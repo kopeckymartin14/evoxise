@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>data Fetcher</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <propertyType name="T" extends="SObject" label="Object API Name" description="Select the API Name of the SObject to Query"/>
+            <property name="queryString" label="SOQL Query" type="String" required="true"  />
+            <property name="firstRetrievedRecord" type="{T}" role="outputOnly" />
+            <property name="retrievedRecords" type="{T[]}" role="outputOnly" />
+            <property name="error" type="String" role="outputOnly" description="Error message when there is an error output from Data Fetcher"/>
+            <property name="aggQueryString" type="String" label="Aggregate SOQL Query" description="An aggregate SOQL Query string to perform math operations in SOQL"/>
+            <property name="aggQueryResult" type="Integer" role="outputOnly" description="Integer result from Aggregate Query"/>
+            <property name="withSharing" type="Boolean" label="With sharing"  description="true or false to indicate if the query runs with sharing or not" required="true" default="true" />
+            <property name="systemAccess" type="Boolean" label="System access"  description="true or false to indicate if the field access is system or not" required="true" default="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

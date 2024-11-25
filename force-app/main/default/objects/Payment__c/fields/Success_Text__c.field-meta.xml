@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Success_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Is_Gift__c == true,
+			&quot;Gratulujeme, nákup darčeka v hodnote &quot;&amp; TEXT(Gift_Card__r.Credits__c) &amp;&quot; X-Token kreditov bol úspešne spracovaný. &quot;,
+			&quot;Gratulujeme, nákup &quot;&amp; TEXT(Credit__c) &amp;&quot; X-Token kreditov bol úspešne spracovaný. &quot;)
+&amp; &quot;Doklad o zaplatení dostanete do Vašej emailovej schránky&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Success Text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

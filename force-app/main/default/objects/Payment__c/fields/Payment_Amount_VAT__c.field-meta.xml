@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Amount_VAT__c</fullName>
+    <label>Payment Amount VAT</label>
+    <summarizedField>Payment_Items__c.TotalAmountVAT2__c</summarizedField>
+    <summaryForeignKey>Payment_Items__c.Payment__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

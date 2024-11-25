@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto; font-family: Arial, sans-serif;">
+<table border="0" cellpadding="0" cellspacing="0" style="max-width: 800px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%;">
+	
+		<tr>
+			<td style="text-align: center;"><img alt="final_evoxise white gradient X logo" src="https://x-finityconsultingsro--devsch.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=0159V000004n96K&amp;oid=00D9V000007OkP3&amp;lastMod=1730728843000" style="width: 60%;" title="final_evoxise white gradient X logo" /></td>
+		</tr>
+		<tr>
+			<td style="padding: 20px; font-size: 16px; color: #333; text-align: center;">
+			<p><span style="font-size:16px;">Ďakujeme za využitie darčekového kódu, bolo Ti pripísaných</span><br />
+			<strong><span style="font-size:20px;">{Payment.Credit__c}</span></strong><span style="font-size:16px;"><strong><span style="font-size:20px;"> X-Token Kreditov</span></strong><br />
+			<br />
+			S priateľským pozdravom,<br />
+			<br />
+			Team Evoxise</span></p>
+			</td>
+		</tr>
+	
+</table>
+</body>
+</html>

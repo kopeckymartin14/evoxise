@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Range_Discount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    Single_Package__c,
+    IF(
+        ISBLANK(Base_Price_Range__c),
+        &quot;0&quot;,
+        &quot;Ušetríš &quot; &amp; TEXT(ROUND(((Base_Price_Range__r.Price_per_Credit__c - Price_per_Credit__c) / Base_Price_Range__r.Price_per_Credit__c) * 100, 0)) &amp; 
+        &quot;% - &quot; &amp; 
+        TEXT(ROUND((Quantity__c / Base_Price_Range__r.Quantity__c * (Base_Price_Range__r.Price_per_Credit__c - Price_per_Credit__c)) * 10, 0)) &amp; 
+        &quot; €&quot;
+    ),
+    IF(
+        ISBLANK(Base_Price_Range__c),
+        &quot;0&quot;,
+        &quot;Ušetríš &quot; &amp; TEXT(ROUND(((Base_Price_Range__r.Price_per_Credit__c - Price_per_Credit__c) / Base_Price_Range__r.Price_per_Credit__c) * 100, 0)) &amp; 
+        &quot;% - &quot; &amp; 
+        TEXT(ROUND(Quantity__c / Base_Price_Range__r.Quantity__c * Base_Price_Range__r.Price_per_Package__c - Price_per_Package__c, 0)) &amp; 
+        &quot; €&quot;
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Range Discount</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

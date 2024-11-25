@@ -1,0 +1,18 @@
+<html>
+ <head>
+ </head>
+ <body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto; font-family: Arial, sans-serif;">
+  &nbsp;&nbsp; &nbsp; 
+  <title></title> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
+  <table border="0" cellpadding="0" cellspacing="0" style="max-width: 800px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%;">
+   <tbody>
+    <tr>
+     <td style="text-align: center;"><img alt="final_evoxise white gradient X logo" src="{[devName:final_evoxise_white_gradient_X_logo]}" style="width: 60%;" title="final_evoxise white gradient X logo" /></td>
+    </tr>
+    <tr>
+     <td style="padding: 20px; font-size: 16px; color: #333; text-align: center;">Z tvojho účtu bolo strhnutých <strong>{ServiceAppointment.Spent_Credit__c} X-Token Kreditov</strong><br /> <br /> Tvoj aktuálny zostatok je <strong>{Account.Remaining_Credit__c}&nbsp;X-Token Kreditov</strong> <p><span style="font-size:16px;">S priateľským pozdravom,<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br /> Team Evoxise</span></p></td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

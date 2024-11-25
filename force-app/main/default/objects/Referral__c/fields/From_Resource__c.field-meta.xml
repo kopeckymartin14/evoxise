@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_Resource__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>From Resource</label>
+    <referenceTo>ServiceResource</referenceTo>
+    <relationshipName>Service_Resources</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

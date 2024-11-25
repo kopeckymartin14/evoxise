@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html style="overflow-y: hidden;">
+<head><meta><meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Invoice</title>
+	<style type="text/css">body {
+      font-family: Arial, sans-serif;
+    }
+	</style>
+</head>
+<body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto;">
+<table border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="2" style="text-align: center; padding-bottom: 20px;">
+			<h2 style="margin: 0; color: #333;">Učtovn&yacute; doklad {doklad}</h2>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 10px; font-size: 14px; color: #333;"><br />
+			<span style="font-size:16px;">Evoxise s.r.o.<br />
+			Trnavsk&aacute; 2297/59<br />
+			90201 Pezinok<br />
+			IČO: 56 524 153<br />
+			DIČ: 2122339010<br />
+			Email: evoxise@gmail.com</span></td>
+			<td style="padding: 10px; font-size: 14px; color: #333;">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding: 10px; font-size: 14px; color: #333;"><span style="font-size:16px;"><strong>Predmet:</strong> Učtovn&yacute; doklad {doklad}<br />
+			<strong>D&aacute;tum platby:</strong> {date}</span></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding: 10px">{htmlTable}</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding: 20px; text-align: center; font-size: 12px; color: #777;">Ďakujeme za tvoju platbu. V pr&iacute;pade ot&aacute;zok n&aacute;s nev&aacute;haj kontaktovať cez na&scaron;u webstr&aacute;nku&nbsp;<a href="https://www.evoxise.sk">EVOXISE.SK</a></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <label>Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Doporucenie</fullName>
+                <default>false</default>
+                <label>Doporučenie</label>
+            </value>
+            <value>
+                <fullName>ReklamaSS</fullName>
+                <default>false</default>
+                <label>Reklama na sociálnej sieti</label>
+            </value>
+            <value>
+                <fullName>Reklama</fullName>
+                <default>false</default>
+                <label>Reklama v časopise/newsletter</label>
+            </value>
+            <value>
+                <fullName>Vyhladavac</fullName>
+                <default>false</default>
+                <label>Vyhľadávač</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

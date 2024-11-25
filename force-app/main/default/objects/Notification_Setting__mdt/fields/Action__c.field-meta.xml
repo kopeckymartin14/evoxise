@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Action</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Job Interest</fullName>
+                <default>true</default>
+                <label>Job Interest</label>
+            </value>
+            <value>
+                <fullName>Create Appointment</fullName>
+                <default>false</default>
+                <label>Create Appointment</label>
+            </value>
+            <value>
+                <fullName>Modify Appointment</fullName>
+                <default>false</default>
+                <label>Modify Appointment</label>
+            </value>
+            <value>
+                <fullName>Cancel Appointment</fullName>
+                <default>false</default>
+                <label>Cancel Appointment</label>
+            </value>
+            <value>
+                <fullName>Payment Successful</fullName>
+                <default>false</default>
+                <label>Payment Successful</label>
+            </value>
+            <value>
+                <fullName>Consumption</fullName>
+                <default>false</default>
+                <label>Consumption</label>
+            </value>
+            <value>
+                <fullName>ADMIN - Job Interest</fullName>
+                <default>false</default>
+                <label>ADMIN - Job Interest</label>
+            </value>
+            <value>
+                <fullName>Exercise Interest</fullName>
+                <default>false</default>
+                <label>Exercise Interest</label>
+            </value>
+            <value>
+                <fullName>Exercise Reminder</fullName>
+                <default>false</default>
+                <label>Exercise Reminder</label>
+            </value>
+            <value>
+                <fullName>Claimed Gift Code</fullName>
+                <default>false</default>
+                <label>Claimed Gift Code</label>
+            </value>
+            <value>
+                <fullName>Send Gift Code</fullName>
+                <default>false</default>
+                <label>Send Gift Code</label>
+            </value>
+            <value>
+                <fullName>Token Return</fullName>
+                <default>false</default>
+                <label>Token Return</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

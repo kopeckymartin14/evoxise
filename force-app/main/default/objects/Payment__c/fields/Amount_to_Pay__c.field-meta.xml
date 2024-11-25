@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_to_Pay__c</fullName>
+    <label>Payment Amount</label>
+    <summarizedField>Payment_Items__c.Total_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Payment_Items__c.Sum_To_Amount__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Payment_Items__c.Payment__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

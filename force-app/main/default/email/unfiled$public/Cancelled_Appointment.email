@@ -1,0 +1,17 @@
+<html>
+ <head>
+  <title></title>
+ </head>
+ <body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto; font-family: Arial, sans-serif;">
+  <table border="0" cellpadding="0" cellspacing="0" style="max-width: 800px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%;">
+   <tbody>
+    <tr>
+     <td style="text-align: center;"><img alt="final_evoxise white gradient X logo" src="{[devName:final_evoxise_white_gradient_X_logo]}" style="width: 60%;" title="final_evoxise white gradient X logo" /></td>
+    </tr>
+    <tr>
+     <td style="padding: 20px; font-size: 16px; color: #333; text-align: center;">Ľutujeme, tvoja rezervácia na <strong>{ServiceAppointment.Start_Date__c}</strong> o <strong>{ServiceAppointment.Start_Time__c}</strong> bola zrušená.<br /> <br /> Ak budeš mať ďalšie otázky alebo by si chcel naplánovať nový termín, neváhaj nás kontaktovať. Sme tu pre teba!<br /> <br /> Tešíme sa na tvoju ďalšiu návštevu.<br /> <br /> S priateľským pozdravom,<br /> <br /> Tím Evoxise</td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

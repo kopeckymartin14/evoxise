@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evoxise_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Unique_Code__c</columns>
+    <columns>Availaible_Credit__c</columns>
+    <columns>Email__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Free_ARX_Training__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Unique_Code__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Evoxise Accounts</label>
+</ListView>

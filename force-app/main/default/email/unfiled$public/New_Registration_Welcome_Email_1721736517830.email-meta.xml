@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>New Registration / Welcome Email</name>
+    <relatedEntityType>Account</relatedEntityType>
+    <style>none</style>
+    <subject>EVOXISE - Vitajte</subject>
+    <textOnly>{greeting},
+
+Ďakujeme za registráciu, blablabla
+
+Váš unikátny kód je {custId}
+
+S pozdravom,
+
+blabla</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

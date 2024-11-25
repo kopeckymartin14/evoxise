@@ -1,0 +1,26 @@
+<html>
+ <head>
+ </head>
+ <body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto; font-family: Arial, sans-serif;">
+  <table border="0" cellpadding="0" cellspacing="0" style="max-width: 800px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%;">
+   <tbody>
+    <tr>
+     <td style="text-align: center;"><img alt="final_evoxise white gradient X logo" src="{[devName:final_evoxise_white_gradient_X_logo]}" style="width: 60%;" title="final_evoxise white gradient X logo" /></td>
+    </tr>
+    <tr>
+     <td style="padding: 20px; font-size: 16px; color: #333; text-align: center;"><span style="font-size:16px;">Ahoj. Tento email som ti poslal, aby som ti odporučil unikátny tréning s technológiou ARX.<br /> <br /> Pre registráciu a viac informacií klikni na tento </span><a href="https://{linkUrl}"><span style="font-size:16px;">odkaz</span></a><span style="font-size:16px;">.<br /> <br /> S priateľským pozdravom,<br /> <br /> {sender}</span></td>
+    </tr>
+   </tbody>
+  </table>
+  <title></title>
+  <meta content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initialscale=1.0" />
+  <meta content="IE=edge" />
+  <style type="text/css">@media screen and (max-width: 480px) {slot[style] {margin-right: 0 !important;}.columnDiv {margin-right: 0 !important;}}@media screen and (min-width: 480px) {slot[style] {margin-bottom: 0 !important;}.columnDiv {margin-bottom: 0 !important;}}
+</style>
+  <style type="text/css">@media screen and (max-width: 480px) {.contentbuilderBaseColumnRow .columnCell {display:inline-block;width:100%}}
+</style>
+  <style type="text/css">.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 600px;}@media only screen and (max-width: 480px) {.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 320px;}}
+</style>
+ </body>
+</html>
