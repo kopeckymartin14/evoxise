@@ -374,7 +374,7 @@
     <formulas>
         <name>soqlOpenPayments</name>
         <dataType>String</dataType>
-        <expression>&quot;SELECT id, Name, Account__c, Amount_to_Pay__c, Credit__c, Status__c, Payment_date__c, Is_Gift__c, Checkout_URL__c from Payment__c where Status__c =&apos;At Branch&apos; AND Account__c = &apos;&quot;+ {!Get_Account_Refresh.Id} +&quot;&apos; AND Amount_to_Pay__c &gt; 0 ORDER BY Name &quot;</expression>
+        <expression>&quot;SELECT id, Name, Account__c, Amount_to_Pay__c, Credit__c, Status__c, Payment_date__c, Checkout_URL__c from Payment__c where Status__c =&apos;At Branch&apos; AND Account__c = &apos;&quot;+ {!Get_Account_Refresh.Id} +&quot;&apos; AND Amount_to_Pay__c &gt; 0 ORDER BY Name &quot;</expression>
     </formulas>
     <interviewLabel>SFSCH - Internal Landing Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <isAdditionalPermissionRequiredToRun>true</isAdditionalPermissionRequiredToRun>

@@ -1,0 +1,42 @@
+<template>
+    <div class="arx-page component__wrapper">
+        <section id="about-us" class="container container__full">
+            <!-- <div>
+                <h2 clas="title">Cenník</h2>
+            </div> -->
+            <h2 class="x-token-title">Cenník</h2>
+            <div class="badge">
+                <div class="badge__image first__image">
+                    <div class="container__image">
+                        <img src={img_single} alt="">
+                    </div>
+                </div>
+                <div class="badge__image">
+                    <div class="container__image">
+                        <img src={img_double} alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="Create_Identify_Customer"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

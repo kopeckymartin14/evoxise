@@ -1,0 +1,250 @@
+/* Base Styles (unchanged) */
+.component__wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 2rem;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	background-color: #030A3D;
+	color: #ffffff;
+    border-radius: var(--br-400);
+}
+
+.title {
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 1rem;
+  font-size: 38px;
+}
+* {
+  font-family: 'Josefin Sans', sans-serif;
+}
+th, td {
+    width: 25%;
+	padding: 12px;
+	text-align: center;
+}
+
+th {
+ font-size: 24px; 
+ color: #94bb44;  
+}
+th:first-child, td:first-child {
+    width: 40%;
+	text-align: left;
+}
+th:not(:first-child), td:not(:first-child) {
+    width: 20%;
+}
+th:nth-child(2), td:nth-child(2) {
+    background-color: #94bb44;
+    color: #030A3D;
+}
+.feature {
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.icon-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #030A3D;
+}
+
+/* Special styling for icons in the 2nd column */
+th:nth-child(2) .icon-container {
+    background-color: #ffffff;
+    width: 50px;
+    height: 50px;
+}
+
+th:nth-child(2) .icon {
+    color: #94bb44;
+}
+
+.tick, .cross {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.tick {
+    background-color: #94bb44;
+    color: white;
+}
+
+.cross {
+    background-color: #F44336;
+    color: white;
+}
+
+.up-arrow, .down-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.up-arrow {
+    background-color: #94bb44;
+    color: white;
+}
+
+.down-arrow {
+    background-color: #F44336;
+    color: white;
+}
+
+.small-text {
+    font-size: 12px;
+}
+
+tbody tr td:nth-child(2) span.up-arrow,
+tbody tr td:nth-child(2) span.tick {
+	background-color: #030A3D;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+    th, td {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    th, td {
+        width: 25%;
+    }
+
+    th:first-child, td:first-child {
+        width: 35%;
+    }
+
+    th, td {
+        text-align: center;
+    }
+
+    .feature {
+        font-size: 18px;
+    }
+
+    .tick, .cross, .up-arrow, .down-arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .icon-container {
+        width: 45px;
+        height: 45px;
+    }
+
+    .icon {
+        font-size: 22px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+
+    .component__wrapper {
+        position: relative;
+        overflow: hidden;
+        margin: 0 0.5rem;
+    }
+    th:first-child {
+        text-align: -webkit-center;
+    }
+
+    td:first-child {
+        text-align: center;
+    }
+    th:nth-child(2) {
+        color: #030A3D;
+        background-color: transparent;
+    }
+
+    td:nth-child(2) {
+        background-color: transparent;
+    }
+    .feature {
+        text-align: center;
+        font-weight: bold;
+        background-color: #030A3D;
+        color: #ffffff;
+        padding: 10px;
+        margin-bottom: 0.5rem;
+        font-size: 16px;
+    }
+
+    td {
+        text-align: center;
+        padding: 10px;
+        background-color: #030A3D;
+    }
+
+    .tick, .cross {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin: 0 auto;
+        font-size: 20px;
+        color: white;
+        border-radius: 50%;
+        padding-top:3px;
+    }
+
+    .tick {
+        background-color: #94bb44;
+    }
+
+    .cross {
+        background-color: #F44336;
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0rem;
+    }
+
+    .icon-container img, .icon-container .icon {
+        width: 60px;
+        height: 30px;
+        max-width: 100%;
+    }
+    .mobile-align {
+        text-align: -webkit-center;
+    }
+    .text-white-color {
+       color: #ffffff;
+    }
+}

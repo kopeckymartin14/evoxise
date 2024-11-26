@@ -1,0 +1,20 @@
+<template>
+    <div class="home-page component__wrapper">
+        <div class="banner container container__full">
+            <div class="container__blots">
+                <div class="blot blot--left"></div>
+                <div class="blot blot--right"></div>
+            </div>
+            <div class="text-container">
+                <template if:false={isLoading}>
+                    <h1 class="headline">{metadata.Headline__c}</h1>
+                    <h2 class="subheadline">{metadata.SubHeadline__c}</h2>
+                    <!-- <h2 class="subheadline"><lightning-formatted-rich-text value={metadata.SubHeadline__c}></lightning-formatted-rich-text></h2> -->
+                </template>
+            </div>
+            <div class="image-container">
+                <img src={imageUrl} alt="Transparent Image" />
+            </div>
+        </div>
+    </div>
+</template>

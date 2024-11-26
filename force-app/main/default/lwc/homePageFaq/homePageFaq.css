@@ -1,0 +1,141 @@
+* {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--clr-default-900);
+}
+
+.component__wrapper {
+    width: 100%;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+section.faq {
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+    justify-content: center;
+	max-width: 1400px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+section.faq h2 {
+	max-width: 60ch;
+    margin: 0 auto;
+    padding: 0rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+section.faq p {
+	max-width: 60ch;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem !important;
+}
+
+section.faq .container.container__right {
+	font-family: RobotoSlab;
+	font-size: 0.875rem;
+	gap: 1.875rem;
+	align-items: flex-start;
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+}
+
+section.faq .container.container__right .wrapper {
+  display: -ms-grid;
+  display: grid;
+  border-radius: 0.625rem;
+  overflow: auto;
+  -webkit-box-shadow: 0px 2px 4px #a8a8a8;
+  box-shadow: 0px 2px 4px #a8a8a8;
+  flex: 1;
+}
+
+section.faq .container.container__right .accordion {
+  position: relative;
+}
+
+section.faq .container.container__right .tile {
+  min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: white;
+  padding: 1rem;
+  color: #030a3d;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 2px 4px #a8a8a8;
+  box-shadow: 0px 2px 4px #a8a8a8;
+}
+
+section.faq .container.container__right .tile span {
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+section.faq .container.container__right .tile::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+section.faq .container.container__right .tile.active::after {
+  content: "\2212";
+}
+
+section.faq .container.container__right .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #f4f4f4;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+section.faq .container.container__right .info p {
+    font-size: 1.2rem !important;
+    color: #030a3d;
+    margin: 0 auto;
+    text-align: left;
+    padding: 1rem;
+    width: 100%;
+    max-width: fit-content;
+}
+
+section.faq .container.container__right .info ul {
+  padding: 0 2rem;
+  font-family: OpenSans;
+  line-height: 130%;
+}
+
+@media (max-width: 767px) {
+    section.faq .container.container__right {
+        flex-direction: column;
+		gap: 1rem;
+    }
+}

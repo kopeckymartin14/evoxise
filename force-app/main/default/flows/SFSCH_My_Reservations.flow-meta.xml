@@ -428,7 +428,7 @@
                     <inputParameters>
                         <name>columns</name>
                         <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;Worktype__c&quot;,&quot;guid&quot;:&quot;column-fb9a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Typ Tréningu&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Worktype&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;SchedStartTime&quot;,&quot;guid&quot;:&quot;column-fd45&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Plánovaný začiatok&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Scheduled Start&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Spent_Credit__c&quot;,&quot;guid&quot;:&quot;column-27ea&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;X-Token kredity&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Spent Credit&quot;,&quot;type&quot;:&quot;number&quot;}]</stringValue>
+                            <stringValue>[{&quot;apiName&quot;:&quot;Worktype__c&quot;,&quot;guid&quot;:&quot;column-fb9a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Typ Tréningu&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Worktype&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;SchedStartTime&quot;,&quot;guid&quot;:&quot;column-fd45&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Plánovaný začiatok&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Scheduled Start&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Spent_Credit__c&quot;,&quot;guid&quot;:&quot;column-27ea&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;X-Token kredity&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Spent Credit&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;Subject&quot;,&quot;guid&quot;:&quot;column-4549&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Druh Tréningu&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Subject&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -668,7 +668,7 @@
             <targetReference>Get_Appointments</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Cancel_Appt</name>
         <label>Cancel Appt</label>

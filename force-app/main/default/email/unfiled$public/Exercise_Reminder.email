@@ -9,7 +9,7 @@
      <td style="text-align: center;"><img alt="final_evoxise white gradient X logo" src="{[devName:final_evoxise_white_gradient_X_logo]}" style="width: 60%;" title="final_evoxise white gradient X logo" /></td>
     </tr>
     <tr>
-     <td style="padding: 20px; font-size: 16px; color: #333; text-align: center;"><span style="font-size:16px;">Ahoj,<br /> Týmto emailom ti chceme len pripomenúť, že zajtra&nbsp;<strong>{ServiceAppointment.Start_Date__c}</strong> o <strong>{ServiceAppointment.Start_Time__c}</strong> <strong> </strong>ťa čaká tréning&nbsp;<strong>{ServiceAppointment.Subject}</strong><br /> <br /> <strong>Nezabudni sa dobre vyspať a pripraviť&nbsp;sa&nbsp;</strong><br /> <br /> Ak budeš mať ďalšie otázky alebo potrebuješ čokoľvek upraviť v rámci tvojej rezervácie, platieb, iného,&nbsp;všetko potrebné nájdeš v&nbsp;klientskej&nbsp;zóne.<br /> <br /> Tešíme sa na tvoju návštevu.<br /> <br /> S priateľským pozdravom,<br /> <br /> Team Evoxise</span></td>
+     <td style="padding: 20px; font-size: 16px; color: #333; text-align: center;"><span style="font-size:16px;">Ahoj,<br /> Týmto emailom ti chceme len pripomenúť, že zajtra&nbsp;<strong>{ServiceAppointment.Start_Date__c}</strong> o <strong>{ServiceAppointment.Start_Time__c}</strong> <strong> </strong>ťa čaká tréning&nbsp;<strong>{ServiceAppointment.Subject}</strong><br /> <br /> <strong>Nezabudni sa dobre vyspať a pripraviť a&nbsp;</strong><br /> <br /> Ak budeš mať ďalšie otázky alebo potrebuješ čokoľvek upraviť v rámci tvojej rezervácie, platieb, iného,&nbsp;všetko potrebné nájdeš v&nbsp;klientskej&nbsp;zóne.<br /> <br /> Tešíme sa na tvoju návštevu.<br /> <br /> S priateľským pozdravom,<br /> <br /> Team Evoxise</span></td>
     </tr>
    </tbody>
   </table>

@@ -1,0 +1,28 @@
+<template>
+    <template if:true={blog}>
+        <div class="arx-page component__wrapper">
+            <section id="about-us" class="container container__full">
+               <div class="badge">
+                    <div class="badge__info">
+                        <div class="slds-p-around_medium">
+                            <lightning-formatted-rich-text value={blog.Content__c}></lightning-formatted-rich-text>
+                        </div>
+                    </div>
+                    <div class="badge__image">
+                        <div class="slds-p-around_medium">
+                            <h2>Ostatné blogy</h2>
+                            <template for:each={blogs} for:item="blog">
+                                <div key={blog.Id} class="blog-item slds-m-bottom_small">
+                                    <div class="slds-text-heading_small blog-link" data-id={blog.Id} onclick={handleBlogSelect}>
+                                        {blog.Title__c}
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>  
+    </template>
+</template>

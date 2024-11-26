@@ -1,0 +1,191 @@
+/* CSS for Blog List items */
+.blog-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-link {
+    text-decoration: none;
+    color: #0070d2; /* Salesforce blue */
+    cursor: pointer;
+}
+
+.blog-link:hover {
+    text-decoration: underline;
+    color: #005fb2; /* Darker blue on hover */
+}
+
+/* Add some spacing between the blogs */
+.slds-m-bottom_small {
+    margin-bottom: 0.5rem;
+}
+
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--clr-default-900);
+}
+
+/* Component Styles */
+.component__wrapper {
+  width: 100%;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1600px;
+  padding: 2rem 2rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.container__full::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 600%;
+  height: 100%;
+  z-index: -20;
+  margin-left: -250%;
+  background-color: white;
+}
+
+.container > h2 {
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 38px;
+}
+
+.container > p {
+  max-width: 60ch;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: flex;
+  gap: 0;
+  background-color: var(--clr-default-100);
+  border-radius: var(--br-400);
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.badge__image {
+  display: grid;
+  place-items: top;
+  min-width:30%;
+  max-width: 50%;
+  background-color: #fff;
+  background-blend-mode: luminosity;
+}
+
+badge__image > h2 {
+    font-size: 20px;
+}
+.badge__info {
+  padding: 1rem;
+}
+
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0rem 0rem;
+  }
+
+  .container > h2 {
+    font-size: 32px;
+  }
+
+  .badge {
+    flex-direction: column;
+  }
+
+  .badge__image {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .badge__info {
+    padding: 1rem 1rem;
+  }
+
+  .slds-modal__container {
+    width: 70%;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .container {
+    padding: 0rem 0rem;
+  }
+
+  .container > h2 {
+    font-size: 28px;
+  }
+
+  .badge {
+    flex-direction: column;
+  }
+
+  .badge__image {
+    min-height: 200px;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .badge__info {
+    padding: 1rem 0rem;
+  }
+
+  .slds-modal__container {
+    width: 90%;
+  }
+
+}

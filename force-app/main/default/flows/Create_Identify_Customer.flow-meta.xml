@@ -189,7 +189,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Clear_Token_Data</targetReference>
+                <targetReference>Account_Login_Token</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -198,7 +198,7 @@
         <name>Account_Login_Token</name>
         <label>Account Login Token?</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>566</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -435,6 +435,11 @@
         <expression>&apos;&lt;div class=&quot;slds-scoped-notification slds-theme_success&quot; role=&quot;status&quot;&gt;&apos;</expression>
     </formulas>
     <formulas>
+        <name>LoginTokenValidity</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() + (1/24)</expression>
+    </formulas>
+    <formulas>
         <name>redBox</name>
         <dataType>String</dataType>
         <expression>&apos;&lt;div class=&quot;slds-scoped-notification slds-theme_error&quot; role=&quot;status&quot;&gt;&apos;</expression>
@@ -475,21 +480,7 @@
         <connector>
             <targetReference>Assign_RecordId</targetReference>
         </connector>
-        <filterLogic>(1 AND 2) OR (3 AND 4)</filterLogic>
-        <filters>
-            <field>One_Time_Token__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>token</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>One_Time_Token_Validity__c</field>
-            <operator>GreaterThanOrEqualTo</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </filters>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Login_Token__c</field>
             <operator>EqualTo</operator>
@@ -551,30 +542,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Clear_Token_Data</name>
-        <label>Clear Token Data</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
-        <connector>
-            <targetReference>Account_Login_Token</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>One_Time_Token_Validity__c</field>
-        </inputAssignments>
-        <inputAssignments>
-            <field>One_Time_Token__c</field>
-        </inputAssignments>
-        <object>Account</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
         <locationX>726</locationX>
@@ -593,7 +560,7 @@
         <inputAssignments>
             <field>Login_Token_Validity__c</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <elementReference>LoginTokenValidity</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -657,7 +624,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>5</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -680,7 +647,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>2</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -691,7 +658,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>5</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>

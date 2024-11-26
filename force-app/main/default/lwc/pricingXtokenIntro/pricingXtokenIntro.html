@@ -1,0 +1,62 @@
+<template>
+  <div class="arx-page component__wrapper">
+    <section id="about-us" class="container container__full">
+      <div class="badge">
+        <div class="badge__image">
+          <div class="container__image">
+            <img src={img_XToken} alt="X-Token">
+          </div>
+        </div>
+        <div class="badge__info">
+          <h2 class="x-token-title">X-Token</h2>
+          
+          <div class="badge__details">
+            <div class="badge__detail">
+                <h4>Investuj do seba, šetri peniaze a zaži maximálny progres s naším revolučným platobným systémom X-Token!</h4><br>
+              <h4>Čo je X-Token?</h4>
+              <ul>
+                <li>X-Token je unikátna platobná jednotka na nákup tréningov v Evoxise. Funguje ako predplatený kredit, ktorý používaš pri každom tréningu. Čím viac X-Tokenov kúpiš, tým menej platíš za tréning.</li>
+              </ul>
+              <h4>Ako funguje X-Token?</h4>
+              <ul>
+                <li>Cena základného tréningu ARX stojí 10 X-Tokenov. Väčšie balíky znamenajú nižšiu cenu za tréning, čo ti umožní ušetriť a sústrediť sa na svoj progres. Viac tokenov, menej výdavkov, lepšie výsledky!</li>
+              </ul>
+              <h4>Získaj X-Tokeny zadarmo!</h4>
+              <ul>
+                <li>Odporuč Evoxise známym alebo nás prezdieľaj na sociálnych sieťach a získaš X-Tokeny zdarma. Viac tréningov za menej peňazí a možnosť pomôcť priateľom k lepšiemu zdraviu a kondícii!</li>
+                <ul>
+                    <li>Odporúčanie => Získaj až <b>10 X-Tokenov</b> za každého, kto sa u nás zaregistruje a kúpi celkovo aspoň 50 X-Tokenov. Poslať odporúčanie vieš z <b>klientskej zóny</b></li>
+                    <li>Zdieľanie => Zacvič si u nás, postni fotku alebo video na sociálnych sieťach a označ nás. Týmto vieš získať individuálnu odmenu v podobe X-Tokenov</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="button-custom" onclick={handleButtonClick}>Kúpiť X-Tokeny</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <template if:true={isModalOpen}>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            title="Close"
+            onclick={closeModal}
+          >
+            <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 class="slds-text-heading_medium">Vstup do Klientskej Zóny</h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium">
+          <lightning-flow flow-api-name="Create_Identify_Customer" onstatuschange={handleStatusChange}></lightning-flow>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+</template>

@@ -1,0 +1,62 @@
+<template>
+    <!-- Arrows for navigating between pages -->
+    <div class="slds-grid slds-grid_align-center">
+        <button class="slds-button slds-button_neutral" style="margin-top: 30px;" onclick={handlePrev} disabled={isPrevDisabled}>
+            &larr; Previous
+        </button>
+        <button class="slds-button slds-button_neutral" style="margin-top: 30px;" onclick={handleNext} disabled={isNextDisabled}>
+            Next &rarr;
+        </button>
+    </div>
+
+    <!-- Table of records, only showing first 5 based on paginatedData -->
+    <template for:each={paginatedData} for:item="day">
+        <div key={day.dayName} class="day-container">
+            <h2>{day.dayName} - {day.dayDate}</h2>
+            <div class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout">
+                <table>
+                    <thead>
+                        <tr class="slds-text-title_bold">
+                            <th></th>
+                            <template for:each={day.workingHours} for:item="hours">
+                                <th key={hours} class="slds-text-align_center">{hours}</th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={day.mainData} for:item="resource">
+                            <tr key={resource.resName}>
+                                <template if:true={resource.selectedTrainer}>
+                                    <td class="slds-text-align_center" style="width:15%;">{resource.resName}</td>
+                                    <template for:each={resource.scheduledTimes} for:item="schedule">
+                                        <td key={schedule} class="box-wrapper">
+                                            <div class="slds-grid slds-wrap slds-align_absolute-center box-container">
+                                                <template for:each={schedule.boxes2} for:item="box">
+                                                    <div key={box} class="slds-col slds-size_1-of-12">
+                                                        <div class={box.box}>
+                                                            <template lwc:if={box.isTooltip}>
+                                                                <div class="item">
+                                                                    <span>II</span>
+                                                                    <div class="tooltip" role="tooltip" id={box.boxId}>
+                                                                        <template for:each={box.tooltips} for:item="tool">
+                                                                            <p style="text-align:left;" key={tool}>{tool}</p>
+                                                                        </template>
+                                                                    </div>
+                                                                </div>
+                                                            </template>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </td>
+                                    </template>
+                                </template>
+                                
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </template>
+</template>

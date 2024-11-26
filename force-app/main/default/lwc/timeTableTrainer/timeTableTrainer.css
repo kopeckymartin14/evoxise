@@ -1,0 +1,98 @@
+.day-container {
+    padding: 0.5rem 1rem 1rem 1rem;
+    margin: 1rem;
+    background: #ededed;
+}
+
+.day-container h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 0px;
+}
+
+.box-wrapper {
+    padding: 0.25rem;
+    width:80px;
+}
+
+.box-container {
+    width: 100%;
+}
+
+.box-container > div{
+    width: 25%;
+}
+
+.white, .red, .grey {
+    height: 20px;
+    border: 1px solid #ccc;
+}
+
+.white {
+    background-color: white;
+}
+
+.red {
+    background-color: red;
+}
+.grey{
+    background-color: grey;
+}
+
+.white span {
+    color: white;
+}
+
+.red span {
+    color: red;
+}
+.grey span{
+    color: grey;
+}
+
+
+.item {
+    position: relative;
+    display: inline-block;
+    margin: 0px 1px;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 125%; /* Position tooltip above the item */
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    z-index: 1;
+    width: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow below the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.title-table {
+    text-align: center;
+    border-bottom: 0.5px black solid;
+    margin: 1rem !important;
+}

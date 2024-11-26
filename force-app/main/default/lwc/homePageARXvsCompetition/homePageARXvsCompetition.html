@@ -1,0 +1,141 @@
+<template>
+	<div id="comparisson-page" class="comparisson-page component__wrapper">
+		<h2 class="title">JE NIEKOĽKO D&Ocirc;VODOV, PREČO SME NAJLEPŠIA MOŽNÁ VOĽBA</h2>
+		<template if:true={isMobile}>
+			<table>
+                <thead>
+                    <tr>
+                        <th colspan="3">ARX VS. Konkurencia</th>
+                    </tr>
+                    <tr>
+                        <th class="mobile-align">
+                            <div class="icon-container">
+                                <img src={img_logo} alt="ARX" width="50">
+                            </div>
+                        </th>
+                        <th class="mobile-align">
+                            <div class="icon-container">
+                                <span class="icon">🏋️</span>
+                            </div>
+                        </th>
+                        <th class="mobile-align">
+                            <div class="icon-container">
+                                <span class="icon">🚴</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3" class="feature">Odpor prispôsobený Tvojej aktuálnej sile</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tick">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="feature">Digitálne sledovanie každého tréningu</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tick">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+					<tr>
+                        <td colspan="3" class="feature">Live Performance Tracking</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tick">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✓</span></td>
+                    </tr>
+					<tr>
+                        <td colspan="3" class="feature">Počet zariadení využitých na precvičovanie celého tela</td>
+                    </tr>
+                    <tr>
+                        <td><span class="up-arrow">↑</span><br><span class="small-text">1 Zariadenie</span></td>
+						<td><span class="down-arrow">↓</span><br><span class="small-text text-white-color">10+ Strojov</span></td>
+						<td><span class="down-arrow">↓</span><br><span class="small-text">Nedá sa precvičiť</span></td>
+                    </tr>
+					<tr>
+                        <td colspan="3" class="feature">Vyhradený čas na cvičenie (za 1. týžden)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="up-arrow">↑</span><br><span class="text-white-color">30min</span><br><span class="small-text">(1 x 30 min)</span>
+						</td>
+						<td><span class="down-arrow">↓</span><br><span class="text-white-color">180min</span><br><span class="small-text text-white-color">(4 x 45 min)</span>
+						</td>
+						<td><span class="down-arrow">↓</span><br><span class="text-white-color">90min</span><br><span class="small-text">(3 x 30 min)</span>
+						</td>
+                    </tr>
+                    <!-- Additional rows as needed -->
+                </tbody>
+            </table>
+		</template>
+		<template if:false={isMobile}>
+			<table>
+			<thead>
+				<tr>
+					<th>ARX VS. Konkurencia</th>
+					<th>
+						<div class="icon-container">
+							<img src={img_logo} alt="ARX" width="50">
+						</div>
+					</th>
+					<th>
+						<div class="icon-container">
+							<span class="icon">🏋️</span>
+						</div>
+						<!-- <br>
+						Činky/<br>Závažia -->
+					</th>
+					<th>
+						<div class="icon-container">
+							<span class="icon">🚴</span>
+						</div>
+						<br>
+						<!-- Kardio stroje<br> -->
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="feature">Odpor prispôsobený Tvojej aktuálnej sile</td>
+					<td><span class="tick">✓</span></td>
+					<td><span class="cross">✗</span></td>
+					<td><span class="cross">✗</span></td>
+				</tr>
+				<tr>
+					<td class="feature">Digitálne sledovanie každého tréningu</td>
+					<td><span class="tick">✓</span></td>
+					<td><span class="cross">✗</span></td>
+					<td><span class="cross">✗</span></td>
+				</tr>
+				<tr>
+					<td class="feature">Live Performance Tracking</td>
+					<td><span class="tick">✓</span></td>
+					<td><span class="cross">✗</span></td>
+					<td><span class="tick">✓</span></td>
+				</tr>
+				<tr>
+					<td class="feature">Počet zariadení využitých na precvičovanie celého tela</td>
+					<td><span class="up-arrow">↑</span><br>1 Zariadenie</td>
+					<td><span class="down-arrow">↓</span><br>10+ Strojov</td>
+					<td><span class="down-arrow">↓</span><br>Nedokážeme precvičiť celé telo</td>
+				</tr>
+				<tr>
+					<td class="feature">Vyhradený čas na cvičenie (za 1. týžden)</td>
+					<td><span class="up-arrow">↑</span><br>30min<br><span class="small-text">(1 tréning x 30 min)</span>
+					</td>
+					<td><span class="down-arrow">↓</span><br>180min<br><span class="small-text">(4 tréningy x 45 min)</span>
+					</td>
+					<td><span class="down-arrow">↓</span><br>90min<br><span class="small-text">(3 tréningy x 30 min)</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</template>
+		
+	</div>
+</template>

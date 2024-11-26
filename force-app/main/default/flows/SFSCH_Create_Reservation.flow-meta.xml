@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Copy_1_of_Save_Appointment</name>
         <label>Copy 1 of Save Appointment</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>3122</locationY>
         <actionName>saveAppointment</actionName>
         <actionType>saveAppointment</actionType>
@@ -50,7 +50,7 @@
     <actionCalls>
         <name>Save_Appointment</name>
         <label>Save Appointment</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>6050</locationY>
         <actionName>saveAppointment</actionName>
         <actionType>saveAppointment</actionType>
@@ -102,7 +102,7 @@
     <assignments>
         <name>Assign_Service_Appointment_Values</name>
         <label>Assign Service Appointment Values</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>ServiceAppointment.ServiceTerritoryId</assignToReference>
@@ -146,7 +146,7 @@
     <assignments>
         <name>Assign_ServiceResourceId_Asset</name>
         <label>Assign ServiceResourceId Asset</label>
-        <locationX>1586</locationX>
+        <locationX>1722</locationX>
         <locationY>1322</locationY>
         <assignmentItems>
             <assignToReference>serviceResourceId</assignToReference>
@@ -162,7 +162,7 @@
     <assignments>
         <name>Assign_ServiceResourceId_when_more</name>
         <label>Assign ServiceResourceId when more</label>
-        <locationX>1146</locationX>
+        <locationX>1214</locationX>
         <locationY>1754</locationY>
         <assignmentItems>
             <assignToReference>serviceResourceId</assignToReference>
@@ -178,7 +178,7 @@
     <assignments>
         <name>Assign_Values_to_Fields</name>
         <label>Assign Values to Fields</label>
-        <locationX>906</locationX>
+        <locationX>1106</locationX>
         <locationY>2354</locationY>
         <assignmentItems>
             <assignToReference>ServiceAppointment.Email</assignToReference>
@@ -226,7 +226,7 @@
     <assignments>
         <name>Assigne_ServiceResourceId</name>
         <label>Assigne ServiceResourceId</label>
-        <locationX>490</locationX>
+        <locationX>558</locationX>
         <locationY>1646</locationY>
         <assignmentItems>
             <assignToReference>serviceResourceId</assignToReference>
@@ -242,7 +242,7 @@
     <assignments>
         <name>Clear_Selected_Values_on_Change</name>
         <label>Clear Selected Values on Change</label>
-        <locationX>482</locationX>
+        <locationX>567</locationX>
         <locationY>5426</locationY>
         <assignmentItems>
             <assignToReference>ServiceAppointment.AdditionalInformation</assignToReference>
@@ -382,7 +382,7 @@
     <assignments>
         <name>count_Trainers</name>
         <label>count Trainers</label>
-        <locationX>642</locationX>
+        <locationX>710</locationX>
         <locationY>1322</locationY>
         <assignmentItems>
             <assignToReference>countTrainers</assignToReference>
@@ -398,7 +398,7 @@
     <assignments>
         <name>Set_Anonymous_Status</name>
         <label>Set Anonymous Status</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4802</locationY>
         <assignmentItems>
             <assignToReference>ServiceAppointment.IsAnonymousBooking</assignToReference>
@@ -414,7 +414,7 @@
     <assignments>
         <name>Set_Triage_Option</name>
         <label>Set Triage Option</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4046</locationY>
         <assignmentItems>
             <assignToReference>selectedTriageOption</assignToReference>
@@ -430,7 +430,7 @@
     <assignments>
         <name>SetAppointmentStage</name>
         <label>Set Appointment Stage</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4262</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -446,7 +446,7 @@
     <assignments>
         <name>SetCandidateStage</name>
         <label>Set Candidate Stage</label>
-        <locationX>438</locationX>
+        <locationX>523</locationX>
         <locationY>4802</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -462,7 +462,7 @@
     <assignments>
         <name>SetConfirmationStage</name>
         <label>Set Confirmation Stage</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>6458</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -479,7 +479,7 @@
         <description>Sets HideAppointmentModeSelectionOptions to False.</description>
         <name>SetHideAppointmentModeSelectionOptionsFalse</name>
         <label>Set Hide Appointment Mode Selection Options Variable</label>
-        <locationX>1054</locationX>
+        <locationX>1139</locationX>
         <locationY>7166</locationY>
         <assignmentItems>
             <assignToReference>HideAppointmentModeSelectionOptions</assignToReference>
@@ -496,7 +496,7 @@
         <description>Sets HideAppointmentModeSelectionOptions to True.</description>
         <name>SetHideAppointmentModeSelectionOptionsTrue</name>
         <label>Set Hide Appointment Mode Selection Options Variable</label>
-        <locationX>790</locationX>
+        <locationX>875</locationX>
         <locationY>7166</locationY>
         <assignmentItems>
             <assignToReference>HideAppointmentModeSelectionOptions</assignToReference>
@@ -512,7 +512,7 @@
     <assignments>
         <name>SetInitialValues</name>
         <label>Set Initial Values</label>
-        <locationX>354</locationX>
+        <locationX>396</locationX>
         <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>ServiceAppointment.ParentRecordId</assignToReference>
@@ -670,7 +670,7 @@
     <assignments>
         <name>SetLocationStage</name>
         <label>Set Location Stage</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4478</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -686,7 +686,7 @@
     <assignments>
         <name>SetReviewStage</name>
         <label>Set Review Stage</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>5834</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -703,7 +703,7 @@
         <description>Sets the flow’s current stage to SelectGroupAppointmentDetailsStage, and sets AppointmentCategory to the value of the appointmentMode variable.</description>
         <name>SetStageToSelectGroupAppointmentDetails</name>
         <label>Set Stage to Select Group Appointment Details</label>
-        <locationX>790</locationX>
+        <locationX>875</locationX>
         <locationY>5534</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -726,7 +726,7 @@
     <assignments>
         <name>SetTimeSlotStage</name>
         <label>Set Time Slot Stage</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>5102</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -749,7 +749,7 @@
     <assignments>
         <name>SetTopicStage</name>
         <label>Set Topic Stage</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>7466</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -797,7 +797,7 @@
     <decisions>
         <name>Any_Trainer</name>
         <label>Any Trainer</label>
-        <locationX>346</locationX>
+        <locationX>380</locationX>
         <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>count_Trainers</targetReference>
@@ -822,7 +822,7 @@
     <decisions>
         <name>Button_After_Review</name>
         <label>Button After Review</label>
-        <locationX>906</locationX>
+        <locationX>1106</locationX>
         <locationY>2570</locationY>
         <defaultConnector>
             <targetReference>Copy_1_of_Save_Appointment</targetReference>
@@ -860,7 +860,7 @@
     <decisions>
         <name>Button_After_Timeslot</name>
         <label>Button After Timeslot</label>
-        <locationX>642</locationX>
+        <locationX>710</locationX>
         <locationY>2246</locationY>
         <defaultConnector>
             <targetReference>Assign_Values_to_Fields</targetReference>
@@ -878,11 +878,27 @@
             </conditions>
             <label>ButtonBackAfterTImeslot</label>
         </rules>
+        <rules>
+            <name>Change_Trainer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>buttonTimeslot.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>changeTrainer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Select_Trainer_Screen</targetReference>
+            </connector>
+            <label>Change Trainer</label>
+        </rules>
     </decisions>
     <decisions>
         <name>buttonAfterTopic</name>
         <label>buttonAfterTopic</label>
-        <locationX>354</locationX>
+        <locationX>396</locationX>
         <locationY>674</locationY>
         <defaultConnector>
             <targetReference>Get_WorkTypeGroup</targetReference>
@@ -904,7 +920,7 @@
     <decisions>
         <name>ButtonAfterTrainer</name>
         <label>ButtonAfterTrainer</label>
-        <locationX>882</locationX>
+        <locationX>950</locationX>
         <locationY>1646</locationY>
         <defaultConnector>
             <targetReference>Assign_ServiceResourceId_when_more</targetReference>
@@ -949,7 +965,7 @@
     <decisions>
         <name>Change_Primary</name>
         <label>Change Primary</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>5318</locationY>
         <defaultConnector>
             <targetReference>IsServiceAppointmentModeGroup</targetReference>
@@ -975,7 +991,7 @@
         <description>Determines whether to display the service appointment mode selection options by checking if appointmentMode is either Group or Regular.</description>
         <name>DisplayServiceAppointmentModeSelectionOptions</name>
         <label>Display Service Appointment Mode Selection Options?</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>7058</locationY>
         <defaultConnector>
             <targetReference>SetHideAppointmentModeSelectionOptionsFalse</targetReference>
@@ -1007,7 +1023,7 @@
     <decisions>
         <name>How_many_trainers</name>
         <label>How many trainers?</label>
-        <locationX>642</locationX>
+        <locationX>710</locationX>
         <locationY>1430</locationY>
         <defaultConnector>
             <targetReference>Select_Trainer_Screen</targetReference>
@@ -1032,7 +1048,7 @@
     <decisions>
         <name>Is_account_referred_by_Trainer</name>
         <label>Is account referred by Trainer?</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>3230</locationY>
         <defaultConnector>
             <targetReference>update_appointment</targetReference>
@@ -1057,7 +1073,7 @@
     <decisions>
         <name>Is_Free_Training</name>
         <label>Is Free Training?</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>3530</locationY>
         <defaultConnector>
             <targetReference>Run_Payment_Logic</targetReference>
@@ -1083,7 +1099,7 @@
         <description>Determines whether the Add Attendees to Service Appointment checkbox is selected on the ScreenSelectGroupServiceAppointmentDetails screen.</description>
         <name>IsAddAttendeesCheckboxSelected</name>
         <label>Is Add Attendees Checkbox Selected?</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>6158</locationY>
         <defaultConnector>
             <targetReference>SetConfirmationStage</targetReference>
@@ -1109,7 +1125,7 @@
         <description>Determines if the service appointment mode is Group.</description>
         <name>IsServiceAppointmentModeGroup</name>
         <label>Is Service Appointment Mode Group?</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>5426</locationY>
         <defaultConnector>
             <targetReference>SetReviewStage</targetReference>
@@ -1134,7 +1150,7 @@
     <decisions>
         <name>Primary_Resource_Change_Screen_Decision</name>
         <label>Primary Resource Change Screen Decision</label>
-        <locationX>482</locationX>
+        <locationX>567</locationX>
         <locationY>5534</locationY>
         <defaultConnector>
             <targetReference>DisplayServiceAppointmentModeSelectionOptions</targetReference>
@@ -1160,7 +1176,7 @@
     <decisions>
         <name>ResourceDecision</name>
         <label>Resource Decision</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4694</locationY>
         <defaultConnector>
             <targetReference>SetTimeSlotStage</targetReference>
@@ -1221,7 +1237,7 @@
     <decisions>
         <name>Service_Resource_Selection_Screen_Decision</name>
         <label>Service Resource Selection Screen Decision</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>3938</locationY>
         <defaultConnector>
             <targetReference>DisplayServiceAppointmentModeSelectionOptions</targetReference>
@@ -1281,7 +1297,7 @@
     <decisions>
         <name>Trainer_Needed</name>
         <label>Trainer Needed?</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>998</locationY>
         <defaultConnector>
             <targetReference>Get_Valid_Resources_no_trainer</targetReference>
@@ -1345,7 +1361,7 @@
     <loops>
         <name>Loop_Assets</name>
         <label>Loop Assets</label>
-        <locationX>1498</locationX>
+        <locationX>1634</locationX>
         <locationY>1214</locationY>
         <collectionReference>Get_Valid_Resources_no_trainer.validServiceResource</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1359,7 +1375,7 @@
     <loops>
         <name>loop_trainers</name>
         <label>loop trainers</label>
-        <locationX>402</locationX>
+        <locationX>470</locationX>
         <locationY>1538</locationY>
         <collectionReference>Get_Valid_Resources.validServiceResource</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1386,7 +1402,7 @@
     <recordLookups>
         <name>Get_Account_Details</name>
         <label>Get Account Details</label>
-        <locationX>354</locationX>
+        <locationX>396</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1407,7 +1423,7 @@
     <recordLookups>
         <name>Get_Service_Terrirories</name>
         <label>Get Service Terrirories</label>
-        <locationX>354</locationX>
+        <locationX>396</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1420,7 +1436,7 @@
     <recordLookups>
         <name>Get_WorkTypeGroup</name>
         <label>Get WorkTypeGroup</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1441,7 +1457,7 @@
     <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>790</locationX>
+        <locationX>875</locationX>
         <locationY>3638</locationY>
         <connector>
             <targetReference>Run_Payment_Logic</targetReference>
@@ -1465,7 +1481,7 @@
     <recordUpdates>
         <name>update_appointment</name>
         <label>update appointment</label>
-        <locationX>1054</locationX>
+        <locationX>1139</locationX>
         <locationY>3338</locationY>
         <connector>
             <targetReference>Is_Free_Training</targetReference>
@@ -1501,7 +1517,7 @@
     <recordUpdates>
         <name>update_appointment2</name>
         <label>update appointment</label>
-        <locationX>790</locationX>
+        <locationX>875</locationX>
         <locationY>3338</locationY>
         <connector>
             <targetReference>Is_Free_Training</targetReference>
@@ -1538,7 +1554,7 @@
     <screens>
         <name>AppointmentTypeScreen</name>
         <label>Appointment Type Screen</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4370</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1589,7 +1605,7 @@
     <screens>
         <name>AttendeesScreen</name>
         <label>Attendees Screen</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>7358</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1687,7 +1703,7 @@
     <screens>
         <name>CandidateScreen</name>
         <label>Candidate Screen</label>
-        <locationX>438</locationX>
+        <locationX>523</locationX>
         <locationY>4910</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1842,7 +1858,7 @@
     <screens>
         <name>ConfirmationScreen</name>
         <label>Confirmation Screen</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>6674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1932,7 +1948,7 @@
     <screens>
         <name>Copy_1_of_Copy_1_of_Time_Slot_Screen</name>
         <label>Copy 1 of Copy 1 of Time Slot Screen</label>
-        <locationX>1498</locationX>
+        <locationX>1634</locationX>
         <locationY>1622</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2120,7 +2136,7 @@
     <screens>
         <name>Copy_1_of_Review_Screen</name>
         <label>Copy 1 of Review Screen</label>
-        <locationX>1498</locationX>
+        <locationX>1634</locationX>
         <locationY>1730</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2325,7 +2341,7 @@
     <screens>
         <name>Copy_1_of_Time_Slot_Screen</name>
         <label>Copy 1 of Time Slot Screen</label>
-        <locationX>642</locationX>
+        <locationX>710</locationX>
         <locationY>2138</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2615,7 +2631,7 @@
             <inputParameters>
                 <name>buttons</name>
                 <value>
-                    <stringValue>[{&quot;label&quot;:&quot;Potvrdzujem zvolený termín&quot;,&quot;value&quot;:&quot;Potvrdzujem zvolený termín&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;success&quot;,&quot;iconName&quot;:&quot;utility:date_time&quot;,&quot;index&quot;:0},{&quot;label&quot;:&quot;Späť do menu&quot;,&quot;value&quot;:&quot;back&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;neutral&quot;,&quot;iconName&quot;:&quot;utility:back&quot;,&quot;index&quot;:1}]</stringValue>
+                    <stringValue>[{&quot;label&quot;:&quot;Potvrdzujem zvolený termín&quot;,&quot;value&quot;:&quot;Potvrdzujem zvolený termín&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;success&quot;,&quot;iconName&quot;:&quot;utility:date_time&quot;,&quot;index&quot;:0},{&quot;label&quot;:&quot;Späť do menu&quot;,&quot;value&quot;:&quot;back&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;neutral&quot;,&quot;iconName&quot;:&quot;utility:back&quot;,&quot;index&quot;:1},{&quot;label&quot;:&quot;Zmeniť Trénera&quot;,&quot;value&quot;:&quot;changeTrainer&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;destructive-text&quot;,&quot;iconName&quot;:&quot;utility:change_owner&quot;,&quot;index&quot;:2}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2628,7 +2644,7 @@
     <screens>
         <name>Copy_1_of_Topic_Screen</name>
         <label>Topic Screen</label>
-        <locationX>354</locationX>
+        <locationX>396</locationX>
         <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2854,7 +2870,7 @@
     <screens>
         <name>LocationScreen</name>
         <label>Location Screen</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4586</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -3065,7 +3081,7 @@
     <screens>
         <name>review</name>
         <label>Copy 1 of Copy 1 of Review Screen</label>
-        <locationX>906</locationX>
+        <locationX>1106</locationX>
         <locationY>2462</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -3384,7 +3400,7 @@
     <screens>
         <name>ReviewScreen</name>
         <label>Review Screen</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>5942</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -3590,7 +3606,7 @@
         <description>Allows the flow user to select group appointment details, such as attendee limit and group appointment access type.</description>
         <name>ScreenSelectGroupServiceAppointmentDetails</name>
         <label>Select Group Service Appointment Details</label>
-        <locationX>790</locationX>
+        <locationX>875</locationX>
         <locationY>5642</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -3668,7 +3684,7 @@
     <screens>
         <name>Select_Trainer_Screen</name>
         <label>Select Trainer</label>
-        <locationX>882</locationX>
+        <locationX>950</locationX>
         <locationY>1538</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -4061,7 +4077,7 @@
     <screens>
         <name>TimeSlotScreen</name>
         <label>Time Slot Screen</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>5210</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -4249,7 +4265,7 @@
     <screens>
         <name>TopicScreen</name>
         <label>Topic Screen</label>
-        <locationX>702</locationX>
+        <locationX>787</locationX>
         <locationY>4154</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -4399,7 +4415,7 @@
         <stageOrder>10</stageOrder>
     </stages>
     <start>
-        <locationX>228</locationX>
+        <locationX>270</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Account_Details</targetReference>
@@ -4410,7 +4426,7 @@
         <description>Calls a sub-flow that adds, modifies, or deletes service appointment attendee records for a group service appointment.</description>
         <name>AddOrModifyAttendees</name>
         <label>Add or Modify Attendees</label>
-        <locationX>790</locationX>
+        <locationX>875</locationX>
         <locationY>6266</locationY>
         <connector>
             <targetReference>SetConfirmationStage</targetReference>
@@ -4445,7 +4461,7 @@
     <subflows>
         <name>Get_JSON_No_Trainer</name>
         <label>Get JSON No Trainer</label>
-        <locationX>1498</locationX>
+        <locationX>1634</locationX>
         <locationY>1514</locationY>
         <connector>
             <targetReference>Copy_1_of_Copy_1_of_Time_Slot_Screen</targetReference>
@@ -4474,7 +4490,7 @@
     <subflows>
         <name>Get_SR_JSON_String_Subflow_Flow_1</name>
         <label>Get SR JSON String Subflow Flow 1</label>
-        <locationX>642</locationX>
+        <locationX>710</locationX>
         <locationY>2030</locationY>
         <connector>
             <targetReference>Copy_1_of_Time_Slot_Screen</targetReference>
@@ -4503,7 +4519,7 @@
     <subflows>
         <name>Get_Valid_Resources</name>
         <label>Get Valid Resources</label>
-        <locationX>346</locationX>
+        <locationX>380</locationX>
         <locationY>1106</locationY>
         <connector>
             <targetReference>Any_Trainer</targetReference>
@@ -4532,7 +4548,7 @@
     <subflows>
         <name>Get_Valid_Resources_no_trainer</name>
         <label>Get Valid Resources</label>
-        <locationX>1498</locationX>
+        <locationX>1634</locationX>
         <locationY>1106</locationY>
         <connector>
             <targetReference>Loop_Assets</targetReference>
@@ -4561,7 +4577,7 @@
     <subflows>
         <name>Get_Valid_Topics</name>
         <label>Get Valid Topics</label>
-        <locationX>354</locationX>
+        <locationX>396</locationX>
         <locationY>458</locationY>
         <connector>
             <targetReference>Copy_1_of_Topic_Screen</targetReference>
@@ -4595,7 +4611,7 @@
     <subflows>
         <name>Run_Payment_Logic</name>
         <label>Run Payment Logic</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>3830</locationY>
         <connector>
             <targetReference>Service_Resource_Selection_Screen_Decision</targetReference>
@@ -4617,7 +4633,7 @@
     <subflows>
         <name>Send_Notification</name>
         <label>Send Notification</label>
-        <locationX>922</locationX>
+        <locationX>1007</locationX>
         <locationY>6566</locationY>
         <connector>
             <targetReference>ConfirmationScreen</targetReference>

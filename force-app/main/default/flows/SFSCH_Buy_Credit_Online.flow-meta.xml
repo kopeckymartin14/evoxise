@@ -4,7 +4,7 @@
         <name>Create_revolut_order_Existing_Customer</name>
         <label>Create revolut order Existing Customer</label>
         <locationX>1083</locationX>
-        <locationY>1214</locationY>
+        <locationY>998</locationY>
         <actionName>RevolutApi</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -50,7 +50,7 @@
         <name>Create_revolut_order_New_Customer</name>
         <label>Create revolut order New Customer</label>
         <locationX>819</locationX>
-        <locationY>1214</locationY>
+        <locationY>998</locationY>
         <actionName>RevolutApi</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -102,26 +102,10 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
-        <name>Generate_login_token</name>
-        <label>Generate login token</label>
-        <locationX>951</locationX>
-        <locationY>674</locationY>
-        <actionName>INV_GenerateRegistrationCode</actionName>
-        <actionType>apex</actionType>
-        <connector>
-            <targetReference>Update_Account_login_token</targetReference>
-        </connector>
-        <flowTransactionModel>Automatic</flowTransactionModel>
-        <nameSegment>INV_GenerateRegistrationCode</nameSegment>
-        <offset>0</offset>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
-    </actionCalls>
-    <actionCalls>
         <name>Navigate_To_Url</name>
         <label>Navigate To Url</label>
         <locationX>1149</locationX>
-        <locationY>2162</locationY>
+        <locationY>1946</locationY>
         <actionName>c:navigateEverywhereLFA</actionName>
         <actionType>component</actionType>
         <connector>
@@ -167,7 +151,7 @@
         <name>Assign_Payment_Values</name>
         <label>Assign Payment Values</label>
         <locationX>951</locationX>
-        <locationY>1730</locationY>
+        <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>fPayment.Id</assignToReference>
             <operator>Assign</operator>
@@ -197,7 +181,7 @@
         <name>Assign_Revolut_Id</name>
         <label>Assign Revolut Id</label>
         <locationX>819</locationX>
-        <locationY>1322</locationY>
+        <locationY>1106</locationY>
         <assignmentItems>
             <assignToReference>Account.Revolut_Id__c</assignToReference>
             <operator>Assign</operator>
@@ -220,7 +204,7 @@
         <name>Already_Paid</name>
         <label>Already Paid?</label>
         <locationX>489</locationX>
-        <locationY>2162</locationY>
+        <locationY>1946</locationY>
         <defaultConnector>
             <targetReference>Cancel_Payment</targetReference>
         </defaultConnector>
@@ -247,7 +231,7 @@
         <locationX>522</locationX>
         <locationY>566</locationY>
         <defaultConnector>
-            <targetReference>Generate_login_token</targetReference>
+            <targetReference>Get_Current_Payment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Continue</defaultConnectorLabel>
         <rules>
@@ -282,7 +266,7 @@
                 <leftValueReference>backToMenu.value</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>backToMenu</stringValue>
+                    <stringValue>back</stringValue>
                 </rightValue>
             </conditions>
             <label>Back to Menu</label>
@@ -292,7 +276,7 @@
         <name>New_Revolut_Customer</name>
         <label>New Revolut Customer?</label>
         <locationX>951</locationX>
-        <locationY>1106</locationY>
+        <locationY>890</locationY>
         <defaultConnector>
             <targetReference>Create_revolut_order_Existing_Customer</targetReference>
         </defaultConnector>
@@ -317,7 +301,7 @@
         <name>Selected_Action</name>
         <label>Selected Action</label>
         <locationX>951</locationX>
-        <locationY>2054</locationY>
+        <locationY>1838</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Credit_Change</name>
@@ -432,7 +416,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
     <formulas>
         <name>urlForm</name>
         <dataType>String</dataType>
-        <expression>{!Get_RedirectURL.After_Payment_URL__c}+&quot;?redir=yes&amp;token=&quot; + {!Generate_login_token.randomNumber} + &quot;&amp;pmt=&quot; + {!Get_Current_Payment.Id}</expression>
+        <expression>{!Get_RedirectURL.After_Payment_URL__c}+&quot;?redir=yes&amp;token=&quot; + {!Account.Login_Token__c} + &quot;&amp;pmt=&quot; + {!Get_Current_Payment.Id}</expression>
     </formulas>
     <formulas>
         <name>VATFormula</name>
@@ -507,7 +491,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Create_Payment_Item</name>
         <label>Create Payment Item</label>
         <locationX>951</locationX>
-        <locationY>1622</locationY>
+        <locationY>1406</locationY>
         <connector>
             <targetReference>Assign_Payment_Values</targetReference>
         </connector>
@@ -560,7 +544,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Get_Current_Payment</name>
         <label>Get Current Payment</label>
         <locationX>951</locationX>
-        <locationY>890</locationY>
+        <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_RedirectURL</targetReference>
@@ -594,7 +578,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Get_RedirectURL</name>
         <label>Get RedirectURL</label>
         <locationX>951</locationX>
-        <locationY>998</locationY>
+        <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>New_Revolut_Customer</targetReference>
@@ -607,7 +591,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Cancel_Payment</name>
         <label>Cancel Payment</label>
         <locationX>621</locationX>
-        <locationY>2270</locationY>
+        <locationY>2054</locationY>
         <connector>
             <isGoTo>true</isGoTo>
             <targetReference>Create_Payment</targetReference>
@@ -632,7 +616,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Cancel_Payment1</name>
         <label>Cancel Payment</label>
         <locationX>885</locationX>
-        <locationY>2270</locationY>
+        <locationY>2054</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -653,7 +637,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Link_Order_Id_to_payment</name>
         <label>Link Order Id to payment</label>
         <locationX>951</locationX>
-        <locationY>1838</locationY>
+        <locationY>1622</locationY>
         <connector>
             <targetReference>Redirect_to_Payment</targetReference>
         </connector>
@@ -663,7 +647,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Set_Started</name>
         <label>Set Started</label>
         <locationX>1149</locationX>
-        <locationY>2270</locationY>
+        <locationY>2054</locationY>
         <connector>
             <targetReference>CloseTabScreen</targetReference>
         </connector>
@@ -684,40 +668,10 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <object>Payment__c</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Account_login_token</name>
-        <label>Update Account login token</label>
-        <locationX>951</locationX>
-        <locationY>782</locationY>
-        <connector>
-            <targetReference>Get_Current_Payment</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Account.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>One_Time_Token_Validity__c</field>
-            <value>
-                <elementReference>tokenValidityFormula</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>One_Time_Token__c</field>
-            <value>
-                <elementReference>Generate_login_token.randomNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Account</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Account_Revolut_Id</name>
         <label>Update Account Revolut Id</label>
         <locationX>819</locationX>
-        <locationY>1430</locationY>
+        <locationY>1214</locationY>
         <connector>
             <targetReference>Create_Payment_Item</targetReference>
         </connector>
@@ -727,7 +681,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Already_Paid_Screen</name>
         <label>Already Paid</label>
         <locationX>357</locationX>
-        <locationY>2270</locationY>
+        <locationY>2054</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1203,7 +1157,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>cancelPayment</name>
         <label>cancelPayment</label>
         <locationX>885</locationX>
-        <locationY>2162</locationY>
+        <locationY>1946</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1250,7 +1204,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>CloseTabScreen</name>
         <label>CloseTabScreen</label>
         <locationX>1149</locationX>
-        <locationY>2378</locationY>
+        <locationY>2162</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1292,7 +1246,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Redirect_to_Payment</name>
         <label>Redirect to Payment</label>
         <locationX>951</locationX>
-        <locationY>1946</locationY>
+        <locationY>1730</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>

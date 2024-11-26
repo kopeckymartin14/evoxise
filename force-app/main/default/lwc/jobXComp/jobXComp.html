@@ -1,0 +1,112 @@
+<template>
+  <div class="arx-page component__wrapper">
+   <section id="about-us" class="container container__full">
+      <div class="badge">
+          <div class="badge__image">
+            <div class="container__image">
+              <!-- <img src={img_machine} alt=""> -->
+              <img src={img_machine2} alt="">
+            </div>
+          </div>
+        <div class="badge__info">
+          <h3 class="text-padding">OSOBNÝ TRÉNER</h3>
+          <p>
+             </p>
+          <div class="badge__details">
+            <!-- <img src="img/icon_apps_colorful.png" alt=""> -->
+            <div class="badge__detail">
+                <h4 class="text-padding">Staň sa súčasťou Evoxise</h4>
+                <p class="text-padding">Si nadšenec fitness a hľadáš miesto, kde budeš môcť rásť, pracovať s najnovšími technológiami a získať výnimočné podmienky? Potom hľadáme práve Teba!</p>
+                <div class="accordion">
+                    <div class="tile" onclick={handleClick}>
+                        <span>Čo ponúkame:</span>
+                    </div>
+                    <div class="info">
+                        <ul>
+                            <li><b>Výborné platové podmienky:</b> Od 20 €/hod.</li>
+                            <li><b>Forma úväzku:</b> Živnosť, dohoda alebo s.r.o.</li>
+                            <li><b>ARX Certifikát:</b> Zaškolíme ťa na trénovanie s ARX, čím získaš konkurenčnú výhodu</li>
+                            <li><b>Práca v priateľskej atmosfére:</b> Sme skvelý tím mladých ľudí, ktorí Ťa budú podporovať.</li>
+                            <li><b>Inovatívna technológia ARX:</b> Získaj skúsenosti s najnovšími technológiami vo fitness. ARX je budúcnosťou tréningu a Ty môžeš byť jej súčasťou!</li>
+                            <li><b>Flexibilná pracovná doba:</b> Pracuj podľa svojich predstáv a užívaj si rovnováhu medzi prácou a súkromím.</li>
+                            <li><b>Propagácia:</b> Budeme Ťa promovať na sociálnych sieťach ako aj na našej website, čím posunieš svoj business na inú úroveň</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="tile" onclick={handleClick}>
+                        <span>Čo od Teba očakávame:</span>
+                    </div>
+                    <div class="info">
+                        <ul>
+                            <li>Nadšenie pre fitness a zdravý životný štýl.</li>
+                            <li>Ochotu učiť sa a prispôsobovať sa novým trendom v oblasti fitness a technológie.</li>
+                            <li>Komunikatívnosť a schopnosť motivovať klientov k dosahovaniu svojich cieľov.</li>
+                            <li>Pozitívny prístup a nadšenie</li>
+                            <li>Skúsenosti s trénovaním sú výhodou, no nie podmienkou - radi Ti všetko potrebné vysvetlíme</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-padding">Ak chceš pracovať v modernom prostredí, s najnovšími technológiami a získať zaslúžené uznanie za svoju prácu, pridaj sa k nám! Čaká Ťa tím, ktorý ti pomôže uspieť.
+                Napíš nám a zisti viac o tom, ako môžeš začať ešte dnes!</p>
+            </div>
+        </div>
+        <!-- <div class="badge__details">
+            <img src="img/icon_apps_colorful.png" alt=""> 
+             <div class="badge__detail">
+                <h4>ČO ZÍSKAŠ?</h4>
+                <ul>
+                    <li>Dokážeš rýchlo a efektívne dosiahnuť svoj cieľ za minimálny čas.</li>
+                    <li>Cviky vykonávaš po boku certifikovaného trénera.</li>
+                    <li>V reálnom čase vidíš svoj progres.</li>
+                    <li>Získaš silnejšie, pevnejšie a priťažlivejšie telo a to len za 30 minút týždenne.</li>
+                    <li>Budeš mať viacej času na rodinu a koníčky namiesto hodín stravených kardiom alebo v posilovni.</li>
+                </ul>
+            </div>
+        </div> --> 
+       <div class="button-container">
+        <!-- <lightning-button 
+            variant="brand" 
+            label="Mám predbežný záujem" 
+            onclick={handleButtonClick}>
+        </lightning-button> -->
+         <button 
+        class="button-custom" 
+        onclick={handleButtonClick}>
+        IDEM DO TOHO
+    </button>
+    </div>
+        </div>
+      </div>
+   </section>
+  </div>
+    <!-- Modal Section -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </header>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="SFSCH_Job_Interest"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+
+                <!-- Modal/Popup Footer -->
+                <!-- <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                </footer> -->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <section id="blog-page" class="blog-page container">
+        <div class="tiles">
+            <template if:true={blogRecords}>
+                <template for:each={blogRecords} for:item="blogWrapper">
+                    <div key={blogWrapper.blogRecord.Id} class="tile" data-id={blogWrapper.blogRecord.Id} onclick={handleCardClick}>
+                        <div class="container__image">
+                            <img src={blogWrapper.imageUrl} alt={blogWrapper.blogRecord.Blog_Title__c} />
+                        </div>
+                        <h2>{blogWrapper.blogRecord.Title__c}</h2>
+                        <p>{blogWrapper.blogRecord.Summary__c}</p>
+                    </div>
+                </template>
+            </template>
+            <template if:false={blogRecords}>
+                <p>No blog records found.</p>
+            </template>
+        </div>
+    </section>
+</template>

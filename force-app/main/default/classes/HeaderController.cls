@@ -12,4 +12,29 @@ public without sharing class HeaderController {
         }
 
     }
+
+    @AuraEnabled
+    public static Boolean removeValidityToken(String token){
+        if(token != null) {
+            List<Account> accounts = [SELECT Id, Unique_Code__c, Login_Token__c,Login_Token_Validity__c FROM Account WHERE Login_Token__c =: token];
+            if(!accounts.isEmpty()) {
+                Account acc = accounts.get(0);
+                acc.Login_Token_Validity__c = Datetime.now() - 1;
+                update acc;
+            }
+        }
+        return true;
+    }
+
+    @AuraEnabled
+    public static Boolean validateToken(String token){
+        if(token != null) {
+            List<Account> accounts = [SELECT Id, Unique_Code__c, Login_Token__c,Login_Token_Validity__c FROM Account WHERE Login_Token__c =: token];
+            if(!accounts.isEmpty()) {
+                Account acc = accounts.get(0);
+                return acc.Login_Token_Validity__c > Datetime.now();
+            }
+        }
+        return false;
+    }
 }

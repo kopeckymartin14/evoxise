@@ -1,0 +1,146 @@
+<template>
+	<div class="scrollContainer" onscroll={handleScroll}>
+        <div class={headerClass}>
+            <header class="scrolled-to-top">
+                <a href="javascript:void(0);" onclick={goToPage}>
+                    <img src={logoHeader2} alt="" data-section="Home">
+                </a>
+                <button class="menu-toggle" onclick={toggleMenu} aria-controls="primary-navigation" aria-expanded={isMenuOpen}>                    <div class="hamburger"></div>
+                </button>
+                <nav>
+                    <ul class="primary" id="primary-navigation">
+                        <!-- <li><a href="javascript:void(0);" data-section="home-page" onclick={navigateToSection}> Čoskoro otvárame </a></li> -->
+                        <!-- <li><a href="javascript:void(0);" data-section="Home" onclick={goToPage}> Úvodná Stránka </a></li> -->
+                        <!-- <li><a href="javascript:void(0);" data-section="home-page" onclick={navigateToSection}> Čoskoro otvárame </a></li> -->
+                        <!-- <template if:true={showModalOption}> -->
+                        <li><a href="javascript:void(0);" onclick={handleButtonClick}> Kúpiť darček </a></li>
+                        <template if:false={isTokenAvailable}>
+                            <li class="has-submenu" data-id="submenu" onclick={toggleSubmenu}>
+                                <a href="javascript:void(0);" data-section="zone__c">Prihlásenie</a>
+                                <ul class="submenu secondary">
+                                  <li><a href="javascript:void(0);" data-section="client-zone" onclick={openClientZone}>Klientská Zóna</a></li>
+                                  <li><a href="javascript:void(0);" data-section="trainer-zone" onclick={openTrainerZone}>Trénerská Zóna</a></li>
+                                </ul>
+                              </li>
+                        </template>
+                        <template if:true={isTokenAvailable}>
+                            <li><a href="javascript:void(0);" data-section="clientzone__c" onclick={goToPage}>Klientská Zóna</a></li>
+                        </template>
+                        <!-- </template> -->
+                        <!-- <li><a onclick={handleButtonClick}> Mám predbežný záujem </a></li> -->
+                        <!-- <li><a href="javascript:void(0);" data-section="arx-page" onclick={navigateToSection}>Čo je ARX</a></li>
+                        <li><a href="javascript:void(0);" data-section="results-page" onclick={navigateToSection}>Výsledky s ARX</a></li>
+                        <li><a href="javascript:void(0);" data-section="benefits-page" onclick={navigateToSection}>Ciele a ARX</a></li>
+                        <li><a href="javascript:void(0);" data-section="comparisson-page" onclick={navigateToSection}>ARX vs Konkurencia</a></li> -->
+                        <li><a href="javascript:void(0);" data-section="kariera_evoxise__c" onclick={goToPage}>Kariéra</a></li>
+                        <li><a href="javascript:void(0);" data-section="Blog__c" onclick={goToPage}>Blog</a></li>
+                        <li><a href="javascript:void(0);" data-section="cennik__c" onclick={goToPage}>Cenník</a></li>
+                        <li><a href="javascript:void(0);" data-section="faq__c" onclick={goToPage}>FAQ</a></li>
+                        <!-- <li><a href="javascript:void(0);" data-section="contact-page" onclick={navigateToSection}>Kontakt</a></li> -->
+                        <li><a href="javascript:void(0);" data-section="contact-page" onclick={openContactPage}>Kontakt</a></li>
+                        
+                        <template if:true={isTokenAvailable}>
+                            <li><a href="javascript:void(0);" onclick={handleLogout}>Odhlásiť sa</a></li>
+                        </template><!-- <li><a href="#contact"> Kontakt </a></li>  -->
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        
+    </div>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modal__container_custom">
+                <!-- Modal/Popup Header -->
+                <div style="display:inline-flex;">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </div>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="SFSCH_Buy_Gift_Anonymous"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <template if:true={isClientZoneOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modal__container_custom">
+                <!-- Modal/Popup Header -->
+                <div style="display:inline-flex;">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeClientZone}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </div>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="Create_Identify_Customer"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={isTrainerZoneOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modal__container_custom">
+                <!-- Modal/Popup Header -->
+                <div style="display:inline-flex;">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeTrainerZone}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </div>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="SFSCH_Create_Identify_Trainer"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={isContactPageOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modal__container_custom">
+                <!-- Modal/Popup Header -->
+                <div style="display:inline-flex;">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeContactPage}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </div>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="SFSCH_Contact_Screen"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

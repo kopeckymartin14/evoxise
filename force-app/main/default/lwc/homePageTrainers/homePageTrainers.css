@@ -1,0 +1,177 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  min-height: 100vh;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+
+* {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--clr-default-900);
+}
+
+.container {
+  max-width: 1400px;
+  padding: 6rem 2rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.container>h2 {
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 1rem;
+  font-size: 38px;
+}
+
+.container>p {
+  max-width: 60ch;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: flex;
+  gap: 0;
+  margin-bottom: 4rem;
+  background-color: var(--clr-default-100);
+  border-radius: var(--br-400);
+  overflow: hidden;
+  box-shadow: var(--box-shadow-100);
+}
+
+.badge__image {
+  display: grid;
+  place-items: center;
+  min-width: 40%;
+  position: relative;
+
+  background-image: url('/resource/1720937937000/backgrounfTrener');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #00127a;
+  background-blend-mode: luminosity;
+}
+
+.badge__image .container__image {
+  background: transparent;
+  width: 250px;
+  height: 250px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-100);
+  z-index: 1;
+}
+
+.badge__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge__info {
+  padding: 2rem;
+  z-index: 1;
+  background: white;
+}
+
+.badge__details {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.badge__details img {
+  height: fit-content;
+}
+
+.blot {
+  top: 30%;
+  left: 100px;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #ccff66;
+  filter: blur(10rem);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+  .badge {
+    flex-direction: column;
+  }
+
+  .badge__image {
+    min-height: 300px;
+  }
+
+  .badge:nth-of-type(2) .badge__image {
+    order: -1;
+  }
+}

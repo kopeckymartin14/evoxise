@@ -181,6 +181,10 @@
 		<members>SFSCH_Trainer_Reservation_Administration</members>
 		<members>SFSCH_Trainer_Shift_Planner</members>
 		<members>Send_Email_by_Action</members>
+		<members>SFSCH_Contact_Screen</members>
+		<members>SFSCH_Payment_Before_Insert_Update</members>
+		<members>SFSCH_Payment_Valid_Checkbox_Scheduled_FLow</members>
+		<members>Send_Email_by_Action</members>
 		<name>Flow</name>
 	</types>
 	<types>
@@ -212,6 +216,25 @@
         <members>spacer</members>
         <members>dataFetcher</members>
         <members>revolutPortal</members>
+        <members>homePageHeader</members>
+        <members>blogArxCard</members>
+        <members>blogBannerX</members>
+        <members>blogDetail</members>
+        <members>heroBannerX</members>
+        <members>homePageARXvsCompetition</members>
+        <members>homePageBenefits</members>
+        <members>homePageFooter</members>
+        <members>homePageTrainers</members>
+        <members>homePageResults</members>
+        <members>homePageVisual</members>
+        <members>jobXComp</members>
+        <members>pricingComparisonARX</members>
+        <members>pricingPacks</members>
+        <members>pricingXtokenIntro</members>
+        <members>redirectButton</members>
+        <members>timeTable</members>
+        <members>timeTableTrainer</members>
+        <members>homePageFaq</members>
 		<name>LightningCOmponentBundle</name>
 	</types>
 	<types>

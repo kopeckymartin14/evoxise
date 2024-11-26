@@ -1,0 +1,316 @@
+<template>
+<footer>
+    <section id="contact-page" class="contact-page container">
+
+
+      <div class="contact">
+        <div class="container__contact">
+          <h2>Máš otázky? Neváhaj nás kontaktovať!</h2>
+          <div class="contact__links">
+            <!-- <a href="mailto:">Poslať email</a>
+            <a href="tel:+">Preferujem zavolať</a> -->
+            <div class="button-container">
+        <!-- <lightning-button 
+            variant="brand-outline" 
+            label="Kontakt" 
+            onclick={handleButtonClick}>
+        </lightning-button> -->
+                <button 
+                class="button-custom" 
+                onclick={handleButtonClick}>
+                Kontaktuj nás
+            </button>
+            </div>
+            <!-- <div class="button-container"> -->
+                <!-- <lightning-button 
+                    variant="brand" 
+                    label="Mám predbežný záujem" 
+                    onclick={handleButtonClick}>
+                </lightning-button> -->
+                <!-- <button 
+                class="button-custom" 
+                onclick={handleButtonClick2}>
+                Registrovať
+            </button>
+          </div> -->
+          </div>
+          <div>
+            <ul class="contact-navigation">
+              <li><span href="javascript:void(0);" data-section="ochrana_osobnych_udajov__c" onclick={goToPage}>Ochrana osobných údajov</span></li>
+              <li><span href="javascript:void(0);" data-section="vseobecne_obchodne_podmienky__c" onclick={goToPage}>Vseobecné obchodné podmienky</span></li>
+              <li><span href="javascript:void(0);" data-section="prevadzkovy_poriadok__c" onclick={goToPage}>Prevádzkový poriadok</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="container__contact">
+          <h2 class="title__footer">Kontaktné údaje</h2>
+          <table class="table__footer">
+            <tbody class="table__body__footer">
+              <tr>
+                <td>BioHacking Studio:</td>
+                <td>EVOXISE</td>
+              </tr>
+              <tr>
+                <td>Adresa:</td>
+                <td>Hrnčiarska 2/B, 902 01 Pezinok, SR</td>
+              </tr>
+              <tr>
+                <td>Emailová adresa:</td>
+                <td>info.evoxise@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Telefónne číslo:</td>
+                <td>0944 609 553</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="contact__info">
+            <!-- <div class="line">
+              <span>Obchodné Meno</span>
+              <span>EVOXISE</span>
+            </div>
+            <div class="line">
+              <span>Adresa:</span>
+              <span>Trnavská 59, 902 01 Pezinok, SR</span>
+            </div> -->
+            <!-- <div class="line">
+              <span>Telefónne číslo:</span>
+              <span>090X XXX XXX</span>
+            </div> -->
+            <!-- <div class="line">
+              <span>Emailová adresa:</span>
+              <span>evoxise@gmail.com</span>
+            </div> -->
+            <div class="line social-links">
+              <a href="https://www.facebook.com/people/Evoxise/61563611777877/" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/evoxisearx?igsh=MjZqM2hrNXE0cmg0" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+          </div>
+          </div>
+        </div>
+        <div class="container__contact">
+          <h2 class="title__footer">Otváracie hodiny</h2>
+          <table class="table__footer">
+            <tbody class="table__body__footer_2">
+              <tr>
+                <td>Pondelok: </td>
+                <td>Na objednávku</td>
+              </tr>
+              <tr>
+                <td>Utorok: </td>
+                <td>Na objednávku</td>
+              </tr>
+              <tr>
+                <td>Streda: </td>
+                <td>Na objednávku</td>
+              </tr>
+              <tr>
+                <td>Štvrtok: </td>
+                <td>Na objednávku</td>
+              </tr>
+              <tr>
+                <td>Piatok: </td>
+                <td>Na objednávku</td>
+              </tr>
+              <tr>
+                <td>Sobota: </td>
+                <td>Na objednávku</td>
+              </tr>
+              <tr>
+                <td>Nedeľa: </td>
+                <td>Na objednávku</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <div class="contact__info">
+            <div class="line">
+              <span>BioHacking Studio:</span>
+              <span>EVOXISE</span>
+            </div>
+            <div class="line">
+              <span>Adresa:</span>
+              <span>Hrnčiarska 2/B, 902 01 Pezinok, SR</span>
+            </div> -->
+            <!-- <div class="line">
+              <span>Telefónne číslo:</span>
+              <span>090X XXX XXX</span>
+            </div> -->
+            <!-- <div class="line">
+              <span>Emailová adresa:</span>
+              <span>evoxise@gmail.com</span>
+            </div>
+          </div> -->
+        </div>
+        <div class="container__blots">
+          <div class="blot blot--left"></div>
+          <div class="blot blot--right"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="contact-page2" class="contact-page container">
+      <div class="contact">
+        <div class="container__blots">
+          <div class="blot blot--left"></div>
+          <div class="blot blot--right"></div>
+        </div>
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+          <h2>Máš otázky? Neváhaj nás kontaktovať!</h2>
+          <div class="button-container">
+            <button class="button-custom" onclick={handleButtonClick}>Kontaktuj nás</button>
+          </div>
+        </div>
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+          <h2>Kontaktné údaje:</h2>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Názov firmy:</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>EVOXISE s.r.o.</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Adresa:</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Trnavská 59, 902 01 Pezinok, SR</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Telefónne číslo:</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>090X XXX XXX</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Email:</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>evoxise@gmail.com</span>
+          </div>
+        </div>              
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+          <h2>Kontaktné údaje:</h2>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>BioHacking Studio</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>EVOXISE</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Adresa:</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Hrnčiarska 2/B, 902 01 Pezinok, SR</span>
+          </div>
+          <div class="slds-col slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Telefónne číslo:</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>090X XXX XXX</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>Email:</span>
+          </div>
+          <div class="slds-col slds-small-size_6-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>evoxise@gmail.com</span>
+          </div>       
+        </div>
+      </div>
+      
+    </section> -->
+
+    <!-- <section id="contact-page2" class="contact-page container">
+      <div class="contact">
+        <div class="container__blots">
+          <div class="blot blot--left"></div>
+          <div class="blot blot--right"></div>
+        </div>
+    
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+          <h2>Máš otázky? Neváhaj nás kontaktovať!</h2>
+          <div class="button-container">
+            <button class="button-custom" onclick={handleButtonClick}>Kontaktuj nás</button>
+          </div>
+        </div>
+    
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+          <h2>Kontaktné údaje:</h2>
+          <div class="line"><span>Názov firmy:</span><span>EVOXISE s.r.o.</span></div>
+          <div class="line"><span>Adresa:</span><span>Trnavská 59, 902 01 Pezinok, SR</span></div>
+          <div class="line"><span>Telefónne číslo:</span><span>090X XXX XXX</span></div>
+          <div class="line"><span>Email:</span><span>evoxise@gmail.com</span></div>
+        </div>
+    
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+          <h2>Kontaktné údaje:</h2>
+          <div class="line"><span>BioHacking Studio</span><span>EVOXISE</span></div>
+          <div class="line"><span>Adresa:</span><span>Hrnčiarska 2/B, 902 01 Pezinok, SR</span></div>
+          <div class="line"><span>Telefónne číslo:</span><span>090X XXX XXX</span></div>
+          <div class="line"><span>Email:</span><span>evoxise@gmail.com</span></div>
+        </div>
+      </div>
+    </section> -->
+    
+
+  </footer>
+      <!-- Modal Section -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Kontaktuj nás</h2>
+                </header>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="SFSCH_Contact_Us"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+
+                <!-- Modal/Popup Footer -->
+                <!-- <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                </footer> -->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- Modal Section -->
+    <template if:true={isModalOpen2}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal2}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </header>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="Interest_Flow_Zaujem"
+                        onstatuschange={handleStatusChange2}>
+                    </lightning-flow>
+                </div>
+
+                <!-- Modal/Popup Footer -->
+                <!-- <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                </footer> -->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

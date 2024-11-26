@@ -1,0 +1,153 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+* {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--clr-default-900);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.tiles {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tile {
+  flex: 1 1 380px;
+  box-shadow: var(--box-shadow-100);
+  padding: 2rem;
+  border-radius: var(--br-400);
+  background-color: #030A3D;
+  color: #ffffff;
+  z-index: 15;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+}
+
+.tile p {
+  color: #ffffff;
+  z-index: 10;
+  position: relative;
+}
+
+.tile h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #94bb44;
+  z-index: 10;
+  position: relative;
+}
+
+.tile .container__image {
+  background: #ffffff;
+  width: 100px;
+  height: 100px;
+  padding: 0.1rem;
+  border-radius: 50%;
+  display: flex; /* Use flexbox to center the image */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 auto; /* Ensure the container itself is centered */
+  z-index: 1;
+  position: relative;
+}
+
+
+.container__image img {
+  width: 100%;
+  height: 100%; /* auto*/
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 1279px) {
+  .tiles {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 767px;
+    padding: 0.5rem 0.5rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+  .tile {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  /* Adjust h2 size for mobile */
+  .container > h2 {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,146 @@
+<template>
+	<div id="comparisson-page" class="comparisson-page component__wrapper">
+		<h2 class="title">Prečo je tréning s ARX výhodný finančne/časovo/výsledkami?</h2>
+		<template if:true={isMobile}>
+			<table>
+                <thead>
+                    <tr>
+                        <th colspan="2"></th>
+                    </tr>
+                    <tr>
+                        <th class="mobile-align">
+                            <div class="icon-container">
+                                <img src={img_logo} alt="ARX" width="50">
+                            </div>
+                        </th>
+                        <th class="mobile-align">
+                            <div class="icon-container">
+                                <span class="icon">🏋️</span>
+                            </div>
+                        </th>
+                        <!-- <th class="mobile-align">
+                            <div class="icon-container">
+                                <span class="icon">🚴</span>
+                            </div>
+                        </th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="feature">Sila/Svalová hmota</td>
+                    </tr>
+                    <tr>
+                        <td>2x viac sily/o 90% nárast svalov</span></td>
+                        <td>Štandard</td>
+                        <!-- <td><span class="cross">✗</span></td> -->
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="feature">Nárast VO2MAX/Redukcia Tuku</td>
+                    </tr>
+                    <tr>
+                        <td>3,5x viac VO2MAX/2,5x redukcia tuku</span></td>
+                        <td>Štandard</td>
+                        <!-- <td><span class="cross">✗</span></td> -->
+                    </tr>
+					<tr>
+                        <td colspan="2" class="feature">Počet tréningov</td>
+                    </tr>
+                    <tr>
+                        <td>1x týždenne</span></td>
+                        <td>3x týždenne</td>
+                        <!-- <td><span class="cross">✓</span></td> -->
+                    </tr>
+					<tr>
+                        <td colspan="2" class="feature">Pomer Výsledky/Čas</td>
+                    </tr>
+                    <tr>
+						<td>6x efektívnejšie ako bežný tréning</span></td>
+                        <td>Štandard</td>
+                    </tr>
+					<tr>
+                        <td colspan="2" class="feature">Cena za tréning/týždeň</td>
+                    </tr>
+                    <tr>
+						<td>1x po 30-45&euro; = 30-45&euro;</span></td>
+                        <td>3x po 5&euro;(vstup) + 20&euro; tréner = 75&euro;</td>
+                    </tr>
+					<tr>
+                        <td colspan="2" class="feature">Pomer Výsledky/Čas/Cena</td>
+                    </tr>
+                    <tr>
+						<td>viac ako 10x</span></td>
+                        <td>Štandard</td>
+                    </tr>
+                    <!-- Additional rows as needed -->
+                </tbody>
+            </table>
+		</template>
+		<template if:false={isMobile}>
+			<table>
+			<thead>
+				<tr>
+					<th>ARX VS. bežný tréning s trénerom </th>
+					<th class="background-arx">
+						<div class="icon-container">
+							<img src={img_logo} alt="ARX" width="50">
+						</div>
+					</th>
+					<th class="background-other">
+						<div class="icon-container">
+							<span class="icon">🏋️</span>
+						</div>
+						<!-- <br>
+						Činky/<br>Závažia -->
+					</th>
+					<!-- <th>
+						<div class="icon-container">
+							<span class="icon">🚴</span>
+						</div>
+						<br>
+						 Kardio stroje<br> 
+					</th> -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="feature">Nárast Sila/Svalová hmota</td>
+					<td class="background-arx"><span class="tick">2x viac sily/o 90% viac svalov</span></td>
+					<td class="background-other"><span class="cross">Štandard</span></td>
+					<!-- <td><span class="cross">✗</span></td> -->
+				</tr>
+				<tr>
+					<td class="feature">Nárast VO2MAX/Redukcia Tuku</td>
+					<td class="background-arx"><span class="tick">3,5x viac VO2MAX/2,5x redukcia tuku</span></td>
+					<td class="background-other"><span class="cross">Štandard</span></td>
+					<!-- <td><span class="cross">✗</span></td> -->
+				</tr>
+				<tr>
+					<td class="feature">Počet tréningov</td>
+					<td class="background-arx"><span class="tick">1x týždenne</span></td>
+					<td class="background-other"><span class="cross">3x týždenne</span></td>
+					<!-- <td><span class="cross">✗</span></td> -->
+				</tr>
+				<tr>
+					<td class="feature">Pomer Výsledky/Čas</td>
+					<td class="background-arx"><span class="tick hoverResults">6x efektívnejšie ako bežný tréning<span class="hoverText">Extra Information Here</span></span></td>
+					<td class="background-other"><span class="cross">Štandard</span></td>
+					<!-- <td><span class="tick">✓</span></td> -->
+				</tr>
+				<tr>
+					<td class="feature">Cena za tréning/týždeň</td>
+					<td class="background-arx"><span class="tick">1x po 30-45&euro; = 30-45&euro;</span></td>
+					<td class="background-other"><span class="cross">3x po 5&euro;(vstup) + 20&euro; tréner = 75&euro;</span></td>
+					<!-- <td><span class="tick">✓</span></td> -->
+				</tr>
+				<tr>
+					<td class="feature">Pomer Výsledky/Čas/Cena</td>
+					<td class="background-arx"><span class="tick hoverResults">viac ako 10x<span class="hoverText">Extra Information Here</span></span></td>
+					<td class="background-other"><span class="cross">Štandard</span></td>
+					<!-- <td><span class="down-arrow">↓</span><br>Nedokážeme precvičiť celé telo</td> -->
+				</tr>
+			</tbody>
+		</table>
+		</template>
+		
+	</div>
+</template>

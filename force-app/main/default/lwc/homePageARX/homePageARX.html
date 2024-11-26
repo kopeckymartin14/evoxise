@@ -1,0 +1,103 @@
+<template>
+  <div class="arx-page component__wrapper">
+   <section id="about-us" class="container container__full">
+      <div class="badge">
+          <div class="badge__image">
+            <div class="container__image">
+              <!-- <img src={img_machine} alt=""> -->
+                <div class="video-container">
+                    <!-- <video autoplay muted loop width="100%" playsinline style="z-index:1; position:relative">
+                        <source src={videoUrl} type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video> -->
+                    
+                    <div class="video-background">
+                        <div class="video-foreground">
+                            <iframe 
+                                    src="https://www.youtube.com/embed/0h_VF4M4f8s?autoplay=1&mute=1&controls=0&loop=1&rel=0&showinfo=0&playlist=0h_VF4M4f8s&modestbranding=1&disablekb=1&cc_load_policy=0" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="autoplay" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+             </div>
+        <div class="badge__info">
+          <h3>EFEKTÍVNE CVIČENIE. MAXIMÁLNE VÝSLEDKY. UŠETRENÝ ČAS.</h3>
+          <p>
+             </p>
+          <div class="badge__details">
+            <!-- <img src="img/icon_apps_colorful.png" alt=""> -->
+            <div class="badge__detail">
+                <h4>ČO JE ARX A AKO FUNGUJE?</h4>
+                <ul>
+                    <li>ARX je multifunkčný stroj na cvičenie, ktorý využíva technológiu Adaptive Resistance™ s motorickým odporom na dosiahnutie skutočných výsledkov za minimálny čas.</li>
+                    <li>Na ARX nemusíš vyberať množstvo závažia - technológia sa o všetko postará za teba.</li>
+                    <li>Odpor sa prispôsobuje v reálnom čase tvojej kondícii, takže pri každom opakovaní dosiahneš maximálmu efektivitu.</li>
+                    <li>Chceš vedieť viac? <a href="https://www.evoxise.sk/s/blog-detail?recordId=a10Wz00000GwYkrIAF">KLIKNI SEM</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="badge__details">
+            <!-- <img src="img/icon_apps_colorful.png" alt=""> -->
+            <div class="badge__detail">
+                <h4>PREČO TRÉNOVAŤ S EVOXISE?</h4>
+                <ul>
+                    <li>Dokážeš rýchlo a efektívne dosiahnuť svoj cieľ za minimálny čas.</li>
+                    <li>Cviky vykonávaš po boku certifikovaného trénera.</li>
+                    <li>V reálnom čase vidíš svoj progres.</li>
+                    <li>Získaš silnejšie, pevnejšie a priťažlivejšie telo a to len za 30 minút týždenne.</li>
+                    <li>Budeš mať viacej času na rodinu a koníčky namiesto hodín stravených kardiom alebo v posilovni.</li>
+                </ul>
+            </div>
+        </div>
+       <!-- <div class="button-container"> -->
+        <!-- <lightning-button 
+            variant="brand" 
+            label="Mám predbežný záujem" 
+            onclick={handleButtonClick}>
+        </lightning-button> -->
+         <!-- <button 
+        class="button-custom" 
+        onclick={handleButtonClick}>
+        Registrovať
+    </button>
+    </div> -->
+        </div>
+      </div>
+   </section>
+  </div>
+    <!-- Modal Section -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </header>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow 
+                        flow-api-name="Interest_Flow_Zaujem"
+                        onstatuschange={handleStatusChange}>
+                    </lightning-flow>
+                </div>
+
+                <!-- Modal/Popup Footer -->
+                <!-- <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                </footer> -->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -50,6 +50,11 @@
                 <default>false</default>
                 <label>Referral</label>
             </value>
+            <value>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+                <label>Subscription</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

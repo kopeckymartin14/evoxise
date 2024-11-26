@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Get_Formatted_Date_and_Time</name>
         <label>Get Formatted Date and Time</label>
-        <locationX>578</locationX>
-        <locationY>890</locationY>
+        <locationX>710</locationX>
+        <locationY>1406</locationY>
         <actionName>DateTimeFormatter</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -25,8 +25,8 @@
     <actionCalls>
         <name>Send_Admin_Notification</name>
         <label>Send Admin Notification</label>
-        <locationX>182</locationX>
-        <locationY>1814</locationY>
+        <locationX>270</locationX>
+        <locationY>2330</locationY>
         <actionName>SendEmailWithAttachment</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -62,14 +62,20 @@
     <actionCalls>
         <name>Send_Email</name>
         <label>Send Email</label>
-        <locationX>314</locationX>
-        <locationY>1490</locationY>
+        <locationX>402</locationX>
+        <locationY>2006</locationY>
         <actionName>SendEmailWithAttachment</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>Notify_Admin</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>bccAddresses</name>
+            <value>
+                <elementReference>bccList</elementReference>
+            </value>
+        </inputParameters>
         <inputParameters>
             <name>htmlBody</name>
             <value>
@@ -100,6 +106,22 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Add_Trainer_Email</name>
+        <label>Add Trainer Email</label>
+        <locationX>578</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>bccList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Service_Resource.Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_All_SA_Fields</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Assignment_1</name>
         <label>Set Lead Related Values</label>
@@ -133,8 +155,8 @@
     <assignments>
         <name>Set_Appointment_Related_Values</name>
         <label>Set Appointment Related Values</label>
-        <locationX>578</locationX>
-        <locationY>998</locationY>
+        <locationX>710</locationX>
+        <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>RecipientEmail</assignToReference>
             <operator>Add</operator>
@@ -179,8 +201,8 @@
     <assignments>
         <name>Set_Recipient</name>
         <label>Set Recipient</label>
-        <locationX>182</locationX>
-        <locationY>1706</locationY>
+        <locationX>270</locationX>
+        <locationY>2222</locationY>
         <assignmentItems>
             <assignToReference>RecipientEmail</assignToReference>
             <operator>RemoveAll</operator>
@@ -202,8 +224,8 @@
     <assignments>
         <name>Set_Recipient_Override</name>
         <label>Set Recipient Override</label>
-        <locationX>182</locationX>
-        <locationY>1298</locationY>
+        <locationX>270</locationX>
+        <locationY>1814</locationY>
         <assignmentItems>
             <assignToReference>RecipientEmail</assignToReference>
             <operator>RemoveAll</operator>
@@ -225,8 +247,8 @@
     <decisions>
         <name>Email_Override</name>
         <label>Email Override?</label>
-        <locationX>314</locationX>
-        <locationY>1190</locationY>
+        <locationX>402</locationX>
+        <locationY>1706</locationY>
         <defaultConnector>
             <targetReference>Send_Email</targetReference>
         </defaultConnector>
@@ -250,8 +272,8 @@
     <decisions>
         <name>Notify_Admin</name>
         <label>Notify Admin?</label>
-        <locationX>314</locationX>
-        <locationY>1598</locationY>
+        <locationX>402</locationX>
+        <locationY>2114</locationY>
         <defaultConnectorLabel>No or missing data</defaultConnectorLabel>
         <rules>
             <name>Yes_notifyAdmin</name>
@@ -286,7 +308,7 @@
     <decisions>
         <name>Related_SObject</name>
         <label>Related SObject</label>
-        <locationX>314</locationX>
+        <locationX>402</locationX>
         <locationY>566</locationY>
         <defaultConnectorLabel>None</defaultConnectorLabel>
         <rules>
@@ -342,9 +364,41 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_All_SA_Fields</targetReference>
+                <targetReference>Get_Service_Resource_Trainer</targetReference>
             </connector>
             <label>Service Appointment</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Trainer_Email_Availabe</name>
+        <label>Trainer Email Availabe</label>
+        <locationX>710</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <targetReference>Get_All_SA_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Service_Resource.Email__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Action</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Exercise Reminder</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Trainer_Email</targetReference>
+            </connector>
+            <label>Available</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -411,7 +465,7 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_Admin_Email_Template</name>
         <label>Get Admin Email Template</label>
-        <locationX>314</locationX>
+        <locationX>402</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -432,8 +486,8 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_All_SA_Fields</name>
         <label>Get Relevant SA Fields</label>
-        <locationX>578</locationX>
-        <locationY>674</locationY>
+        <locationX>710</locationX>
+        <locationY>1190</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_SA_Account</targetReference>
@@ -462,7 +516,7 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_Email_Template</name>
         <label>Get Email Template</label>
-        <locationX>314</locationX>
+        <locationX>402</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -483,7 +537,7 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_Email_Template_DeveloperName</name>
         <label>Get Email Template DeveloperName</label>
-        <locationX>314</locationX>
+        <locationX>402</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -511,7 +565,7 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_Org_Wide_Address</name>
         <label>Get Org Wide Address</label>
-        <locationX>314</locationX>
+        <locationX>402</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -545,8 +599,8 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_SA_Account</name>
         <label>Get SA Account</label>
-        <locationX>578</locationX>
-        <locationY>782</locationY>
+        <locationX>710</locationX>
+        <locationY>1298</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Formatted_Date_and_Time</targetReference>
@@ -563,8 +617,50 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
         <object>Account</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Service_Resource</name>
+        <label>Get Service Resource</label>
+        <locationX>710</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Trainer_Email_Availabe</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Service_Resource_Trainer.ServiceResourceId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ServiceResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Service_Resource_Trainer</name>
+        <label>Get Service Resource Trainer</label>
+        <locationX>710</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Service_Resource</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsPrimaryResource</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AssignedResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
-        <locationX>188</locationX>
+        <locationX>276</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Org_Wide_Address</targetReference>
@@ -576,6 +672,13 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>bccList</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>

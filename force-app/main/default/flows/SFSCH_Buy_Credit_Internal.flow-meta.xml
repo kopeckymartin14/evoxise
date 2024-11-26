@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>62.0</apiVersion>
     <assignments>
         <name>Add_to_Summary</name>
         <label>Add to Summary</label>
         <locationX>438</locationX>
-        <locationY>998</locationY>
+        <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>amountToPay</assignToReference>
             <operator>Add</operator>
@@ -21,7 +21,7 @@
         <name>Assign_Message</name>
         <label>Assign Message</label>
         <locationX>702</locationX>
-        <locationY>3014</locationY>
+        <locationY>3230</locationY>
         <assignmentItems>
             <assignToReference>message</assignToReference>
             <operator>Assign</operator>
@@ -34,7 +34,7 @@
         <name>Assign_Products_Values</name>
         <label>Assign Products Values</label>
         <locationX>790</locationX>
-        <locationY>1730</locationY>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>fPaymentItem.Sum_To_Credit__c</assignToReference>
             <operator>Assign</operator>
@@ -99,7 +99,7 @@
         <name>null</name>
         <label>null</label>
         <locationX>174</locationX>
-        <locationY>2798</locationY>
+        <locationY>3014</locationY>
         <assignmentItems>
             <assignToReference>amountToPay</assignToReference>
             <operator>Assign</operator>
@@ -112,12 +112,36 @@
             <targetReference>Buy_Credits_Online</targetReference>
         </connector>
     </assignments>
+    <choices>
+        <name>eight</name>
+        <choiceText>&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;8x Tréning =&amp;gt; 80 X-Tokenov&lt;/strong&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>8.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>four</name>
+        <choiceText>&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;4x Tréning =&amp;gt; 40 X-Tokenov&lt;/strong&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>4.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>six</name>
+        <choiceText>&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;6x Tréning =&amp;gt; 60 X-Tokenov&lt;/strong&gt;</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>6.0</numberValue>
+        </value>
+    </choices>
     <collectionProcessors>
         <name>Filter_Products</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Products</label>
         <locationX>810</locationX>
-        <locationY>1406</locationY>
+        <locationY>1622</locationY>
         <assignNextValueToReference>currentItem_Filter_Products</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>tableProducts.outputRemainingRows</collectionReference>
@@ -144,7 +168,7 @@
         <name>Any_Credits</name>
         <label>Any Credits?</label>
         <locationX>570</locationX>
-        <locationY>782</locationY>
+        <locationY>998</locationY>
         <defaultConnector>
             <targetReference>Any_Products_to_Buy</targetReference>
         </defaultConnector>
@@ -169,7 +193,7 @@
         <name>Any_Items_to_process</name>
         <label>Any Items to process?</label>
         <locationX>810</locationX>
-        <locationY>2006</locationY>
+        <locationY>2222</locationY>
         <defaultConnector>
             <targetReference>Loop_Selected_Products</targetReference>
         </defaultConnector>
@@ -194,7 +218,7 @@
         <name>Any_Products_to_Buy</name>
         <label>Any Products to Buy?</label>
         <locationX>570</locationX>
-        <locationY>1190</locationY>
+        <locationY>1406</locationY>
         <defaultConnector>
             <targetReference>Redirect_to_Payment</targetReference>
         </defaultConnector>
@@ -219,7 +243,7 @@
         <name>modifiedCredits</name>
         <label>modifiedCredits?</label>
         <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <defaultConnector>
             <targetReference>Any_Credits</targetReference>
         </defaultConnector>
@@ -241,7 +265,7 @@
         <name>Not_Empty_FIlter</name>
         <label>Not Empty FIlter</label>
         <locationX>810</locationX>
-        <locationY>1514</locationY>
+        <locationY>1730</locationY>
         <defaultConnector>
             <targetReference>Any_Items_to_process</targetReference>
         </defaultConnector>
@@ -266,7 +290,7 @@
         <name>Selected_Action</name>
         <label>Selected Action</label>
         <locationX>570</locationX>
-        <locationY>2582</locationY>
+        <locationY>2798</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Credit_Change</name>
@@ -314,6 +338,14 @@
             <label>Platba</label>
         </rules>
     </decisions>
+    <dynamicChoiceSets>
+        <name>termsCHoice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Terms__c</picklistField>
+        <picklistObject>Credit_Price_Range__c</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
         <name>addAmountProducts</name>
@@ -354,8 +386,13 @@
         <name>soqlPackagesFormula</name>
         <dataType>String</dataType>
         <expression>IF({!packageType.value},
-&quot;select id, name, Price_per_Credit__c, Price_per_ARX_Training__c,Quantity__c,Price_per_Package__c, Single_Package__c, Range_Discount__c from Credit_Price_Range__c where Single_Package__c = true order by Order__c ASC&quot;,
-&quot;select id, name, Price_per_Credit__c,Quantity__c,Price_per_ARX_Training__c, Price_per_Package__c, Single_Package__c, Range_Discount__c from Credit_Price_Range__c where Single_Package__c = false order by Order__c ASC&quot;)</expression>
+&quot;select id, name, Price_per_Credit__c, Price_per_ARX_Training__c,Quantity__c,Price_per_Package__c, Single_Package__c, Range_Discount__c from Credit_Price_Range__c where Single_Package__c = true AND RecordtypeId = &apos;&quot; + {!Get_Credit_Programs_Recordtype.Id} + &quot;&apos; order by Order__c ASC&quot;,
+&quot;select id, name, Price_per_Credit__c,Quantity__c,Price_per_ARX_Training__c, Price_per_Package__c, Single_Package__c, Range_Discount__c from Credit_Price_Range__c where Single_Package__c = false  AND RecordtypeId = &apos;&quot; + {!Get_Credit_Programs_Recordtype.Id} + &quot;&apos;order by Order__c ASC&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>soqlSubscription</name>
+        <dataType>String</dataType>
+        <expression>&quot;select id, name, Price_per_Credit__c, Price_per_ARX_Training__c,Quantity__c,Price_per_Package__c, Single_Package__c,Terms__c, Count_of_Trainings__c,Range_Discount__c from Credit_Price_Range__c WHERE Count_of_Trainings__c = &quot; + TExt({!valueChosen}) + &quot; AND RecordtypeId = &apos;&quot; + {!Get_Monthly_Subscription_Recordtype.Id} + &quot;&apos; order by Terms__c ASC&quot;</expression>
     </formulas>
     <formulas>
         <name>sumToCreditFormula</name>
@@ -380,6 +417,13 @@
 LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
     </formulas>
     <formulas>
+        <name>valueChosen</name>
+        <dataType>Number</dataType>
+        <expression>IF({!countTrainings}= {!four}, 4,
+IF({!countTrainings}= {!six}, 6,8))</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
         <name>VATFormula</name>
         <dataType>Currency</dataType>
         <expression>{!amountToPayFormula} - {!amountToPayWoVAT}</expression>
@@ -392,7 +436,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Loop_FIlter_Products</name>
         <label>Loop FIlter Products</label>
         <locationX>702</locationX>
-        <locationY>1622</locationY>
+        <locationY>1838</locationY>
         <collectionReference>Filter_Products</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -406,7 +450,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Loop_Selected_Products</name>
         <label>Loop Selected Products</label>
         <locationX>526</locationX>
-        <locationY>1298</locationY>
+        <locationY>1514</locationY>
         <collectionReference>tableProducts.outputSelectedRows</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -439,7 +483,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Create_Items</name>
         <label>Create Items</label>
         <locationX>678</locationX>
-        <locationY>2114</locationY>
+        <locationY>2330</locationY>
         <connector>
             <targetReference>Loop_Selected_Products</targetReference>
         </connector>
@@ -449,7 +493,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Create_Payment</name>
         <label>Create Payment</label>
         <locationX>176</locationX>
-        <locationY>566</locationY>
+        <locationY>782</locationY>
         <connector>
             <targetReference>modifiedCredits</targetReference>
         </connector>
@@ -490,7 +534,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Create_Payment_Item</name>
         <label>Create Payment Item</label>
         <locationX>438</locationX>
-        <locationY>890</locationY>
+        <locationY>1106</locationY>
         <connector>
             <targetReference>Add_to_Summary</targetReference>
         </connector>
@@ -540,13 +584,41 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Get_Credit_Programs_Recordtype</name>
+        <label>Get Credit Programs Recordtype</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Monthly_Subscription_Recordtype</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Credit_Price_Range__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Credit_Package</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Evoxise_Recordtype</name>
         <label>Get Evoxise Recordtype</label>
         <locationX>176</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Products</targetReference>
+            <targetReference>Get_Credit_Programs_Recordtype</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -581,10 +653,38 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Monthly_Subscription_Recordtype</name>
+        <label>Get Monthly Subscription Recordtype</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Products</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Credit_Price_Range__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Monthly_Subscription</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Payment</name>
         <label>Get Payment</label>
         <locationX>702</locationX>
-        <locationY>2798</locationY>
+        <locationY>3014</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Send_Recepit</targetReference>
@@ -605,7 +705,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Get_Products</name>
         <label>Get Products</label>
         <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Buy_Credits_Online</targetReference>
@@ -640,7 +740,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Cancel_Payment</name>
         <label>Cancel Payment</label>
         <locationX>174</locationX>
-        <locationY>2690</locationY>
+        <locationY>2906</locationY>
         <connector>
             <targetReference>null</targetReference>
         </connector>
@@ -664,7 +764,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Cancel_Payment1</name>
         <label>Cancel Payment</label>
         <locationX>438</locationX>
-        <locationY>2798</locationY>
+        <locationY>3014</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -685,7 +785,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Update_Payment</name>
         <label>Update Payment</label>
         <locationX>702</locationX>
-        <locationY>2690</locationY>
+        <locationY>2906</locationY>
         <connector>
             <targetReference>Get_Payment</targetReference>
         </connector>
@@ -715,7 +815,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Buy_Credits_Online</name>
         <label>Buy Credits Online</label>
         <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -843,6 +943,56 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
             </visibilityRule>
         </fields>
         <fields>
+            <name>buttonPrograms</name>
+            <extensionName>c:fsc_flowButtonBar</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>alignment</name>
+                <value>
+                    <stringValue>left</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>orientation</name>
+                <value>
+                    <stringValue>horizontal</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showLines</name>
+                <value>
+                    <stringValue>neither</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>actionMode</name>
+                <value>
+                    <stringValue>selection</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>buttons</name>
+                <value>
+                    <stringValue>[{&quot;label&quot;:&quot;Credit Packages&quot;,&quot;value&quot;:&quot;Credit Packages&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;neutral&quot;,&quot;index&quot;:0},{&quot;label&quot;:&quot;Monthly Subscription&quot;,&quot;value&quot;:&quot;Monthly Subscription&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;neutral&quot;,&quot;index&quot;:1}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>cssString</name>
+                <value>
+                    <stringValue>align-items: center; display: flex; justify-content: center; margin-bottom: 15px</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>defaultValue</name>
+                <value>
+                    <stringValue>Monthly Subscription</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
             <name>Buy_Credits_Online_Section2</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
@@ -926,7 +1076,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
                     <inputParameters>
                         <name>label</name>
                         <value>
-                            <stringValue>Cennik Balíkov</stringValue>
+                            <stringValue>Cennik X-Token Balíkov</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1157,6 +1307,247 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
                         <stringValue>Show Credits</stringValue>
                     </rightValue>
                 </conditions>
+                <conditions>
+                    <leftValueReference>buttonPrograms.value</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Credit Packages</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Buy_Credits_Online_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Buy_Credits_Online_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Buy_Credits_Online_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>countTrainings</name>
+                    <choiceReferences>four</choiceReferences>
+                    <choiceReferences>six</choiceReferences>
+                    <choiceReferences>eight</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Počet Tréningov Mesačne</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Buy_Credits_Online_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>sso</name>
+                    <fieldText>&lt;p&gt;{!soqlSubscription}&lt;/p&gt;&lt;p&gt;{!countTrainings}&lt;/p&gt;&lt;p&gt;{!four}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>buttonPrograms.value</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Monthly Subscription</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Buy_Credits_Online_Section4</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Buy_Credits_Online_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Buy_Credits_Online_Section4_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>fetchSubscription</name>
+                    <dataTypeMappings>
+                        <typeName>T</typeName>
+                        <typeValue>Credit_Price_Range__c</typeValue>
+                    </dataTypeMappings>
+                    <extensionName>c:dataFetcher</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>systemAccess</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>withSharing</name>
+                        <value>
+                            <booleanValue>false</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>queryString</name>
+                        <value>
+                            <elementReference>soqlSubscription</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>subscriptionTable</name>
+                    <dataTypeMappings>
+                        <typeName>T</typeName>
+                        <typeValue>Credit_Price_Range__c</typeValue>
+                    </dataTypeMappings>
+                    <extensionName>flowruntime:datatable</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Cenník Mesačných Programov</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>selectionMode</name>
+                        <value>
+                            <stringValue>SINGLE_SELECT</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>minRowSelection</name>
+                        <value>
+                            <numberValue>1.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>shouldDisplayLabel</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>tableData</name>
+                        <value>
+                            <elementReference>fetchSubscription.retrievedRecords</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxRowSelection</name>
+                        <value>
+                            <numberValue>1.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>columns</name>
+                        <value>
+                            <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-0983&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Credit Price Range Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Terms__c&quot;,&quot;guid&quot;:&quot;column-f2ae&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Viazanosť (Mesiac)&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Terms&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Quantity__c&quot;,&quot;guid&quot;:&quot;column-d5db&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Počet X-Tokenov&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Quantity&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;Price_per_Credit__c&quot;,&quot;guid&quot;:&quot;column-7067&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Cena/X-Token&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Price per Credit&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;Price_per_Package__c&quot;,&quot;guid&quot;:&quot;column-93b0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Cena za mesiac&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Price per Package&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;Range_Discount__c&quot;,&quot;guid&quot;:&quot;column-7977&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Zľava Mesačne&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Range Discount&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>countTrainings</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>fetchSubscription.firstRetrievedRecord.Id</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Buy_Credits_Online_Section4_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>2</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Buy_Credits_Online_Section4_Column4</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>countTrainings</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>buttonPrograms.value</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Monthly Subscription</stringValue>
+                    </rightValue>
+                </conditions>
             </visibilityRule>
         </fields>
         <fields>
@@ -1175,10 +1566,10 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
             </visibilityRule>
         </fields>
         <fields>
-            <name>Buy_Credits_Online_Section3</name>
+            <name>Buy_Credits_Online_Section5</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Buy_Credits_Online_Section3_Column1</name>
+                <name>Buy_Credits_Online_Section5_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1189,7 +1580,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Buy_Credits_Online_Section3_Column2</name>
+                <name>Buy_Credits_Online_Section5_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>tableProducts</name>
@@ -1366,7 +1757,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Buy_Credits_Online_Section3_Column3</name>
+                <name>Buy_Credits_Online_Section5_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1387,7 +1778,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>cancelPayment</name>
         <label>cancelPayment</label>
         <locationX>438</locationX>
-        <locationY>2690</locationY>
+        <locationY>2906</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1434,7 +1825,7 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
         <name>Redirect_to_Payment</name>
         <label>Redirect to Payment</label>
         <locationX>570</locationX>
-        <locationY>2474</locationY>
+        <locationY>2690</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1614,12 +2005,12 @@ LEFT(RIGHT({!Create_Payment}, 8),4))</expression>
             <targetReference>Get_Metadata</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Send_Recepit</name>
         <label>Send Recepit</label>
         <locationX>702</locationX>
-        <locationY>2906</locationY>
+        <locationY>3122</locationY>
         <connector>
             <targetReference>Assign_Message</targetReference>
         </connector>
