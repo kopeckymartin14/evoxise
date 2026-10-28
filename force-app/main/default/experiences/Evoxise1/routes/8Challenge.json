@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "efb81307-c249-4073-9cef-3e8a8d0e9931",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "eight_challenge__c",
+  "id" : "db2690a6-51e1-434d-8a95-c94c5b0fdd8b",
+  "label" : "8 Challenge",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-8-challenge",
+  "type" : "route",
+  "urlPrefix" : "8-challenge"
+}

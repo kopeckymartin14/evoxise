@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Bergheimer leads (Bergheimer public site) must not get the Evoxise Core e-mail.</description>
+        <name>Is_Not_Bergheimer_Lead</name>
+        <label>Is Not Bergheimer Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Bergheimer lead</defaultConnectorLabel>
+        <rules>
+            <name>Not_Bergheimer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Bergheimer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SFSCH_Send_Email_Notification_Flow_1</targetReference>
+            </connector>
+            <label>Not Bergheimer</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>    <interviewLabel>SFSCH - Send Evoxise Core Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SFSCH - Send Evoxise Core Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Evoxise_Core_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Not_Bergheimer_Lead</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Evoxise_Core_Sent__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <dateTimeValue>2026-03-14T23:00:00.000Z</dateTimeValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <schedule>
+            <dayOfMonthToRun>0</dayOfMonthToRun>
+            <frequency>Daily</frequency>
+            <frequencyNumber>0</frequencyNumber>
+            <startDate>2026-03-12</startDate>
+            <startTime>19:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>SFSCH_Send_Email_Notification_Flow_1</name>
+        <label>SFSCH - Send Email Notification Flow 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+        <flowName>SFSCH_Send_Email_Notification</flowName>
+        <inputAssignments>
+            <name>Action</name>
+            <value>
+                <stringValue>Evoxise Core</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Id</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Lead</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

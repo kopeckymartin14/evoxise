@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "17a62857-e347-4068-a393-4e77bab8f895",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "reverz__c",
+  "id" : "7fa21ebf-6582-4d66-8002-9c9af855fe53",
+  "label" : "reverz",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-reverz",
+  "type" : "route",
+  "urlPrefix" : "reverz"
+}

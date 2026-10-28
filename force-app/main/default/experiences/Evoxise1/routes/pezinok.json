@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "d39a5d5f-ea35-455a-b247-6a39a124dbb8",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "pezinok__c",
+  "id" : "23d718e7-c0cf-47fb-93f7-c26e713c53f4",
+  "label" : "Pezinok",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-pezinok",
+  "type" : "route",
+  "urlPrefix" : "pezinok"
+}

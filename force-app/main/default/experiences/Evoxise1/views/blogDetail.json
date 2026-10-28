@@ -1,0 +1,78 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "7d509cef-d297-4f53-8fba-093ff6dc595b",
+  "label" : "Blog Detail",
+  "regions" : [ {
+    "id" : "f53cb3c5-c121-43af-9eff-3fd1e90d2119",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "headlineLine1" : "Blogy",
+        "headlineLine2" : "Viac Informácii.",
+        "headlineLine3" : "Merateľne.",
+        "manifestoOpeningText" : "Prvých 30 získa zvýhodnenú cenu a prioritný prístup pred verejným otvorením.",
+        "manifestoText" : "",
+        "showManifesto" : false,
+        "videoResource" : "videoBanner",
+        "videoResourceMobile" : "",
+        "videoUrl" : ""
+      },
+      "componentName" : "c:videoBanner",
+      "id" : "e7a2980a-feaf-48db-ae62-503e103b6056",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:blogDetail",
+      "id" : "b786a0bb-2c3b-4749-8b34-256d2306aede",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "d98866d7-6748-45a2-8ca8-c01e7416cda2",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c6efbb3b-5ac1-4e71-bfa8-8f66aab32010",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "98262f51-3105-4d85-89bf-5e2e28c5686a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7e475ae4-212d-4c69-aefc-0754e4c373f9",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<meta name=\"robots\" content=\"noindex,nofollow\">\r\n<meta name=\"googlebot\" content=\"noindex,nofollow\">",
+        "description" : "",
+        "title" : "Blog"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "d916c929-2a42-4aab-8fb3-e83b537162fd",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7afebcb9-3ee4-4581-bea6-bed18292cc16",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-blog-detail"
+}

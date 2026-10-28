@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "751b7f55-adfb-422b-93e3-ad10db1a6912",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "anonymousBooking__c",
+  "id" : "40ea9b6d-2636-45ef-97fe-8b142ca74116",
+  "label" : "anonymous-booking",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-anonymous-booking",
+  "type" : "route",
+  "urlPrefix" : "anonymous-booking"
+}

@@ -1,0 +1,95 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "f874191b-f55a-4986-87d6-e01d387b20df",
+  "label" : "Accuniq Json",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "8dec398c-ff05-47cc-a586-9b00eefcc35e",
+          "columns" : [ {
+            "UUID" : "c3a681bf-c5e6-4fb6-b5cc-b79f78c4254c",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "1517bb9e-a400-4004-b5d3-1913e13377ba",
+            "columnKey" : "2f981",
+            "columnName" : "Column 2",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "8b029705-9084-40f0-8e6f-292c23ca68ed",
+            "columnKey" : "cdb44",
+            "columnName" : "Column 3",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "8dec398c-ff05-47cc-a586-9b00eefcc35e",
+      "regions" : [ {
+        "id" : "c3a681bf-c5e6-4fb6-b5cc-b79f78c4254c",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "",
+            "flowName" : "SFSCH_Accuniq_AI_Summary"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "c89a02f6-f49f-4c28-a2c0-e79a7afd5358",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1517bb9e-a400-4004-b5d3-1913e13377ba",
+        "regionLabel" : "Column 2",
+        "regionName" : "2f981",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "8b029705-9084-40f0-8e6f-292c23ca68ed",
+        "regionLabel" : "Column 3",
+        "regionName" : "cdb44",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "78e89aa7-7a2c-4f97-9fea-f862fd0e48c7",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Accuniq Json"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "f5294a83-5290-4e86-b2c5-015b1dfdbade",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c053147a-4ebc-4bd3-a6d8-e95688f74229",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-accuniq-json"
+}

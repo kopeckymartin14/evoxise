@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "71cbdbf6-1a27-4297-8524-0dc17283ac67",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "x_challenge__c",
+  "id" : "386f12c8-09cd-4f8d-9e27-2ebde357a993",
+  "label" : "X-Challenge",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-x-challenge",
+  "type" : "route",
+  "urlPrefix" : "x-challenge"
+}

@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "baa72f1c-29aa-40d4-b5d2-52b785f2757d",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "interview__c",
+  "id" : "4d27cc65-48c1-4f57-ac79-43cfb247ccda",
+  "label" : "Interview",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-interview",
+  "type" : "route",
+  "urlPrefix" : "interview"
+}

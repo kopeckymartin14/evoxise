@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "f874191b-f55a-4986-87d6-e01d387b20df",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "accuniq_json__c",
+  "id" : "189e40b7-489f-4eee-a215-8cc3e3245cf7",
+  "label" : "Accuniq Json",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-accuniq-json",
+  "type" : "route",
+  "urlPrefix" : "accuniq-json"
+}

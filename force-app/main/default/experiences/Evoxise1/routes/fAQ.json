@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "bd4a427d-d0a3-47ae-9d3b-b17323406fc4",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "faq__c",
+  "id" : "19f48284-8e18-4e12-8b7e-28de8b816715",
+  "label" : "FAQ",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-faq-evoxise",
+  "type" : "route",
+  "urlPrefix" : "faq-evoxise"
+}

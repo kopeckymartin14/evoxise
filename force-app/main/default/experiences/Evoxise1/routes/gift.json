@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "908bfc3a-1e93-4522-87bc-a6070137a347",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "gift_evoxise__c",
+  "id" : "e7e15fe8-5b7a-4617-a38b-d9aefa2c6b76",
+  "label" : "Gift",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-gift-evoxise",
+  "type" : "route",
+  "urlPrefix" : "gift-evoxise"
+}

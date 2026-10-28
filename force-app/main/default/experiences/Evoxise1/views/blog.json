@@ -1,0 +1,78 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "0fe374a4-fdce-49aa-8ab2-d065e325fa84",
+  "label" : "Blog",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "headlineLine1" : "Blog.",
+        "headlineLine2" : "ARX, biohacking.",
+        "headlineLine3" : "Tipy.",
+        "manifestoOpeningText" : "Prvých 30 získa zvýhodnenú cenu a prioritný prístup pred verejným otvorením.",
+        "manifestoText" : "",
+        "showManifesto" : false,
+        "videoResource" : "videoBanner",
+        "videoResourceMobile" : "",
+        "videoUrl" : ""
+      },
+      "componentName" : "c:videoBanner",
+      "id" : "e328c176-9379-4f6c-8cef-84b081f116e2",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:blogArxCard",
+      "id" : "ff213d5e-d185-479c-bfb8-1f11e612848f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "aba66748-dc66-4a7d-a7a1-0f6c71c5de0f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4cf96c2c-c0e3-42ad-9928-d208a6879eab",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "114446bc-b4eb-46ef-8e6d-ca22e1691eb9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "25afdee5-3868-4b8e-a8b6-3440729a5b7d",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "2974eb83-e96d-423f-936e-1839e0ebc7f4",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<link rel=\"canonical\" href=\"https://www.evoxise.sk/s/blogs-evoxise\">\n<meta name=\"robots\" content=\"index,follow\">\n<meta name=\"keywords\" content=\"evoxise blog, arx tréning tipy, arx trening tipy, biohacking blog, fitness tipy slovensko, body composition blog, silový tréning rady, silovy trening rady, zdravý životný štýl, zdravy zivotny styl, fitness motivácia, fitness motivacia, arx technológia, arx technologia, merateľné výsledky fitness, meratelne vysledky fitness\">\n<meta name=\"author\" content=\"EVOXISE Studio\">\n<meta property=\"og:title\" content=\"Blog — ARX, biohacking a fitness tipy | EVOXISE\">\n<meta property=\"og:description\" content=\"Blog Evoxise — ARX tréning, biohacking, longevity a analýza tela. Vedecky podložené články bez fitness klišé.\">\n<meta property=\"og:url\" content=\"https://www.evoxise.sk/s/blogs-evoxise\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<meta property=\"og:locale\" content=\"sk_SK\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Blog — ARX, biohacking a fitness tipy | EVOXISE\">\n<meta name=\"twitter:description\" content=\"ARX tréning, biohacking, longevity a analýza tela. Vedecky podložené články bez fitness klišé.\">\n<meta name=\"twitter:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Blog\",\n  \"name\": \"Evoxise Blog — ARX, biohacking, longevity\",\n  \"url\": \"https://www.evoxise.sk/s/blogs-evoxise\",\n  \"description\": \"Blog o ARX tréningu, biohackingu a longevity. Vedecky podložené články.\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"EVOXISE\",\n    \"url\": \"https://www.evoxise.sk\"\n  },\n  \"inLanguage\": \"sk\"\n}\n</script>",
+        "description" : "Blog Evoxise — ARX tréning, biohacking, longevity a analýza tela. Vedecky podložené články bez fitness klišé. Pezinok · Bratislava.",
+        "title" : "Blog — ARX, biohacking a fitness tipy | EVOXISE"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "2e4fabff-9697-4a36-97da-93e8a10b5080",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cbd56869-ef66-4ddf-b5fd-340a03574a6a",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-blogs-evoxise"
+}

@@ -1,0 +1,71 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "06859fbf-99fb-4cf3-bd32-f00713e92a76",
+  "label" : "Booking Success Page Anonymous",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:heroBannerX",
+      "id" : "0f273839-d28e-4249-9845-36e38b4c01ac",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "77cfa40f-6420-4b14-9274-5ab7c9ccde43",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "63d3db04-a0a1-4b77-99b4-e8b78b295772",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-size: 36px;\">Toto okno môžete zavrieť</span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "ad5a2dd6-0fec-4318-ba16-639be5891ba8",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2124f76a-2cd5-44b8-8a52-c4efa7cb1603",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "330ca8a5-5bbc-40d9-9e63-b714f717d9cb",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "735bd383-705f-43c5-a4b3-0a52eb859a0b",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Booking Success Page Anonymous"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "1567c5eb-4897-4207-99d7-6c2ff92ba977",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b5aa5f2f-b392-4a37-9245-c9ac54deb93f",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-booking-success-page-anonymous"
+}

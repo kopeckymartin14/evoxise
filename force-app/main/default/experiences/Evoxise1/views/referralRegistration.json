@@ -1,0 +1,92 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "bce70fa2-cd5a-40f3-9503-4979adfdac84",
+  "label" : "referral-registration",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "1db7ee28-407d-4d14-bf50-76b53d4d4608",
+          "columns" : [ {
+            "UUID" : "d2464e7b-2b94-4212-926d-91b32e9009a7",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "1db7ee28-407d-4d14-bf50-76b53d4d4608",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "c:heroBannerX",
+          "id" : "6aebeca6-6815-4f0d-b777-8c12afef8cc2",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "flowArguments" : "[{\"label\":\"refferalCode\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!referralCode}\"}]",
+            "flowName" : "SFSCH_Create_Customer_Referral"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "e0c68960-691f-4594-90b3-c6e142ade1c7",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "40cb3b06-df68-4e9e-a2c9-da5232aa9b39",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageFooter",
+          "id" : "53453e23-697b-4d1d-8082-751f41515456",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "d2464e7b-2b94-4212-926d-91b32e9009a7",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "dc6e2d9e-98f1-40ff-a708-40e365895d2c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "referral-registration"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "8f23039d-aa2b-433d-833c-4cd93ff201a7",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "96bd6c15-6ff7-45ee-8399-c047825991ed",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-referral-registration"
+}

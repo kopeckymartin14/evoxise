@@ -1,0 +1,124 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "e6a62796-cd0e-4caa-9092-4a527e69eafe",
+  "label" : "Accuniq",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "77f4d729-2fb0-4bb9-b7d2-d5acd2562863",
+          "columns" : [ {
+            "UUID" : "aec46b7d-669c-417d-a17a-9e24c43a9b74",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "77f4d729-2fb0-4bb9-b7d2-d5acd2562863",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "headlineLine1" : "RTG metabolizmu.",
+            "headlineLine2" : "Zisti čo ťa brzdí.",
+            "headlineLine3" : "Čo ťa posunie.",
+            "manifestoOpeningText" : "",
+            "manifestoText" : "",
+            "showManifesto" : false,
+            "videoResource" : "videoBannerAccuniq",
+            "videoResourceMobile" : "videoBannerAccuniqMobile",
+            "videoUrl" : ""
+          },
+          "componentName" : "c:videoBanner",
+          "id" : "99ff9a9b-6c6d-40cb-bf50-e07b94ee4ca3",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "headerText" : "Ako ti pomôžeme?",
+            "position" : "bottom-right",
+            "welcomeMessage" : ""
+          },
+          "componentName" : "c:evoxiseAiChat",
+          "id" : "a496869c-3f3a-4c19-a127-d8282527c20a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:accuniqDiagnostic",
+          "id" : "ea31e137-b4c8-4dbd-9db1-c99fc002554d",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:accuniqAnalysis",
+          "id" : "a0d36c9b-ba03-43dc-a9bb-53356623d5cf",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:accuniqPrecautions",
+          "id" : "c2d8b5cb-e33c-44f7-aa64-5f2ade41e6a4",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageFooter",
+          "id" : "fa19c025-4737-4694-9ff8-4f04a07c5dee",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "79129028-8794-4504-a309-5adf36e28146",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "aec46b7d-669c-417d-a17a-9e24c43a9b74",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "18651f9b-dd3f-429d-b1af-a9e3bb35331f",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<link rel=\"canonical\" href=\"https://www.evoxise.sk/s/accuniq\">\r\n<meta name=\"robots\" content=\"index,follow\">\r\n<meta name=\"keywords\" content=\"accuniq, accuniq meranie, analýza zloženia tela, analyza zlozenia tela, body composition, meranie tuku, svalová hmota, svalova hmota, biohacking diagnostika, EVOXISE accuniq, body audit Pezinok, meranie zdravia, diagnostika tela, zloženie tela, zlozenie tela, accuniq pezinok, meranie tela pezinok\">\r\n<meta name=\"author\" content=\"EVOXISE Studio\">\r\n<meta property=\"og:title\" content=\"Accuniq Body Audit — analýza zloženia tela | EVOXISE Pezinok\">\r\n<meta property=\"og:description\" content=\"ACCUNIQ BC380 body audit — klinická analýza zloženia tela za menej ako minútu. Svaly, viscerálny tuk, bunkové zdravie v číslach. Dostupné v Evoxise Pezinok.\">\r\n<meta property=\"og:url\" content=\"https://www.evoxise.sk/s/accuniq\">\r\n<meta property=\"og:type\" content=\"website\">\r\n<meta property=\"og:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\r\n<meta property=\"og:locale\" content=\"sk_SK\">\r\n<meta name=\"twitter:card\" content=\"summary_large_image\">\r\n<meta name=\"twitter:title\" content=\"Accuniq Body Audit | EVOXISE\">\r\n<meta name=\"twitter:description\" content=\"ACCUNIQ BC380 body audit — klinická analýza zloženia tela. Svaly, viscerálny tuk, bunkové zdravie v číslach.\">\r\n<meta name=\"twitter:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\r\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Accuniq Body Audit\",\"description\":\"Klinická analýza zloženia tela technológiou ACCUNIQ BC380. Meranie percentuálneho podielu tuku, svalovej hmoty, viscerálneho tuku a bunkového zdravia.\",\"url\":\"https://www.evoxise.sk/s/accuniq\",\"provider\":{\"@type\":\"LocalBusiness\",\"name\":\"EVOXISE Studio Pezinok\",\"url\":\"https://www.evoxise.sk\",\"telephone\":\"+421944609553\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Hrnčiarska 2/B\",\"addressLocality\":\"Pezinok\",\"postalCode\":\"902 01\",\"addressCountry\":\"SK\"}},\"areaServed\":{\"@type\":\"City\",\"name\":\"Pezinok\"},\"serviceType\":\"Body Composition Analysis\"}</script>",
+        "description" : "ACCUNIQ BC380 body audit — klinická analýza zloženia tela za menej ako minútu. Svaly, viscerálny tuk, bunkové zdravie v číslach. Dostupné v Evoxise Pezinok.",
+        "title" : "Accuniq Body Audit — analýza zloženia tela | EVOXISE Pezinok"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "630d80da-c517-4796-a25d-5c5464c149d7",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "d6ac2697-5125-491b-a025-51b0027af57c",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-accuniq"
+}

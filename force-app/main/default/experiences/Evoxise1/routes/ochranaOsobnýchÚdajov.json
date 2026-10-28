@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "4d13e976-73c2-48fe-8ff6-eff9accfda1b",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "ochrana_osobnych_udajov__c",
+  "id" : "5cc48e75-2731-43bb-9e03-1704600864b5",
+  "label" : "Ochrana Osobných Údajov",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-ochrana-osobnych-udajov",
+  "type" : "route",
+  "urlPrefix" : "ochrana-osobnych-udajov"
+}

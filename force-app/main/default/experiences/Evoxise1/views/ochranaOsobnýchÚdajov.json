@@ -1,0 +1,85 @@
+{
+  "appPageId": "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName": "siteforce:sldsOneColLayout",
+  "dataProviders": [],
+  "id": "4d13e976-73c2-48fe-8ff6-eff9accfda1b",
+  "label": "Ochrana Osobných Údajov",
+  "regions": [
+    {
+      "components": [
+        {
+          "componentAttributes": {},
+          "componentName": "c:heroBannerX",
+          "id": "1382e16a-14d3-43db-93b5-a063bbc36ff0",
+          "renderPriority": "NEUTRAL",
+          "renditionMap": {},
+          "type": "component"
+        },
+        {
+          "componentAttributes": {},
+          "componentName": "c:homePageHeader",
+          "id": "e13b0171-0104-48ff-82fa-469ea145b19a",
+          "renderPriority": "NEUTRAL",
+          "renditionMap": {},
+          "type": "component"
+        }
+      ],
+      "id": "35640888-d6e5-4810-9cc8-5250904b8f5c",
+      "regionName": "header",
+      "type": "region"
+    },
+    {
+      "components": [
+        {
+          "componentAttributes": {
+            "richTextValue": "<div style=\"margin-left: 10px; margin-bottom:10px; max-width: 900px;\">\n<p style=\"text-align: center;\"><strong style=\"font-size: 20px; font-family: sans-serif;\">Informácia o spracúvaní osobných údajov</strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Táto informácia vysvetľuje, ako spoločnosť Evoxise s.r.o. spracúva osobné údaje klientov, záujemcov, účastníkov podujatí a návštevníkov webu www.evoxise.sk podľa Nariadenia Európskeho parlamentu a Rady (EÚ) 2016/679 (ďalej len „GDPR“) a zákona č. 18/2018 Z. z. o ochrane osobných údajov.</span></p>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Prevádzkovateľ</u></strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Prevádzkovateľom osobných údajov je:</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>Evoxise s.r.o.</strong>, so sídlom Trnavská 59, 902 01 Pezinok, IČO: 56 524 153, DIČ: 2122339010, zapísaná v Obchodnom registri Mestského súdu Bratislava III, oddiel Sro, vložka č. 181717/B (ďalej len „Prevádzkovateľ“).</span></p>\n<ul><li><span style=\"font-size: 16px; font-family: sans-serif;\">prevádzka Pezinok: Hrnčiarska 2/B, 902 01 Pezinok,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">prevádzka Bratislava: Bratislava – Kramáre (otvorenie v januári 2027),</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">e-mail: <a href=\"mailto:evoxise@evoxise-gym.com\">evoxise@evoxise-gym.com</a>,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">telefón: <a href=\"tel:+421944609553\">0944 609 553</a>, Pezinok <a href=\"tel:+421905832259\">0905 832 259</a>, Bratislava <a href=\"tel:+421904896224\">0904 896 224</a>.</span></li></ul>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Vo veciach ochrany osobných údajov nás kontaktujte e-mailom alebo písomne na adrese sídla.</span></p>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Na aké účely a na akom právnom základe údaje spracúvame</u></strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>a) Registrácia a klientsky účet</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Meno, priezvisko, e-mail, telefón, prípadne názov firmy a informácia, odkiaľ ste sa o nás dozvedeli. Údaje potrebujeme na vytvorenie a vedenie vášho účtu v Klientskej zóne. Právny základ: plnenie zmluvy a opatrenia pred jej uzavretím (čl. 6 ods. 1 písm. b) GDPR).</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>b) Rezervácie tréningov</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Údaje o rezerváciách prvého tréningu zdarma, individuálnych a skupinových tréningov, ich termínoch, zrušeniach a účasti. Právny základ: plnenie zmluvy (čl. 6 ods. 1 písm. b) GDPR).</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>c) Platby, kredit, darčekové poukazy a tovar</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Údaje o nákupe kreditu, darčekových poukazov a tovaru (Evoxise Merch) a o platbe. Online platby spracúva platobná brána Revolut. Údaje o vašej platobnej karte nevidíme ani neukladáme. Pri darčekovom poukaze spracúvame aj meno a e-mail obdarovaného, ktoré nám poskytnete. Právny základ: plnenie zmluvy (čl. 6 ods. 1 písm. b) GDPR).</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>d) Účtovné a daňové povinnosti</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Údaje na faktúrach a účtovných dokladoch. Právny základ: plnenie zákonnej povinnosti (čl. 6 ods. 1 písm. c) GDPR), najmä podľa zákona č. 431/2002 Z. z. o účtovníctve.</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>e) Meranie zloženia tela Accuniq</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Ak sa rozhodnete pre meranie, spracúvame jeho výsledky (napríklad hmotnosť, podiel svalov a tuku, viscerálny tuk, celkové skóre) a ich vyhodnotenie s odporúčaniami pre tréning. Ide o údaje týkajúce sa zdravia, ktoré spracúvame len na základe vášho výslovného súhlasu (čl. 9 ods. 2 písm. a) GDPR). Súhlas môžete kedykoľvek odvolať. Na prípravu textového vyhodnotenia môžeme použiť nástroj umelej inteligencie. Vyhodnotenie slúži len ako podklad pre tréning a nerobia sa na jeho základe rozhodnutia s právnymi účinkami.</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>f) Súťaže a podujatia (Eight Challenge, X-Challenge a ďalšie)</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Meno, e-mail, kategória, vekové pásmo a údaje potrebné na organizáciu podujatia. Pri účastníkoch mladších ako 18 rokov spracúvame aj meno zákonného zástupcu, ktorý za účastníka podpisuje vyhlásenie o účasti. Výsledky s menami účastníkov nezverejňujeme. Právny základ: plnenie zmluvy (čl. 6 ods. 1 písm. b) GDPR).</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>g) Odporúčanie známeho</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Ak nám odporučíte známeho, spracúvame jeho kontaktné údaje, ktoré nám poskytnete, aby sme mu mohli poslať pozvánku. Odporučte nás prosím len osobe, ktorá s tým súhlasí. Právny základ: oprávnený záujem (čl. 6 ods. 1 písm. f) GDPR).</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>h) Waitlist a novinky e-mailom</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Ak sa prihlásite na waitlist (napríklad pre otvorenie prevádzky v Bratislave) alebo na odber noviniek, spracúvame váš e-mail a posielame vám informácie a ponuky Evoxise. Právny základ: váš súhlas (čl. 6 ods. 1 písm. a) GDPR a § 116 zákona č. 452/2021 Z. z. o elektronických komunikáciách). Klientom môžeme posielať ponuky podobných služieb aj bez súhlasu. Z odberu sa môžete kedykoľvek odhlásiť odkazom v každom e-maile.</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>i) Otázky, podnety a sťažnosti</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Údaje, ktoré nám pošlete e-mailom, telefonicky, cez sociálne siete alebo priamo na prevádzke. Na prípravu odpovede na vašu otázku môžeme použiť nástroj umelej inteligencie. Odpoveď vychádza z našich informácií o službách. Právny základ: oprávnený záujem na komunikácii s klientmi (čl. 6 ods. 1 písm. f) GDPR).</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>j) Analytika a marketing na webe</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Ak s tým súhlasíte v nastaveniach cookies, používame Google Analytics, Google Ads a Meta Pixel. Pomáhajú nám merať návštevnosť webu a účinnosť reklamy a zobrazovať reklamu na sociálnych sieťach a vo vyhľadávači. Tieto nástroje môžu vytvárať profil vašich záujmov. Právny základ: váš súhlas (čl. 6 ods. 1 písm. a) GDPR a § 109 zákona č. 452/2021 Z. z.). Podrobnosti nájdete na stránke <a href=\"/s/cookies\">Cookies</a>.</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>k) Kamerový systém</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Priestory prevádzok (tréningový priestor a vstup) sú monitorované kamerovým systémom na ochranu zdravia a bezpečnosti osôb a ochranu majetku. Právny základ: oprávnený záujem (čl. 6 ods. 1 písm. f) GDPR).</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>l) Fotografie a videozáznamy</strong></span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Fotografie a videá z tréningov a podujatí zverejňujeme na webe a sociálnych sieťach len so súhlasom zobrazenej osoby (čl. 6 ods. 1 písm. a) GDPR). Súhlas môžete kedykoľvek odvolať.</span></p>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Komu údaje poskytujeme</u></strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">K údajom majú prístup poverení zamestnanci a tréneri Prevádzkovateľa. Ďalej ich spracúvajú naši zmluvní partneri (sprostredkovatelia), a to len podľa našich pokynov:</span></p>\n<ul><li><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>Salesforce</strong> – systém, v ktorom beží web, Klientska zóna, rezervácie a odosielanie e-mailov,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">dodávateľ, ktorý pre nás spravuje systém Salesforce a web,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>Revolut</strong> – platobná brána pre online platby,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>Anthropic</strong> – nástroj umelej inteligencie na prípravu odpovedí a vyhodnotení,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\"><strong>Google</strong> (Analytics, Ads, písma Google Fonts) a <strong>Meta</strong> (Facebook, Instagram) – len v rozsahu podľa nastavení cookies,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">externá účtovná kancelária,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">správca kamerového systému.</span></li></ul>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Údaje poskytujeme aj orgánom verejnej moci, ak nám to ukladá zákon.</span></p>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Prenos údajov mimo Európskej únie</u></strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Niektorí z partnerov (Salesforce, Google, Meta, Anthropic) môžu údaje spracúvať aj v USA. Prenos je chránený rozhodnutím Európskej komisie o primeranosti (EU-US Data Privacy Framework) alebo štandardnými zmluvnými doložkami Európskej komisie.</span></p>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Ako dlho údaje uchovávame</u></strong></p>\n<ul><li><span style=\"font-size: 16px; font-family: sans-serif;\">klientsky účet, rezervácie a kredit: počas trvania zmluvného vzťahu a najviac 6 mesiacov po skončení platnosti kreditu alebo permanentky, ak zákon nevyžaduje dlhšiu dobu,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">účtovné doklady: 10 rokov po roku, ktorého sa týkajú,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">výsledky merania Accuniq: do odvolania súhlasu, najneskôr do zrušenia klientskeho účtu,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">súťaže a podujatia: počas prípravy a konania podujatia a po ňom, kým je to potrebné na vybavenie nárokov,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">waitlist a novinky e-mailom: do odhlásenia alebo odvolania súhlasu,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">otázky a podnety: kým ich vybavíme a kým je to potrebné na prípadné nároky,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">záznamy kamerového systému: 15 dní,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">fotografie a videá: do odvolania súhlasu,</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">cookies: podľa doby uvedenej na stránke <a href=\"/s/cookies\">Cookies</a>.</span></li></ul>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Vaše práva</u></strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Máte právo:</span></p>\n<ul><li><span style=\"font-size: 16px; font-family: sans-serif;\">na prístup k svojim osobným údajom (čl. 15 GDPR),</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">na opravu nesprávnych údajov (čl. 16 GDPR),</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">na vymazanie údajov (čl. 17 GDPR),</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">na obmedzenie spracúvania (čl. 18 GDPR),</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">na prenosnosť údajov (čl. 20 GDPR),</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">namietať proti spracúvaniu na základe oprávneného záujmu a proti priamemu marketingu (čl. 21 GDPR),</span></li><li><span style=\"font-size: 16px; font-family: sans-serif;\">kedykoľvek odvolať súhlas; odvolanie nemá vplyv na zákonnosť spracúvania pred jeho odvolaním.</span></li></ul>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Práva uplatníte e-mailom na <a href=\"mailto:evoxise@evoxise-gym.com\">evoxise@evoxise-gym.com</a> alebo listom na adrese Evoxise s.r.o., Trnavská 59, 902 01 Pezinok. Odpovieme vám najneskôr do jedného mesiaca.</span></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Ak sa domnievate, že vaše údaje spracúvame v rozpore s predpismi, môžete podať návrh na začatie konania na Úrad na ochranu osobných údajov Slovenskej republiky, Hraničná 12, 820 07 Bratislava 27, <a href=\"https://www.dataprotection.gov.sk\">www.dataprotection.gov.sk</a>.</span></p>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Povinnosť poskytnúť údaje</u></strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Údaje potrebné na registráciu, rezerváciu, platbu alebo účasť na podujatí sú podmienkou uzavretia zmluvy. Bez nich vám službu nevieme poskytnúť. Poskytnutie údajov na základe súhlasu je dobrovoľné.</span></p>\n<p style=\"text-align: center; margin-top: 28px;\"><strong style=\"font-size: 18px; font-family: sans-serif;\"><u>Automatizované rozhodovanie</u></strong></p>\n<p><span style=\"font-size: 16px; font-family: sans-serif;\">Nerobíme rozhodnutia s právnymi účinkami založené výlučne na automatizovanom spracúvaní. Profilovanie na reklamné účely prebieha len so súhlasom podľa písm. j).</span></p>\n<p style=\"margin-top: 28px;\"><span style=\"font-size: 14px; font-family: sans-serif; color: #666;\">Posledná aktualizácia: 28. 10. 2026</span></p>\n</div>"
+          },
+          "componentName": "forceCommunity:htmlBlock",
+          "id": "fdd31d3d-6914-4f64-8767-6fbca21c1bc7",
+          "renderPriority": "NEUTRAL",
+          "renditionMap": {},
+          "type": "component"
+        }
+      ],
+      "id": "cdd4bce8-e1c3-4d12-b902-ca5f58ebdbe1",
+      "regionName": "content",
+      "type": "region"
+    },
+    {
+      "components": [
+        {
+          "componentAttributes": {},
+          "componentName": "c:homePageFooter",
+          "id": "f9d505cc-6ef6-4729-b664-62f414003fb9",
+          "renderPriority": "NEUTRAL",
+          "renditionMap": {},
+          "type": "component"
+        }
+      ],
+      "id": "08fbbc5d-a8d3-46ac-8ece-feafeda7b7c2",
+      "regionName": "footer",
+      "type": "region"
+    },
+    {
+      "components": [
+        {
+          "componentAttributes": {
+            "customHeadTags": "",
+            "description": "",
+            "title": "Ochrana Osobných Údajov"
+          },
+          "componentName": "forceCommunity:seoAssistant",
+          "id": "1068ad06-d32c-4477-bb80-cf79c68adbcb",
+          "renditionMap": {},
+          "type": "component"
+        }
+      ],
+      "id": "da4944de-b89a-44cc-a703-122f81cb3fcb",
+      "regionName": "sfdcHiddenRegion",
+      "type": "region"
+    }
+  ],
+  "themeLayoutType": "Inner",
+  "type": "view",
+  "viewType": "custom-ochrana-osobnych-udajov"
+}

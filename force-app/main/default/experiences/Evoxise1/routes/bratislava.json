@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "f991bfd8-b072-43b9-ba43-361c07911ba0",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "bratislava__c",
+  "id" : "b4fd8040-7c1a-495d-9e7c-f28abe17be97",
+  "label" : "Bratislava",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-bratislava",
+  "type" : "route",
+  "urlPrefix" : "bratislava"
+}

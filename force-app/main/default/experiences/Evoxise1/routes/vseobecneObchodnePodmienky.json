@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "fe174a76-9835-4488-8450-922ef1c2e730",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "vseobecne_obchodne_podmienky__c",
+  "id" : "5537ccc9-8070-4b6f-9e05-190492f129f6",
+  "label" : "Vseobecne Obchodne Podmienky",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-vseobecne-obchodne-podmienky",
+  "type" : "route",
+  "urlPrefix" : "vseobecne-obchodne-podmienky"
+}

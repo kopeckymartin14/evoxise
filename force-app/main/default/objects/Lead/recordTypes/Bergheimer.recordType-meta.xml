@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bergheimer</fullName>
+    <active>true</active>
+    <businessProcess>Bergheimer</businessProcess>
+    <description>Requests from the Bergheimer public site Kontakt form.</description>
+    <label>Bergheimer</label>
+</RecordType>

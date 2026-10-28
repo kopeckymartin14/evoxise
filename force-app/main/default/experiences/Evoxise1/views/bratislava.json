@@ -1,0 +1,165 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "f991bfd8-b072-43b9-ba43-361c07911ba0",
+  "label" : "Bratislava",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "8eba7b48-382f-49a8-b6f4-5ef5677226f5",
+          "columns" : [ {
+            "UUID" : "0cd247ec-6d1b-48e3-a936-9dd731618352",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "8eba7b48-382f-49a8-b6f4-5ef5677226f5",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "headlineLine1" : "Bratislava",
+            "headlineLine2" : "ARX čoskoro",
+            "headlineLine3" : "Výsledky, ktoré uvidíš",
+            "manifestoOpeningText" : "Otvárame v Bratislave. Zaregistruj sa a získaj zvýhodnenú cenu — dostupnú len pred verejným otvorením",
+            "manifestoText" : "Evoxise nie je fitko. Je to tréning, ktorý zmení to, ako sa cítiš, ako vyzeráš — a každú zmenu zaznamenáva v číslach.",
+            "showManifesto" : true,
+            "videoResource" : "videoBanner",
+            "videoResourceMobile" : "videoBannerMobile",
+            "videoUrl" : ""
+          },
+          "componentName" : "c:videoBanner",
+          "id" : "2ed6733a-082a-4440-bbe2-3fd4db3f080e",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "headerText" : "Ako ti pomôžeme?",
+            "position" : "bottom-right",
+            "welcomeMessage" : ""
+          },
+          "componentName" : "c:evoxiseAiChat",
+          "id" : "3087fb52-b546-4ad6-b978-c601abcc9eaf",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "locationText" : "Bratislava · Otvára sa Jeseň 2026",
+            "primaryCtaLabel" : "Získať prioritný prístup",
+            "videoDuration" : "2:14",
+            "videoLabel" : "ARX Alpha · Live demo",
+            "waitlistUrl" : "/s/bratislava-waitlist"
+          },
+          "componentName" : "c:homePageARXIntroBratislava",
+          "id" : "d0bbf3b5-e031-4411-b5de-feff3d40fbe8",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "9ac046e1-ff69-43b6-ae59-99126149a93b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageTestimonials",
+          "id" : "cb030a23-eb8b-4451-8968-0b5098d1811e",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageARXvsCompetition",
+          "id" : "3face1f1-1e45-43f1-ad16-1969c4cfc701",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageWaitlistStrip",
+          "id" : "c184c99c-2d8d-430a-b890-0df16e335be7",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:trainingOptionsBratislava",
+          "id" : "3fb7e4c9-c5fe-4af0-8e7c-dc112dfa039d",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageForWho",
+          "id" : "cde5e20b-75e6-4f98-a9a6-edcf6ed37cc5",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageReels",
+          "id" : "ddd574f8-fca8-4761-b483-97b2e440c63d",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageWaitlistStrip",
+          "id" : "8cf74511-4ac8-446a-92ea-d14fe17981b4",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageFooter",
+          "id" : "0c6063d1-f172-4d8e-9b16-9e95edad5996",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "0cd247ec-6d1b-48e3-a936-9dd731618352",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "32e95044-8e4a-44f8-8ee7-9e58724e1f82",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<link rel=\"canonical\" href=\"https://www.evoxise.sk/s/bratislava\">\n<meta name=\"robots\" content=\"index,follow\">\n<meta name=\"keywords\" content=\"evoxise bratislava, arx tréning bratislava, arx trening bratislava, fitness štúdio bratislava, fitness studio bratislava, arx bratislava, biohacking bratislava, moderné fitness bratislava, moderne fitness bratislava, osobný tréner bratislava, osobny trener bratislava, silový tréning bratislava, silovy trening bratislava, evoxise waitlist, arx machine bratislava\">\n<meta name=\"author\" content=\"EVOXISE Studio\">\n<meta property=\"og:title\" content=\"EVOXISE Bratislava — ARX tréning a biohacking štúdio | Otvára Január 2027\">\n<meta property=\"og:description\" content=\"Evoxise Bratislava otvára jeseň 2026. Prvé ARX biohacking štúdio v BA. Zaregistruj sa na waitlist — Founding Member cena pre prvých 30.\">\n<meta property=\"og:url\" content=\"https://www.evoxise.sk/s/bratislava\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<meta property=\"og:locale\" content=\"sk_SK\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"EVOXISE Bratislava — ARX tréning | Otvára Január 2027\">\n<meta name=\"twitter:description\" content=\"Prvé EVOXISE štúdio v Bratislave. ARX tréning a biohacking. Zaregistruj sa na waitlist.\">\n<meta name=\"twitter:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"ExerciseGym\",\"name\":\"EVOXISE Bratislava\",\"description\":\"Prvé EVOXISE štúdio v Bratislave. ARX tréning, biohacking a merateľné výsledky. Otvára Január 2027.\",\"url\":\"https://www.evoxise.sk/s/bratislava\",\"sameAs\":[\"https://www.evoxise.sk\",\"https://www.instagram.com/evoxisepezinok\"],\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Bratislava\",\"addressCountry\":\"SK\"},\"openingHours\":\"Január 2027\",\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"EVOXISE\",\"url\":\"https://www.evoxise.sk\"}}</script>",
+        "description" : "Evoxise Bratislava otvárame v januári 2027. Prvé ARX biohacking štúdio v BA. Zaregistruj sa na waitlist — Founding Member cena pre prvých 30.",
+        "title" : "EVOXISE Bratislava — ARX tréning a biohacking štúdio | Otvárame Január 2027"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "bd2bc69b-6ac2-428f-8558-ec001b6f3c16",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7bb07d7c-56b3-4033-85ec-4ce81f192ab1",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-bratislava"
+}

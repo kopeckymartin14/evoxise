@@ -1,0 +1,95 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "baa72f1c-29aa-40d4-b5d2-52b785f2757d",
+  "label" : "Interview",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "7b1b6926-17e5-4ad4-85c5-d78b417c056f",
+          "columns" : [ {
+            "UUID" : "bf359532-4592-47f4-802c-f407fc30891c",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "107b894c-5a2d-4cc8-bc42-f10cec28c064",
+            "columnKey" : "b5ceb",
+            "columnName" : "Column 2",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "c85d5b3f-65e1-4096-add3-7866be85fade",
+            "columnKey" : "5032a",
+            "columnName" : "Column 3",
+            "columnWidth" : "4",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "7b1b6926-17e5-4ad4-85c5-d78b417c056f",
+      "regions" : [ {
+        "id" : "bf359532-4592-47f4-802c-f407fc30891c",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "",
+            "flowName" : "AI_Studio_Interview_Log"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "c57b6eb1-0957-4637-99a3-b8b1cef41923",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "107b894c-5a2d-4cc8-bc42-f10cec28c064",
+        "regionLabel" : "Column 2",
+        "regionName" : "b5ceb",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "c85d5b3f-65e1-4096-add3-7866be85fade",
+        "regionLabel" : "Column 3",
+        "regionName" : "5032a",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8db3a015-ff82-47fb-8f05-55328b0f099e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Interview"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "d9c588e5-11cd-440a-9b1e-33da47355f30",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "58f8bac0-664a-4131-980a-b7c9a7d3a538",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-interview"
+}

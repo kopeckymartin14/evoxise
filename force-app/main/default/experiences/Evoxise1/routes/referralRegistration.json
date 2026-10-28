@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "bce70fa2-cd5a-40f3-9503-4979adfdac84",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "referralregistration__c",
+  "id" : "44cc928e-4e65-4c11-b61a-9f0c6e73dbd6",
+  "label" : "referral-registration",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-referral-registration",
+  "type" : "route",
+  "urlPrefix" : "referral-registration"
+}

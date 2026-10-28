@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "0fe374a4-fdce-49aa-8ab2-d065e325fa84",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "Blog__c",
+  "id" : "6f17b2e2-5c63-4f44-92a9-862093bed546",
+  "label" : "Blogy",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-blogs-evoxise",
+  "type" : "route",
+  "urlPrefix" : "blogs-evoxise"
+}

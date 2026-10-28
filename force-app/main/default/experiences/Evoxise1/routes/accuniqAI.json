@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "314b9f6d-67a6-4d0f-9d8c-fb4da190eb8b",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "accuniq_ai__c",
+  "id" : "3c594771-ff51-4c2d-8925-3c1e63104443",
+  "label" : "Accuniq AI",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-accuniq-ai",
+  "type" : "route",
+  "urlPrefix" : "accuniq-ai"
+}

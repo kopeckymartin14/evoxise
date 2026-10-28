@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evoxise</fullName>
+    <active>true</active>
+    <businessProcess>Evoxise</businessProcess>
+    <description>Evoxise leads (Evoxise community, scheduler, waitlists, manual entry).</description>
+    <label>Evoxise</label>
+</RecordType>

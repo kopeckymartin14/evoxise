@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "6e147c5f-b6c1-4c58-a499-df770366b9df",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "prvytreningzdarma__c",
+  "id" : "e9be8fac-643d-4024-bdca-68d9c0c60b38",
+  "label" : "Prvý Tréning za Polovicu",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-prvy-trening-zdarma",
+  "type" : "route",
+  "urlPrefix" : "prvy-trening-za-polovicu"
+}

@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "7d4ed09c-3341-4263-b46a-aa0c94768268",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "evoxise_merch__c",
+  "id" : "458c44ba-585e-4466-9da3-db558392829d",
+  "label" : "Evoxise Merch",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-evoxise-merch",
+  "type" : "route",
+  "urlPrefix" : "evoxise-merch"
+}

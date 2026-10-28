@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "655d4e18-9d0c-493e-bedb-2a5487f13ec4",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "chcem_skutocnu_zmenu__c",
+  "id" : "c765cad7-e876-4f51-8b80-feacdd805fa3",
+  "label" : "Chcem Skutocnu Zmenu",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-chcem-skutocnu-zmenu",
+  "type" : "route",
+  "urlPrefix" : "chcem-skutocnu-zmenu"
+}

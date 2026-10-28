@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "32aa0597-3416-4db4-bc1d-fc4db3d0591a",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "arxkruhac__c",
+  "id" : "b6198e2a-5cef-46fa-b32b-3195c42e77f3",
+  "label" : "ARX Kruhac",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-arx-kruhac",
+  "type" : "route",
+  "urlPrefix" : "arx-kruhac"
+}

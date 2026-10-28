@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "a5e0f220-7f56-4a6f-b8a3-9092a88255e9",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "trainerzone__c",
+  "id" : "2b93dd60-53be-4fef-bc7b-8ebd5ef3f49c",
+  "label" : "Trainer Zone",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-trainer-zone",
+  "type" : "route",
+  "urlPrefix" : "trainer-zone"
+}

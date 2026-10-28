@@ -1,0 +1,159 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "0fcfe95c-c56f-44dd-88d7-5a8363e31c74",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "manifestoOpeningText" : "Otvárame v Bratislave. Prihlás sa na waitlist a získaj skorý prístup — skôr ako ostatní.",
+        "manifestoText" : "Evoxise nie je fitko. Je to tréning, ktorý zmení to, ako sa cítiš, ako vyzeráš — a každú zmenu zaznamenáva v číslach.",
+        "showManifesto" : true,
+        "videoResource" : "videoBanner",
+        "videoResourceMobile" : "videoBannerMobile",
+        "videoUrl" : "x-finityconsultingsro--dev9.sandbox.my.site.com/sfsites/c/cms/delivery/media/MC2K6UIB4GWJCFLLKH4LSGCNYGGM"
+      },
+      "componentName" : "c:videoBanner",
+      "id" : "5b72ade7-c48e-4e8a-bff3-b0b5d6771366",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "70aa6ba4-f5ae-4dbc-a4fa-fd89effabd05",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "bannerSubtitle" : "8 × 800 m · 8 disciplín ·",
+        "bannerSubtitleAccent" : "Jeden cieľ.",
+        "bannerTitle" : "Eight Challenge",
+        "ctaLabel" : "Zisti viac",
+        "eventDate" : "2027-05-15T09:00:00+02:00",
+        "eventDateLabel" : "15. 5. 2027",
+        "eventEdition" : "2. ročník",
+        "eventLocation" : "Pezinok",
+        "offerDeadline" : "202ý-01-31",
+        "offerLabel" : "31. januára",
+        "offerText" : "Zvýhodnené štartovné do {date}",
+        "targetUrl" : "/s/8-challenge"
+      },
+      "componentName" : "c:eightChallengeBanner",
+      "id" : "c906001d-395d-4ff6-9b62-0cb980b0d4fe",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "locationText" : "Pezinok · Bratislava",
+        "navBratislavaImage" : "",
+        "navBratislavaUrl" : "/s/bratislava",
+        "navPezinokImage" : "",
+        "navPezinokUrl" : "/s/pezinok",
+        "primaryCtaLabel" : "Rezervovať prvý tréning za polovicu",
+        "showBranches" : true,
+        "videoDuration" : "2:14",
+        "videoLabel" : "ARX Alpha · Live demo"
+      },
+      "componentName" : "c:homePageARXIntro",
+      "id" : "b667065c-648f-4f22-aa6d-e1174e72d1d4",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "headerText" : "Ako ti pomôžeme?",
+        "position" : "bottom-right",
+        "welcomeMessage" : ""
+      },
+      "componentName" : "c:evoxiseAiChat",
+      "id" : "05ee4714-52fd-4a59-aea8-c07e92499af2",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageTestimonials",
+      "id" : "2dc76d47-4b8c-466b-90a2-356dc8f18701",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFreeTrainingStrip",
+      "id" : "eda3f571-ffba-4be4-bc7f-697228dd1f8a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageARXvsCompetition",
+      "id" : "cdfeab60-86bf-47ac-9b2d-2a5e7120d87d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageForWho",
+      "id" : "b0e5e42b-c3f2-4434-8f68-9a2257001308",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageReels",
+      "id" : "4fd364b4-53f0-479d-8f2f-09e2cd7ff538",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFreeTrainingStrip",
+      "id" : "d18f3daf-4d5d-4d28-b3cf-d93eaa491897",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "d97a9686-1b54-41c9-8d0f-f84c34aa6135",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2adb2d6b-031a-4059-99b2-a2a276f31bd4",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "af5fd2fa-67c8-450c-866a-a77b286ec2b6",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "dd80a88e-5f91-4a82-9f09-f1e68fee8034",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<link rel=\"canonical\" href=\"https://www.evoxise.sk/s/\">\n<meta name=\"robots\" content=\"index,follow\">\n<meta name=\"keywords\" content=\"evoxise, evoxise pezinok, arx tréning, arx trening, arx fitness, arx machine slovensko, arx cvičenie, arx cvicenie, fitness štúdio Pezinok, fitness studio Pezinok, osobný tréner Pezinok, osobny trener Pezinok, biohacking fitness, silový tréning, silovy trening, efektívny tréning, efektivny trening, tréning pre zaneprázdnených, trening pre zaneprazdnenych, merateľné výsledky, meratelne vysledky, body composition, body audit, accuniq diagnostika, fitness Bratislava, arx tréning Bratislava, arx trening Bratislava, moderné fitness štúdio, moderne fitness studio\">\n<meta name=\"author\" content=\"EVOXISE Studio Pezinok\">\n<meta property=\"og:title\" content=\"EVOXISE — Fitness, ARX tréning a biohacking | Pezinok | Bratislava\">\n<meta property=\"og:description\" content=\"Evoxise — biohacking štúdio s ARX tréningom v Pezinku a čoskoro v Bratislave. 1 tréning týždenne nahradí 3 v klasickom fitku. Výsledky merané vedou.\">\n<meta property=\"og:url\" content=\"https://www.evoxise.sk/s/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<meta property=\"og:locale\" content=\"sk_SK\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"EVOXISE — Fitness, ARX tréning a biohacking\">\n<meta name=\"twitter:description\" content=\"Moderné fitness štúdio s ARX technológiou. Merateľné výsledky, Pezinok &amp; Bratislava.\">\n<meta name=\"twitter:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"ExerciseGym\",\"name\":\"EVOXISE Studio Pezinok, Bratislava\",\"description\":\"Moderné fitness štúdio s ARX technológiou. Merateľné výsledky, biohacking tréning, Pezinok.\",\"url\":\"https://www.evoxise.sk\",\"telephone\":\"+421944609553\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Hrnčiarska 2/B\",\"addressLocality\":\"Pezinok\",\"postalCode\":\"902 01\",\"addressCountry\":\"SK\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":48.2913,\"longitude\":17.2681},\"openingHoursSpecification\":[{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"],\"opens\":\"07:00\",\"closes\":\"20:00\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":[\"Saturday\"],\"opens\":\"09:00\",\"closes\":\"14:00\"}],\"sameAs\":[\"https://www.instagram.com/evoxisearx\"]}</script>",
+        "description" : "Evoxise — biohacking štúdio s ARX tréningom v Pezinku a čoskoro v Bratislave. 1 tréning týždenne nahradí 3 v klasickom fitku. Výsledky merané vedou.",
+        "title" : "EVOXISE — Fitness, ARX tréning a biohacking | Pezinok | Bratislava"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "2ee19845-110a-4608-a916-7b5372e105e9",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7c899b69-dafa-45c9-87b9-7b036f0ec060",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "dc6f8b93-e83b-4e18-9abe-eba71b8e279b",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "prevadzkovy_poriadok__c",
+  "id" : "d3798379-f2c3-41e6-85b3-832a5242e92e",
+  "label" : "Prevadzkovy Poriadok",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-prevadzkovy-poriadok",
+  "type" : "route",
+  "urlPrefix" : "prevadzkovy-poriadok"
+}

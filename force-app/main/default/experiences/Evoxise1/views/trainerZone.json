@@ -1,0 +1,99 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "a5e0f220-7f56-4a6f-b8a3-9092a88255e9",
+  "label" : "Trainer Zone",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "418b23bb-337b-4ea4-90c3-2b7d56957128",
+          "columns" : [ {
+            "UUID" : "e50ad0d9-6477-4027-9750-9a1b3915cf84",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "418b23bb-337b-4ea4-90c3-2b7d56957128",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "c:heroBannerX",
+          "id" : "86e9e838-4493-4ebd-bc0c-90a84f8ca838",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "flowArguments" : "[{\"label\":\"token\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!token}\"}]",
+            "flowName" : "SFSCH_Internal_Landing_Flow"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "86aa293e-217f-4bfd-8de0-008f11afea0f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:timeTableTrainer",
+          "id" : "71dd06f4-ab0e-4bc6-bc8c-b133b8a736ee",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "22ec6ccd-ccc2-482a-96b3-f08c7a4f0d67",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageFooter",
+          "id" : "d966a920-55d0-4986-89c6-eb3f0dec5675",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "e50ad0d9-6477-4027-9750-9a1b3915cf84",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "17319bf7-dae2-46e7-bba1-ce87c5e2e79c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Trainer Zone"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "7471af3e-6720-45ca-bcf5-e588412d6c28",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0b2621c6-5346-448a-b4ec-103ca37e83f6",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-trainer-zone"
+}

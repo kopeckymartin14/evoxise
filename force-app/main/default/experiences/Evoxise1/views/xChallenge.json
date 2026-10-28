@@ -1,0 +1,69 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "71cbdbf6-1a27-4297-8524-0dc17283ac67",
+  "label" : "X-Challenge",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:heroBannerX",
+      "id" : "1900dac6-8bbd-48da-9c6a-a420bbf2c684",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "ff4e855a-ac86-4918-ab32-7f68a8615eff",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4866fc06-b6e4-400e-bfdd-cf27864ce572",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:challengeTable",
+      "id" : "e465e9a2-e1de-4428-8aa6-e1f28cb89b0f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "59888878-f132-4b57-b38b-7f996b905bc5",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "cf822767-2c38-46f1-be7d-b0a46ab57f21",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fcabb1be-31ac-4fc6-af1c-6a7e5cfb6c2b",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<meta name=\"robots\" content=\"noindex,nofollow\">\r\n<meta name=\"googlebot\" content=\"noindex,nofollow\">",
+        "description" : "",
+        "title" : "X-Challenge"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "e72d0246-aaa0-4f73-aa61-bf863bf94078",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "320df171-ded4-4a9e-86e0-b26235269470",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-x-challenge"
+}

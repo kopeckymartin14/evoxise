@@ -1,0 +1,103 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "655d4e18-9d0c-493e-bedb-2a5487f13ec4",
+  "label" : "Chcem Skutocnu Zmenu",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "eabc1cec-8930-4dc3-bb96-8e125e41e08b",
+          "columns" : [ {
+            "UUID" : "b6dd91bc-cb98-40b8-9dfa-eaf22295b021",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "eabc1cec-8930-4dc3-bb96-8e125e41e08b",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "c:accuniqARXProduct",
+          "id" : "31f89f02-5d01-46db-b801-f48ce44d8cf4",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageARX",
+          "id" : "258f2770-0a90-4646-8071-fca5cfefd3d3",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:accuniqDiagnostic",
+          "id" : "75b26d71-9873-49cf-a4c0-dc84536b2a90",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "40fb1f2d-b4a9-410d-92eb-9e083cb68949",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "301d14af-ea35-440f-a310-282a794f0758",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageFooter",
+          "id" : "bbb2ff25-8542-4839-935e-e597d2049759",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "b6dd91bc-cb98-40b8-9dfa-eaf22295b021",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "1196c36c-7cfe-4fc2-b520-eb88fad72dc5",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<meta name=\"robots\" content=\"noindex,nofollow\">\r\n<meta name=\"googlebot\" content=\"noindex,nofollow\">",
+        "description" : "",
+        "title" : "Chcem Skutocnu Zmenu"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "feffaf1d-7eaa-4ce6-8447-822e827eefa0",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b1ce829f-63b6-4f1a-93b5-bc923282e43b",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-chcem-skutocnu-zmenu"
+}

@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "39ec261c-e384-40c7-88a8-a5afbe07fafa",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "Spartan_Komarno__c",
+  "id" : "d2ae0ce2-4f6d-4b8e-b37c-f3a13f3d9980",
+  "label" : "Spartan Komarno",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-spartan-komarno",
+  "type" : "route",
+  "urlPrefix" : "spartan-komarno"
+}

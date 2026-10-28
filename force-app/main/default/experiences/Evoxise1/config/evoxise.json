@@ -1,0 +1,78 @@
+{
+  "forgotPasswordRouteId" : "e7fbc03a-3d36-4ba1-be25-89d2fd24b817",
+  "isAvailableToGuests" : true,
+  "isFilteredComponentsView" : false,
+  "isProgressiveRenderingEnabled" : false,
+  "loginAppPageId" : "347e2955-eab6-429b-813d-ee7cfc08aebc",
+  "mainAppPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "preferredDomain" : "www.evoxise.sk",
+  "selfRegistrationRouteId" : "efe82a18-0e6c-48ab-9c27-2507508417cd",
+  "trustedSitesForScript" : [ {
+    "id" : "03d2f483-5654-44a8-9d20-299f692f5386",
+    "isActive" : true,
+    "trustedSiteName" : "metaJS",
+    "trustedSiteUrl" : "https://connect.facebook.net/en_US/fbevents.js",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "25e1f646-81ad-4f13-bd3a-10db33ced40f",
+    "isActive" : true,
+    "trustedSiteName" : "connect.facebook.net",
+    "trustedSiteUrl" : "https://connect.facebook.net/signals/config/1622570835343070",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "666d8a10-7136-4124-ab68-d9c01d42d2ff",
+    "isActive" : true,
+    "trustedSiteName" : "connect.facebook.net1",
+    "trustedSiteUrl" : "https://connect.facebook.net/signals/config/1049470799699135",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "750ec813-d883-4f9c-b990-02e214a5570e",
+    "isActive" : true,
+    "trustedSiteName" : "GoogleAnalytics",
+    "trustedSiteUrl" : "https://www.google-analytics.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "27a61830-0db9-4f33-9925-3998a3ddc84e",
+    "isActive" : true,
+    "trustedSiteName" : "GoogleAnalyticsAdwords",
+    "trustedSiteUrl" : "https://stats.g.doubleclick.net",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "c9fbfc26-4a49-461a-ad39-ca3ed280eb4e",
+    "isActive" : true,
+    "trustedSiteName" : "GoogleTagManager",
+    "trustedSiteUrl" : "https://www.googletagmanager.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "3378dfa0-f500-4056-b5ac-9ce06598671a",
+    "isActive" : true,
+    "trustedSiteName" : "GoogleTagManagerDebug",
+    "trustedSiteUrl" : "https://tagmanager.google.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "e0c5c7b0-7a23-45e5-a51f-c9a69903651b",
+    "isActive" : true,
+    "trustedSiteName" : "Region 1 Analytics Google",
+    "trustedSiteUrl" : "https://region1.analytics.google.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "7a0770e9-2900-463f-9b01-f7a92db4c7a4",
+    "isActive" : true,
+    "trustedSiteName" : "www.googletagmanager.com",
+    "trustedSiteUrl" : "https://www.googletagmanager.com/gtag/js",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "4d0bbc54-b0d4-4975-90f2-2a19d25e3f6e",
+    "isActive" : true,
+    "trustedSiteName" : "fb",
+    "trustedSiteUrl" : "https://connect.facebook.net",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "95240841-504f-4a62-aace-2c123e99decf",
+    "isActive" : true,
+    "trustedSiteName" : "fb22",
+    "trustedSiteUrl" : "https://connect.facebook.net/signals/config/1647809569547904",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

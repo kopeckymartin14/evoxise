@@ -1,0 +1,129 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "d39a5d5f-ea35-455a-b247-6a39a124dbb8",
+  "label" : "Pezinok",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "813dfffb-64b6-4f94-8981-6ffc0af91dd5",
+          "columns" : [ {
+            "UUID" : "62b1b001-846d-4fab-97d8-91a550fd5b37",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "813dfffb-64b6-4f94-8981-6ffc0af91dd5",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "headlineLine1" : "Pezinok",
+            "headlineLine2" : "Viac Výsledkov.",
+            "headlineLine3" : "Merateľne.",
+            "manifestoOpeningText" : "",
+            "manifestoText" : "",
+            "showManifesto" : false,
+            "videoResource" : "videoBanner",
+            "videoResourceMobile" : "videoBannerMobile",
+            "videoUrl" : ""
+          },
+          "componentName" : "c:videoBanner",
+          "id" : "8feb4121-2a35-4e4c-a4ab-272a01cdeb8f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "headerText" : "Ako ti pomôžeme?",
+            "position" : "bottom-right",
+            "welcomeMessage" : ""
+          },
+          "componentName" : "c:evoxiseAiChat",
+          "id" : "deaa8e65-3ed9-43b1-b493-0c79274e72a7",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "locationText" : "Pezinok · Hrnčiarska 2/B",
+            "primaryCtaLabel" : "Rezervovať prvý tréning za polovicu",
+            "videoDuration" : "2:14",
+            "videoLabel" : "ARX Alpha · Live demo"
+          },
+          "componentName" : "c:homePageARXIntroPezinok",
+          "id" : "3ac609c0-7103-494e-aa19-3f5991be929b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageTrainers",
+          "id" : "8d364239-5103-4763-ae98-9a93e37fd67b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:trainingOptions",
+          "id" : "9b02e2bb-12a6-4768-80d9-3cf83ef17ab8",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "f60b6e8a-08ee-44f0-ba7e-63613070b60f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageFooter",
+          "id" : "2554dad6-986f-434f-8cc5-16d3328ac72a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "62b1b001-846d-4fab-97d8-91a550fd5b37",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0cddcdd4-b17d-46f5-8b22-930b499f605d",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<link rel=\"canonical\" href=\"https://www.evoxise.sk/s/pezinok\">\n<meta name=\"robots\" content=\"index,follow\">\n<meta name=\"keywords\" content=\"evoxise pezinok, arx tréning pezinok, arx trening pezinok, fitness pezinok, fitness štúdio pezinok, fitness studio pezinok, osobný tréner pezinok, osobny trener pezinok, silový tréning pezinok, silovy trening pezinok, biohacking pezinok, arx machine pezinok, efektívny tréning pezinok, efektivny trening pezinok, cvičenie pezinok, cvicenie pezinok, tréning pre ženy pezinok, trening pre zeny pezinok, tréning pre mužov pezinok, trening pre muzov pezinok\">\n<meta name=\"author\" content=\"EVOXISE Studio Pezinok\">\n<meta property=\"og:title\" content=\"EVOXISE Pezinok — ARX tréning a fitness štúdio\">\n<meta property=\"og:description\" content=\"Evoxise Pezinok (Hrnčiarska 2/B) — ARX tréning, osobný tréner, ACCUNIQ diagnostika. 1 ARX tréning = 3 klasické fitká.\">\n<meta property=\"og:url\" content=\"https://www.evoxise.sk/s/pezinok\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<meta property=\"og:locale\" content=\"sk_SK\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"EVOXISE Pezinok — ARX tréning a fitness štúdio\">\n<meta name=\"twitter:description\" content=\"Evoxise Pezinok — ARX tréning, osobný tréner, ACCUNIQ diagnostika. Rezervuj prvý tréning.\">\n<meta name=\"twitter:image\" content=\"https://www.evoxise.sk/resource/evoxise_og\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"@id\":\"https://www.evoxise.sk/s/pezinok\",\"name\":\"EVOXISE Studio Pezinok\",\"description\":\"ARX tréning, biohacking a merateľné výsledky. Fitness štúdio v Pezinku.\",\"url\":\"https://www.evoxise.sk/s/pezinok\",\"telephone\":\"+421944609553\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Hrnčiarska 2/B\",\"addressLocality\":\"Pezinok\",\"postalCode\":\"902 01\",\"addressCountry\":\"SK\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":48.2913,\"longitude\":17.2681},\"openingHoursSpecification\":[{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"],\"opens\":\"07:00\",\"closes\":\"20:00\"},{\"@type\":\"OpeningHoursSpecification\",\"dayOfWeek\":[\"Saturday\"],\"opens\":\"09:00\",\"closes\":\"14:00\"}],\"sameAs\":[\"https://www.instagram.com/evoxisepezinok\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"EVOXISE\",\"url\":\"https://www.evoxise.sk\"}}</script>",
+        "description" : "Evoxise Pezinok (Hrnčiarska 2/B) — ARX tréning, osobný tréner, ACCUNIQ diagnostika. 1 ARX tréning = 3 klasické fitká. Rezervuj prvý tréning.",
+        "title" : "EVOXISE Pezinok — ARX tréning a fitness štúdio"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "6e9c9a83-ebdd-40d7-a343-258337be27df",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "973f3687-0674-4feb-8fdd-f8fddeb5ece2",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-pezinok"
+}

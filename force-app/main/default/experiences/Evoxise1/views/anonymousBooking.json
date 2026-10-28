@@ -1,0 +1,72 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "751b7f55-adfb-422b-93e3-ad10db1a6912",
+  "label" : "anonymous-booking",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:heroBannerX",
+      "id" : "d55c8168-2260-4da4-a732-fa4cef58467f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "98b0532c-2fef-4f49-925b-8cb859a741db",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "flowArguments" : "[{\"label\":\"cancelId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!cancelId}\"},{\"label\":\"modifyId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!modifyId}\"}]",
+        "flowName" : "SFSCH_Anonymous_Booking"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "8ad312b1-234a-43bb-a0b3-b5956efb20b9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "c8ab43cc-e06a-4bd8-93dc-33eacfaf5e5d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9b7b1cc0-451a-4815-bb6f-2de0c938b850",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "82572c70-8f88-409e-a858-3337f160fbe1",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "3e495c87-04ec-43a5-9df3-d5634ca4aa6c",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "anonymous-booking"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "ed217a4d-d0ae-45e9-bdf6-0f3965a58a7e",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "5c48a061-d45e-403c-a2a3-1feffe80b1a4",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-anonymous-booking"
+}

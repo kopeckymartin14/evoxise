@@ -1,0 +1,72 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "2944ede0-d9be-4236-a207-51300fc596c6",
+  "label" : "Register-Group-Training",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:heroBannerX",
+      "id" : "acade055-e176-4c72-b4d0-ad23ad17387c",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "5309cb24-fd04-47cc-ba71-12095c5c2c54",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "53d35e4c-e19e-4cda-87a3-8497858c978e",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "flowArguments" : "[{\"label\":\"action\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!action}\"},{\"label\":\"recordId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!attendeeId}\"}]",
+        "flowName" : "SFSCH_Group_Training_Action"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "f5b8fe33-5e83-4bf1-b562-fa050c4a87b2",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e9d4ba6f-6569-4a26-8d76-0757f2f7fe30",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "e520dec4-01fe-4dbb-902b-045cf2cf27a1",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a10aa8bb-bef3-40d8-b9e4-b152e1651152",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Register-Group-Training"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "a7531b6f-ac22-4875-b16b-4e6b459202d9",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "00acc629-fdbc-473e-bc60-014b504e9766",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-register-group-training"
+}

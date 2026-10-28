@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "d623eb28-a41b-45cb-9e42-76088be736ce",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "clientzone__c",
+  "id" : "3d9a105f-eeba-4286-99ac-9084e76365f8",
+  "label" : "Client Zone",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-client-zone",
+  "type" : "route",
+  "urlPrefix" : "client-zone"
+}

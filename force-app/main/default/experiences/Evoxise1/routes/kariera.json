@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "d0a9c1b5-8674-40d7-bb27-f83b46ff6d3a",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "kariera_evoxise__c",
+  "id" : "f7cc8242-63f4-44cb-a969-6c4fc0ec1dca",
+  "label" : "Kariera",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-kariera-evoxise",
+  "type" : "route",
+  "urlPrefix" : "kariera-evoxise"
+}

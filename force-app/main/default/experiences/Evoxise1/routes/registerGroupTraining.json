@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "2944ede0-d9be-4236-a207-51300fc596c6",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "registerGroupTraining__c",
+  "id" : "b287bf99-a93b-4c82-aa3a-76178fb970a4",
+  "label" : "Register-Group-Training",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-register-group-training",
+  "type" : "route",
+  "urlPrefix" : "register-group-training"
+}

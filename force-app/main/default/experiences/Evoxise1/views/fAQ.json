@@ -1,0 +1,69 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "bd4a427d-d0a3-47ae-9d3b-b17323406fc4",
+  "label" : "FAQ",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:heroBannerX",
+      "id" : "6de3eaa3-beee-4c42-b153-c8d969cc838d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e5a367b1-9fc1-4eab-b3ff-93e5d1ff60be",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFaq",
+      "id" : "41aad5b8-2abc-4218-b044-a472ea43ee05",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "a7ee9632-1c40-4157-95ae-7536e62c178a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2fe62687-99d1-407f-8ea3-a256446121ce",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "410e2b1d-0ab8-4a58-b981-8fc4582066bd",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "1c55f09a-ff69-4881-ab20-17bf9ad58e9d",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<meta name=\"robots\" content=\"noindex,nofollow\">\r\n<meta name=\"googlebot\" content=\"noindex,nofollow\">",
+        "description" : "Objav, ako Ti naše 20/30-minútové tréningy so smart technológiou pomôžu dosiahnuť top výsledky bez zbytočného trávenia hodín v posilke. Evoxise ti prinesie efektívny tréning na mieru!",
+        "title" : "FAQ"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "b110a6ee-b3e1-4d40-a2cc-dbe022ad251d",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "23c9d345-a9cb-47e5-a99d-9277268b206d",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-faq-evoxise"
+}

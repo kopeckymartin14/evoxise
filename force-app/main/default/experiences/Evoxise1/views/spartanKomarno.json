@@ -1,0 +1,111 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "39ec261c-e384-40c7-88a8-a5afbe07fafa",
+  "label" : "Spartan Komarno",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "316d4886-5255-4776-aba0-0256d2aa9061",
+          "columns" : [ {
+            "UUID" : "64fb83c9-88b0-4d06-ac61-57717e6d0656",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "316d4886-5255-4776-aba0-0256d2aa9061",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "headlineLine1" : "SPARTAN KOMÁRNO.",
+            "headlineLine2" : "Accuniq Meranie.",
+            "headlineLine3" : "Pulsio Regenerácia.",
+            "manifestoOpeningText" : "Prvých 30 získa zvýhodnenú cenu a prioritný prístup pred verejným otvorením.",
+            "manifestoText" : "",
+            "showManifesto" : false,
+            "videoUrl" : ""
+          },
+          "componentName" : "c:videoBanner",
+          "id" : "aebab00b-53d9-4e08-9683-78168e937555",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "0d6637be-7dbf-41a3-8ba2-de6fc9f73c70",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "accuniqNewPrice" : "20 €",
+            "accuniqOldPrice" : "30 €",
+            "eventDateText" : "Spartan Race Komárno · 2026",
+            "eventName" : "Spartan Race Komárno",
+            "heroNote" : "Príď sa zmerať a zregenerovať — pred alebo po pretekoch, priamo na mieste.",
+            "imageAlt" : "EVOXISE na Spartan Race Komárno",
+            "locationText" : "Komárno",
+            "navBratislavaUrl" : "/s/bratislava",
+            "navPezinokUrl" : "/s/pezinok",
+            "primaryCtaLabel" : "Registrovať sa na meranie",
+            "pulsioNewPrice" : "20 €",
+            "pulsioOldPrice" : "30 €",
+            "showBranches" : false
+          },
+          "componentName" : "c:homePageSpartanIntro",
+          "id" : "3cf5993e-b88c-4984-8fda-6d9999f35aa6",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageFooter",
+          "id" : "226257eb-e7f8-4275-8399-79f0534d6634",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "64fb83c9-88b0-4d06-ac61-57717e6d0656",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b340b27f-6e73-4c3b-a129-9248ccae2e36",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "Nájdeš nás na Spartan Race Komárno. Profesionálna ACCUNIQ diagnostika tela s AI analýzou a Pulsio regenerácia nôh — pred aj po pretekoch. Zaregistruj sa online.",
+        "title" : "EVOXISE na Spartan Race Komárno — Diagnostika & Regenerácia"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "a2364c9f-8885-4041-b315-90e647fc4eda",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0e8782bb-9a7c-4773-bdf7-6e0c0590f76e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-spartan-komarno"
+}

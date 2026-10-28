@@ -1,0 +1,81 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "32aa0597-3416-4db4-bc1d-fc4db3d0591a",
+  "label" : "ARX Kruhac",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:heroBannerX",
+      "id" : "ff39d7c1-350d-4874-80f9-a0ef2ba7b3c8",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e227b288-9369-45b5-aac6-a1662e90b056",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "490355ce-8593-4798-9c66-f4d740f658ef",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width: 800px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%;\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<td style=\"padding: 20px; font-size: 16px; color: #333; text-align: center;\">\n\n\n                <h1 style=\"text-align: left;\">ARX Skupinový Tréning💥</h1><br>\n\t\t\t<p style=\"text-align: left;\">Kombinácia silového tréningu, funkčného pohybu a tímovej energie v malej skupine len 4 osôb. Tréner sa ti môže venovať naplno a ty zo seba dostaneš maximum. 🔝</p><br/>\n\n\t\t\t<p style=\"text-align: left;\"><strong>Čo ťa čaká?</strong><br/>\n\t\t\t✅ 60 minút intenzívneho tréningu<br/>\n\t\t\t✅ Rozcvička, silovo-funkčné stanovištia s ARX, záverečný strečing<br/>\n\t\t\t✅ Cena: 4 X-tokeny (12 €/osoba)<br/>\n\t\t\t✅ Revolučná ARX technológia pre rýchlejší progres</p><br>\n\n\t\t\t<p style=\"text-align: left;\">➡️ <em>Miesta sú limitované (max. 4 osoby/tréning)</em> – rezervuj si svoje čo najskôr!</p><br>\n\n\t\t\t<p style=\"text-align: left;\">A ak si chceš zacvičiť s kamošmi, dohodneme vám aj vlastný termín – stačí byť štyria! 😉</p>\n\n\t\t\t</td>\n\t\t</tr>\n\t</tbody>\n</table>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "ee550610-5cd9-46fe-b95e-203527410b56",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "flowArguments" : "[{\"label\":\"worktypegroupid\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"group\"}]",
+        "flowName" : "SFSCH_Fast_Reservation_Navigation"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "6acf0c28-d986-4cdf-8ea9-656f110e9e37",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "00b1baf6-3293-4929-84bf-cf18876f9bc7",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "c72a504a-348d-4a82-937a-51f82d4e5d87",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "939d91df-2acf-4baa-a421-f59632dcb1f9",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<meta name=\"robots\" content=\"noindex,nofollow\">\r\n<meta name=\"googlebot\" content=\"noindex,nofollow\">",
+        "description" : "",
+        "title" : "ARX Kruhac"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "9f78b5d1-8145-4251-bd2e-76cf91e3a169",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e6b832c7-0f51-45df-8e41-df4572b14baf",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-arx-kruhac"
+}

@@ -1,0 +1,80 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "6e147c5f-b6c1-4c58-a499-df770366b9df",
+  "label" : "Prvy Trening Zdarma",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageHeader",
+      "id" : "cd3bd69e-43e6-45f7-a40d-6dfea381e7c6",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "12a24f5b-80af-4c51-9969-967c60ffb82c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "headlineLine1" : "Rezervácia",
+        "headlineLine2" : "Len krok ti chýba",
+        "headlineLine3" : "Prvý tréning za POLOVICU",
+        "manifestoOpeningText" : "Prvých 30 získa zvýhodnenú cenu a prioritný prístup pred verejným otvorením.",
+        "manifestoText" : "",
+        "showManifesto" : false,
+        "videoUrl" : ""
+      },
+      "componentName" : "c:videoBanner",
+      "id" : "8bf02f6f-3e74-4e2d-b73a-dcb3ee1010b3",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "flowArguments" : "[{\"label\":\"cancelId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!cancelId}\"},{\"label\":\"leadId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!leadId}\"},{\"label\":\"machineType\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"ARX\"},{\"label\":\"modifyId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!modifyId}\"}]",
+        "flowName" : "SFSCH_EVOXISE_Booking_Selector"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "21835144-399e-427b-8042-5460ed12fe5f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7b13a798-e72b-4546-8ec3-fdc3f54c5be6",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:homePageFooter",
+      "id" : "017fcea0-406e-4499-a623-f1e2612bf865",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f5205e06-a965-46ff-9567-89dc7efb1c96",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<meta name=\"robots\" content=\"noindex,nofollow\">\r\n<meta name=\"googlebot\" content=\"noindex,nofollow\">",
+        "description" : "",
+        "title" : "Prvý tréning za polovicu"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "637d4a28-3cc5-4411-b5da-1acf50f6c9a7",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6e668e2f-914e-4c8b-aa2f-f5a633a7038e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-prvy-trening-zdarma"
+}

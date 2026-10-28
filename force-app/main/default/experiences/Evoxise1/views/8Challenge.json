@@ -1,0 +1,95 @@
+{
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "efb81307-c249-4073-9cef-3e8a8d0e9931",
+  "label" : "8 Challenge",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "7006fd3f-9b41-4ffe-ab9d-b6787b619e76",
+          "columns" : [ {
+            "UUID" : "09564433-ae54-4e55-8ef5-e7a9a6d10594",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "7006fd3f-9b41-4ffe-ab9d-b6787b619e76",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "doublesPrice" : "80 €",
+            "doublesPriceOriginal" : "80 €",
+            "earlyBirdDeadline" : "2027-01-31",
+            "earlyBirdLabel" : "31. januára",
+            "eventDate" : "2027-05-15T09:00:00+02:00",
+            "eventLocation" : "Pezinok",
+            "heroVideoResource" : "hyroxHeader",
+            "heroVideoResourceMobile" : "hyroxHeaderMobile",
+            "kidsPrice" : "20",
+            "kidsPriceOriginal" : "15 €",
+            "powerDoublesPrice" : "75 €",
+            "powerDoublesPriceOriginal" : "75 €",
+            "powerSinglePrice" : "50 €",
+            "powerSinglePriceOriginal" : "50 €",
+            "programResource" : "",
+            "propozicieResource" : "",
+            "showHeroVideo" : true,
+            "singlePrice" : "55 €",
+            "singlePriceOriginal" : "55 €"
+          },
+          "componentName" : "c:hyroxLanding",
+          "id" : "b42af809-7120-4bba-9bd4-eb32309a8e46",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:homePageHeader",
+          "id" : "648e68e7-2860-4bcf-b0e3-afa80e1482d3",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "09564433-ae54-4e55-8ef5-e7a9a6d10594",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "d2b0211d-6cca-42f4-a04c-0af47df4d068",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "<link rel=\"canonical\" href=\"https://www.evoxise.sk/s/8-challenge\">\n<meta name=\"robots\" content=\"index,follow\">\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"SportsEvent\",\n  \"name\": \"Eight Challenge 2027\",\n  \"description\": \"2. ročník fitness race v Pezinku — 8 × 800 m behu a 8 disciplín (HALF 8 × 400 m). Kategórie Single, Doubles, HALF a Kids.\",\n  \"startDate\": \"2027-05-15T09:00:00+02:00\",\n  \"endDate\": \"2027-05-15T16:00:00+02:00\",\n  \"eventStatus\": \"https://schema.org/EventScheduled\",\n  \"eventAttendanceMode\": \"https://schema.org/OfflineEventAttendanceMode\",\n  \"location\": {\n    \"@type\": \"Place\",\n    \"name\": \"Pezinok\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n      \"addressLocality\": \"Pezinok\",\n      \"addressCountry\": \"SK\"\n    }\n  },\n  \"organizer\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Evoxise\",\n    \"url\": \"https://www.evoxise.sk\"\n  },\n  \"url\": \"https://www.evoxise.sk/s/8-challenge\",\n  \"offers\": {\n    \"@type\": \"AggregateOffer\",\n    \"priceCurrency\": \"EUR\",\n    \"lowPrice\": \"20\",\n    \"highPrice\": \"119\",\n    \"offerCount\": \"5\",\n    \"availability\": \"https://schema.org/InStock\",\n    \"url\": \"https://www.evoxise.sk/s/8-challenge\"\n  }\n}\n</script>",
+        "description" : "2. ročník Eight Challenge 15. 5. 2027 v Pezinku: 8 × 800 m behu a 8 disciplín, HALF 8 × 400 m aj Kids. Fitness preteky pre každého. Registrácia je otvorená",
+        "title" : "Eight Challenge 2027 Pezinok — 2. ročník fitness race | Evoxise"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "8416b139-5e1f-4d11-94cc-8f6ea92b5ff7",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "855d87e5-edba-4d47-bbed-086ba450ab71",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-8-challenge"
+}
