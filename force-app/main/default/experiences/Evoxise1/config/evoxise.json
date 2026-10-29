@@ -8,6 +8,18 @@
   "preferredDomain" : "www.evoxise.sk",
   "selfRegistrationRouteId" : "efe82a18-0e6c-48ab-9c27-2507508417cd",
   "trustedSitesForScript" : [ {
+    "id" : "e3f2cab3-2f6a-4830-a8aa-3aeeef0557be",
+    "isActive" : true,
+    "trustedSiteName" : "Cookiebot",
+    "trustedSiteUrl" : "https://consent.cookiebot.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "b233583c-bc58-4f07-8e8c-ca3e0971cf88",
+    "isActive" : true,
+    "trustedSiteName" : "CookiebotCDN",
+    "trustedSiteUrl" : "https://consentcdn.cookiebot.com",
+    "type" : "trustedSitesForScripts"
+  }, {
     "id" : "03d2f483-5654-44a8-9d20-299f692f5386",
     "isActive" : true,
     "trustedSiteName" : "metaJS",
