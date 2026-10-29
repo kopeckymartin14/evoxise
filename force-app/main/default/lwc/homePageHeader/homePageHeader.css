@@ -1,0 +1,417 @@
+﻿/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: calc(1400px - 4rem);
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  border-radius: var(--br-400);
+  transition: 0.6s background-color ease-in-out;
+}
+
+.trainingFree {
+  background-color: white;
+  border: 1px solid #000;
+  color: #000 !important;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 50px;
+}
+header.scrolled-to-top {
+  background-color: transparent;
+}
+
+header img {
+  padding-block: 0;
+  height: 40px;
+  max-height: 110px;
+}
+
+header .primary {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+header a {
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+.scrolled-to-top a {
+  color: white;
+}
+
+/* Main Menu Toggle (Mobile) */
+.menu-toggle {
+  padding: 0.5rem 0.5rem;
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: 20px;
+  right: 0.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  background: black;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+  transition: all ease-in-out 200ms;
+}
+
+.hamburger::before {
+  transform: translateY(-7px);
+}
+
+.hamburger::after {
+  transform: translateY(4px);
+}
+
+.scrolled-to-top .hamburger,
+.scrolled-to-top .hamburger::before,
+.scrolled-to-top .hamburger::after {
+  background: white;
+}
+
+[aria-expanded="true"] .hamburger {
+  transform: rotate(45deg);
+}
+
+[aria-expanded="true"] .hamburger::before {
+  opacity: 0;
+}
+
+[aria-expanded="true"] .hamburger::after {
+  transform: translateY(-3px) rotate(-90deg);
+}
+
+/* Desktop Sub-menu Styling */
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  padding: 1rem;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.has-submenu[aria-expanded="true"] .submenu {
+  display: block;
+}
+
+.submenu li a {
+  color: black;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  display: block;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) and (hover: hover) {
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+}
+
+/* Mobile & Tablet Styling */
+
+/* ── Modal (ARX design, header width) ───────────────────────── */
+.hdr-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 10, 61, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 8999;
+}
+.hdr-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none;
+}
+.hdr-modal-box {
+  width: 65%;
+  max-width: 55rem;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  pointer-events: auto;
+}
+.hdr-modal-head {
+  background: #030a3d;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #ccff66;
+  flex-shrink: 0;
+}
+.hdr-modal-head h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.hdr-modal-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  flex-shrink: 0;
+}
+.hdr-modal-close:hover {
+  background: #ccff66;
+  color: #030a3d;
+  border-color: #ccff66;
+}
+.hdr-modal-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  background: #fff;
+  padding: 1.5rem;
+}
+.lwc-modal-content {
+  overflow: visible !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 767px) {
+  /* Full-screen menu under the header. The header (fixed + transform) is the containing
+     block, so the panel is centred on it and sized to the viewport. Opacity + transform
+     in 0.2 s: the old max-height 0 -> 100vh in 0.6 s lagged ~0.3 s on close (dev9). */
+  header nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    width: 100vw;
+    height: calc(100dvh - 88px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 30px -18px rgba(3, 10, 61, 0.35);
+    padding: 8px 0 24px;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-8px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s linear 0.2s;
+  }
+
+  header ul.primary {
+    display: block;
+    margin: 0;
+  }
+
+  header ul.primary > li {
+    border-bottom: 1px solid rgba(3, 10, 61, 0.08);
+  }
+
+  header ul.primary > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 0 24px;
+    font-size: 18px;
+    color: #030a3d;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header nav.nav--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s;
+  }
+
+  .scrolled-to-top a {
+    color: black;
+  }
+
+  /* Mobile sub-menu: an accordion row */
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 0 8px;
+    background: rgba(3, 10, 61, 0.03);
+  }
+
+  .submenu li a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 24px 0 40px;
+    font-weight: 500;
+    color: #030a3d;
+  }
+
+  .has-submenu > a::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    margin: 0 4px 4px 0;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.15s ease;
+  }
+
+  .has-submenu[aria-expanded="true"] > a::after {
+    transform: rotate(-135deg);
+    margin-bottom: -4px;
+  }
+
+  .has-submenu[aria-expanded="true"] .submenu {
+    display: block;
+    animation: submenu-in 0.15s ease both;
+  }
+
+  /* full screen on phones: no strip of the page above the modal */
+  .hdr-modal-overlay {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .hdr-modal-box {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    height: 100%;
+    max-height: none;
+  }
+
+  .hdr-modal-head {
+    padding: 0.875rem 1rem;
+    padding-top: max(0.875rem, env(safe-area-inset-top));
+  }
+
+  .hdr-modal-head h2 {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hdr-modal-close {
+    flex-shrink: 0;
+  }
+
+  .hdr-modal-body {
+    padding: 1rem;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .scrolled-to-top .button-mobile {
+    color: white;
+    margin-right: 35px;
+    font-size: 15px;
+  }
+
+  header .button-mobile {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-right: 35px;
+  }
+
+  .trainingFree {
+    background-color: white;
+    border: 1px solid #000;
+    color: #000 !important;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 50px;
+  }
+}
+
+@keyframes submenu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header nav,
+  header nav.nav--open,
+  .has-submenu > a::after,
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    transition: none;
+  }
+
+  .has-submenu[aria-expanded="true"] .submenu {
+    animation: none;
+  }
+}

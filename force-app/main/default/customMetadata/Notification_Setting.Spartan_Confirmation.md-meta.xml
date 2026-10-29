@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Spartan Confirmation</label>
+    <protected>false</protected>
+    <values>
+        <field>Action__c</field>
+        <value xsi:type="xsd:string">Spartan Confirmation</value>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Admin_Email__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Admin_Notify_Template__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Base_URL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Calendar_Invite__c</field>
+        <value xsi:type="xsd:string">Request</value>
+    </values>
+    <values>
+        <field>Email_Override__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Notify_Admin__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Template_API_Name__c</field>
+        <value xsi:type="xsd:string">Evoxise_Registration_Confirmation</value>
+    </values>
+</CustomMetadata>

@@ -19,6 +19,14 @@
         <value xsi:nil="true"/>
     </values>
     <values>
+        <field>Base_URL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Calendar_Invite__c</field>
+        <value xsi:type="xsd:string">Request</value>
+    </values>
+    <values>
         <field>Email_Override__c</field>
         <value xsi:nil="true"/>
     </values>

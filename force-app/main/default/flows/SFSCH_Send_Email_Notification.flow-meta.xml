@@ -1,39 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Get_Formatted_Date_and_Time</name>
-        <label>Get Formatted Date and Time</label>
-        <locationX>578</locationX>
+        <name>Copy_1_of_Copy_1_of_Copy_1_of_Send_Email_Standard</name>
+        <label>Copy 1 of Copy 1 of Copy 1 of Send Email Standard</label>
+        <locationX>50</locationX>
         <locationY>890</locationY>
-        <actionName>DateTimeFormatter</actionName>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Lead.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>Get_Org_Wide_Address.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Get_Email_Template.Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Lead_UniqueHTMLBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>attachmentId</name>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Lead.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Copy_1_of_Send_Email_Standard</name>
+        <label>Copy 1 of Copy 1 of Send Email Standard</label>
+        <locationX>314</locationX>
+        <locationY>1106</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>RecipientEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>Get_Org_Wide_Address.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Get_Email_Template.Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>UpdatedHTMLBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Copy_2_of_Send_Email_Standard</name>
+        <label>Copy 1 of Copy 2 of Send Email Standard</label>
+        <locationX>1722</locationX>
+        <locationY>998</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_AI_Summary.Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+        </inputParameters>
+        <inputParameters>
+            <name>bccRecipientAddressList</name>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>Get_Org_Wide_Address.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Get_Email_Template.Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>AISummary_HTMLBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Send_Email_Standard</name>
+        <label>Copy 1 of Send Email Standard</label>
+        <locationX>1810</locationX>
+        <locationY>2078</locationY>
+        <actionName>SendEmailWithAttachment</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>Set_Appointment_Related_Values</targetReference>
+            <targetReference>remove_Email_list</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>dateTimes</name>
+            <name>toAddresses</name>
             <value>
-                <elementReference>ServiceAppointment.SchedStartTime</elementReference>
+                <elementReference>RecipientEmail</elementReference>
             </value>
         </inputParameters>
-        <nameSegment>DateTimeFormatter</nameSegment>
-        <offset>0</offset>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
-    </actionCalls>
-    <actionCalls>
-        <name>Send_Admin_Notification</name>
-        <label>Send Admin Notification</label>
-        <locationX>182</locationX>
-        <locationY>1814</locationY>
-        <actionName>SendEmailWithAttachment</actionName>
-        <actionType>apex</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>htmlBody</name>
             <value>
-                <elementReference>Admin_Lead_HTMLBody</elementReference>
+                <elementReference>UpdatedHTMLBody</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -45,30 +215,38 @@
         <inputParameters>
             <name>subject</name>
             <value>
-                <elementReference>Get_Admin_Email_Template.Subject</elementReference>
+                <elementReference>Get_Email_Template.Subject</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>toAddresses</name>
+            <name>calendarAppointmentId</name>
             <value>
-                <elementReference>RecipientEmail</elementReference>
+                <elementReference>ServiceAppointment.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>calendarMethod</name>
+            <value>
+                <elementReference>Get_Email_Template_DeveloperName.Calendar_Invite__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logRelatedToId</name>
+            <value>
+                <elementReference>ServiceAppointment.AccountId</elementReference>
             </value>
         </inputParameters>
         <nameSegment>SendEmailWithAttachment</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
-        <name>Send_Email</name>
-        <label>Send Email</label>
-        <locationX>314</locationX>
-        <locationY>1490</locationY>
+        <name>Copy_2_of_Copy_1_of_Send_Email_Standard</name>
+        <label>Copy 2 of Copy 1 of Send Email Standard</label>
+        <locationX>842</locationX>
+        <locationY>1754</locationY>
         <actionName>SendEmailWithAttachment</actionName>
         <actionType>apex</actionType>
-        <connector>
-            <targetReference>Notify_Admin</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>htmlBody</name>
@@ -89,29 +267,297 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>toAddresses</name>
+            <name>calendarAppointmentId</name>
             <value>
-                <elementReference>RecipientEmail</elementReference>
+                <elementReference>ServiceAppointment.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>calendarMethod</name>
+            <value>
+                <elementReference>Get_Email_Template_DeveloperName.Calendar_Invite__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetObjectId</name>
+            <value>
+                <elementReference>Lead.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveAsActivity</name>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputParameters>
         <nameSegment>SendEmailWithAttachment</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_2_of_Send_Email_Standard</name>
+        <label>Copy 2 of Send Email Standard</label>
+        <locationX>578</locationX>
+        <locationY>1862</locationY>
+        <actionName>SendEmailWithAttachment</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>toAddresses</name>
+            <value>
+                <elementReference>RecipientEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>bccAddresses</name>
+            <value>
+                <elementReference>bccList</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>UpdatedHTMLBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>orgWideEmailAddressId</name>
+            <value>
+                <elementReference>Get_Org_Wide_Address.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subject</name>
+            <value>
+                <elementReference>Get_Email_Template.Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>calendarAppointmentId</name>
+            <value>
+                <elementReference>ServiceAppointment.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>calendarMethod</name>
+            <value>
+                <elementReference>Get_Email_Template_DeveloperName.Calendar_Invite__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetObjectId</name>
+            <value>
+                <elementReference>Lead.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveAsActivity</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>SendEmailWithAttachment</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Get_Formatted_Date_and_Time</name>
+        <label>Get Formatted Date and Time</label>
+        <locationX>1084</locationX>
+        <locationY>1214</locationY>
+        <actionName>DateTimeFormatter</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Is_Lead</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>dateTimes</name>
+            <value>
+                <elementReference>ServiceAppointment.SchedStartTime</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DateTimeFormatter</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Accuniq_Measure</name>
+        <label>Send Email Accuniq Measure</label>
+        <locationX>1986</locationX>
+        <locationY>998</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>measureEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+        </inputParameters>
+        <inputParameters>
+            <name>bccRecipientAddressList</name>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>Get_Org_Wide_Address.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Get_Email_Template.Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Get_Email_Template.HtmlValue</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Standard</name>
+        <label>Send Email Standard</label>
+        <locationX>1546</locationX>
+        <locationY>2186</locationY>
+        <actionName>SendEmailWithAttachment</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>remove_Email_list</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>toAddresses</name>
+            <value>
+                <elementReference>RecipientEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>bccAddresses</name>
+            <value>
+                <elementReference>bccList</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>htmlBody</name>
+            <value>
+                <elementReference>UpdatedHTMLBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>orgWideEmailAddressId</name>
+            <value>
+                <elementReference>Get_Org_Wide_Address.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subject</name>
+            <value>
+                <elementReference>Get_Email_Template.Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>calendarAppointmentId</name>
+            <value>
+                <elementReference>ServiceAppointment.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>calendarMethod</name>
+            <value>
+                <elementReference>Get_Email_Template_DeveloperName.Calendar_Invite__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logRelatedToId</name>
+            <value>
+                <elementReference>ServiceAppointment.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SendEmailWithAttachment</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
     <assignments>
-        <name>Assignment_1</name>
-        <label>Set Lead Related Values</label>
-        <locationX>50</locationX>
-        <locationY>674</locationY>
+        <name>Add_Trainer_Email</name>
+        <label>Add Trainer Email</label>
+        <locationX>1546</locationX>
+        <locationY>2078</locationY>
+        <assignmentItems>
+            <assignToReference>bccList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Service_Resource.Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>bccString</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Service_Resource.Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_Standard</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Emails_to_list</name>
+        <label>Assign Emails to list</label>
+        <locationX>1678</locationX>
+        <locationY>1754</locationY>
         <assignmentItems>
             <assignToReference>RecipientEmail</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Lead.Email</elementReference>
+                <elementReference>Loop_Attendees.Account__r.Email__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>count</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Appointment_Related_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Set_Appointment_Related_Values</name>
+        <label>Copy 1 of Set Appointment Related Values</label>
+        <locationX>710</locationX>
+        <locationY>1538</locationY>
         <assignmentItems>
             <assignToReference>UpdatedHTMLBody</assignToReference>
             <operator>Assign</operator>
@@ -119,29 +565,51 @@
                 <elementReference>Lead_HTMLBody</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Trainer_Email_Availabe</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Add_Trainer_Email</name>
+        <label>Copy 2 of Add Trainer Email</label>
+        <locationX>578</locationX>
+        <locationY>1754</locationY>
         <assignmentItems>
-            <assignToReference>UpdatedAdminHTMLBody</assignToReference>
-            <operator>Assign</operator>
+            <assignToReference>bccList</assignToReference>
+            <operator>Add</operator>
             <value>
-                <elementReference>Admin_Lead_HTMLBody</elementReference>
+                <elementReference>Get_Service_Resource.Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>bccString</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Service_Resource.Email__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Email_Override</targetReference>
+            <targetReference>Copy_2_of_Send_Email_Standard</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>remove_Email_list</name>
+        <label>remove Email list</label>
+        <locationX>1678</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientEmail</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Attendees</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Set_Appointment_Related_Values</name>
         <label>Set Appointment Related Values</label>
-        <locationX>578</locationX>
-        <locationY>998</locationY>
-        <assignmentItems>
-            <assignToReference>RecipientEmail</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>ServiceAppointment.Email</elementReference>
-            </value>
-        </assignmentItems>
+        <locationX>1678</locationX>
+        <locationY>1862</locationY>
         <assignmentItems>
             <assignToReference>UpdatedHTMLBody</assignToReference>
             <operator>Assign</operator>
@@ -150,14 +618,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Email_Override</targetReference>
+            <targetReference>Trainer_Email_Availabe</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Set_Payment_Related_Values</name>
         <label>Set Payment Related Values</label>
         <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>RecipientEmail</assignToReference>
             <operator>Add</operator>
@@ -173,121 +641,93 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Email_Override</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_Recipient</name>
-        <label>Set Recipient</label>
-        <locationX>182</locationX>
-        <locationY>1706</locationY>
-        <assignmentItems>
-            <assignToReference>RecipientEmail</assignToReference>
-            <operator>RemoveAll</operator>
-            <value>
-                <elementReference>RecipientEmail</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>RecipientEmail</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_Email_Template_DeveloperName.Admin_Email__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Send_Admin_Notification</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Set_Recipient_Override</name>
-        <label>Set Recipient Override</label>
-        <locationX>182</locationX>
-        <locationY>1298</locationY>
-        <assignmentItems>
-            <assignToReference>RecipientEmail</assignToReference>
-            <operator>RemoveAll</operator>
-            <value>
-                <elementReference>RecipientEmail</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>RecipientEmail</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_Email_Template_DeveloperName.Email_Override__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Send_Email</targetReference>
+            <targetReference>Copy_1_of_Copy_1_of_Send_Email_Standard</targetReference>
         </connector>
     </assignments>
     <decisions>
-        <name>Email_Override</name>
-        <label>Email Override?</label>
-        <locationX>314</locationX>
-        <locationY>1190</locationY>
+        <name>Copy_1_of_Trainer_Email_Availabe</name>
+        <label>Copy 1 of Trainer Email Availabe</label>
+        <locationX>710</locationX>
+        <locationY>1646</locationY>
         <defaultConnector>
-            <targetReference>Send_Email</targetReference>
+            <targetReference>Copy_2_of_Copy_1_of_Send_Email_Standard</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Yes_override</name>
+            <name>Copy_1_of_Available</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Email_Template_DeveloperName.Email_Override__c</leftValueReference>
+                <leftValueReference>Get_Service_Resource.Email__c</leftValueReference>
                 <operator>IsBlank</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Action</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Exercise Reminder</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Set_Recipient_Override</targetReference>
+                <targetReference>Copy_2_of_Add_Trainer_Email</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>Copy 1 of Available</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Notify_Admin</name>
-        <label>Notify Admin?</label>
-        <locationX>314</locationX>
-        <locationY>1598</locationY>
-        <defaultConnectorLabel>No or missing data</defaultConnectorLabel>
+        <name>Is_Lead</name>
+        <label>Is Lead?</label>
+        <locationX>1084</locationX>
+        <locationY>1322</locationY>
+        <defaultConnector>
+            <targetReference>Get_SA_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Yes_notifyAdmin</name>
+            <name>Lead_dec</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Email_Template_DeveloperName.Notify_Admin__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Admin_Email_Template</leftValueReference>
-                <operator>IsBlank</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Email_Template_DeveloperName.Admin_Email__c</leftValueReference>
+                <leftValueReference>Lead</leftValueReference>
                 <operator>IsBlank</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Set_Recipient</targetReference>
+                <targetReference>Get_Appointment</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>isSandbox</name>
+        <label>isSandbox?</label>
+        <locationX>1766</locationX>
+        <locationY>242</locationY>
+        <defaultConnectorLabel>Sandbox</defaultConnectorLabel>
+        <rules>
+            <name>Production</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Org.IsSandbox</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Org_Wide_Address</targetReference>
+            </connector>
+            <label>Production</label>
         </rules>
     </decisions>
     <decisions>
         <name>Related_SObject</name>
         <label>Related SObject</label>
-        <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationX>1018</locationX>
+        <locationY>782</locationY>
         <defaultConnectorLabel>None</defaultConnectorLabel>
         <rules>
             <name>Template_Missing</name>
@@ -302,7 +742,7 @@
             <label>Template Missing</label>
         </rules>
         <rules>
-            <name>Lead_sobj</name>
+            <name>Lead_path</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>Get_Email_Template.RelatedEntityType</leftValueReference>
@@ -312,7 +752,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assignment_1</targetReference>
+                <targetReference>Copy_1_of_Copy_1_of_Copy_1_of_Send_Email_Standard</targetReference>
             </connector>
             <label>Lead</label>
         </rules>
@@ -342,9 +782,78 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_All_SA_Fields</targetReference>
+                <targetReference>Get_Service_Resource_Trainer</targetReference>
             </connector>
             <label>Service Appointment</label>
+        </rules>
+        <rules>
+            <name>AI_Summary</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Email_Template.RelatedEntityType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accuniq_AI_Summary__c</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_AI_Summary</targetReference>
+            </connector>
+            <label>AI Summary</label>
+        </rules>
+        <rules>
+            <name>Accuniq_Measure</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Email_Template.RelatedEntityType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accuniq_Measures__c</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Measure</targetReference>
+            </connector>
+            <label>Accuniq Measure</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Trainer_Email_Availabe</name>
+        <label>Trainer Email Availabe</label>
+        <locationX>1678</locationX>
+        <locationY>1970</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Send_Email_Standard</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Service_Resource.Email__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Action</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Exercise Reminder</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>count</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Trainer_Email</targetReference>
+            </connector>
+            <label>Available</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -354,6 +863,14 @@
         <expression>SUBSTITUTE(SUBSTITUTE({!Get_Admin_Email_Template.HtmlValue}, &apos;{Lead.Name}&apos;,{!Lead.Name}),&apos;{Lead.Description_Rich__c}&apos;,{!Lead.Description_Rich__c})</expression>
     </formulas>
     <formulas>
+        <name>AISummary_HTMLBody</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+SUBSTITUTE({!Get_Email_Template.HtmlValue},
+&apos;{Name}&apos;,{!Get_AI_Summary.Client_Name__c}),
+&apos;{linkAI}&apos;,{!$Setup.Website_Settings__c.AI_Summary_Base_URL__c} + {!Id})</expression>
+    </formulas>
+    <formulas>
         <name>Appointment_HTMLBody</name>
         <dataType>String</dataType>
         <expression>SUBSTITUTE(
@@ -361,12 +878,13 @@ SUBSTITUTE(
 SUBSTITUTE(
 SUBSTITUTE(
 SUBSTITUTE(
-SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{ServiceAppointment.Start_Date__c}&apos;,{!ServiceAppointment.Start_Date__c}),
+SUBSTITUTE({!Get_Email_Template.HtmlValue},
+&apos;{Name}&apos;,{!ServiceAppointment.Account.Name}),
+&apos;{ServiceAppointment.Start_Date__c}&apos;,{!ServiceAppointment.Start_Date__c}),
 &apos;{ServiceAppointment.Start_Time__c}&apos;,{!Get_Formatted_Date_and_Time.formattedTime}),
 &apos;{ServiceAppointment.DurationInMinutes}&apos;,TEXT({!ServiceAppointment.DurationInMinutes})),
 &apos;{ServiceAppointment.Subject}&apos;,{!ServiceAppointment.Subject}),
-&apos;{Account.Remaining_Credit__c}&apos;,TEXT({!Get_SA_Account.Remaining_Credit__c})),
-&apos;{ServiceAppointment.Spent_Credit__c}&apos;,TEXT({!ServiceAppointment.Spent_Credit__c}))</expression>
+&apos;{cancel}&apos;,&apos;https://www.evoxise.sk/s/anonymous-booking?cancelId=&apos; + {!ServiceAppointment.Id})</expression>
     </formulas>
     <formulas>
         <name>emailFormula</name>
@@ -376,7 +894,36 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{ServiceAppointment.Start_Date_
     <formulas>
         <name>Lead_HTMLBody</name>
         <dataType>String</dataType>
-        <expression>SUBSTITUTE(SUBSTITUTE({!Get_Email_Template.HtmlValue}, &apos;{Lead.Name}&apos;,{!Lead.Name}),&apos;{Lead.Description_Rich__c}&apos;,{!Lead.Description_Rich__c})</expression>
+        <expression>SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE(
+SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{ServiceAppointment.Start_Date__c}&apos;,{!ServiceAppointment.Start_Date__c}),
+&apos;{ServiceAppointment.Start_Time__c}&apos;,{!Get_Formatted_Date_and_Time.formattedTime}),
+&apos;{ServiceAppointment.DurationInMinutes}&apos;,TEXT({!Get_Appointment.DurationInMinutes})),
+&apos;{ServiceAppointment.Subject}&apos;,{!Get_Appointment.Subject}),
+&apos;{LeadName}&apos;,{!Get_Appointment.Anonymous_Participant__c}),
+&apos;{modify}&apos;,&apos;https://www.evoxise.sk/s/anonymous-booking?modifyId=&apos; + {!ServiceAppointment.Id}),
+&apos;{cancel}&apos;,&apos;https://www.evoxise.sk/s/anonymous-booking?cancelId=&apos; +  {!ServiceAppointment.Id}),
+&apos;{leadId}&apos;,{!Lead.Id})</expression>
+    </formulas>
+    <formulas>
+        <name>Lead_UniqueHTMLBody</name>
+        <dataType>String</dataType>
+        <expression>Substitute(
+Substitute(
+Substitute(
+{!Get_Email_Template.HtmlValue},&apos;{LeadName}&apos;,{!Lead.FirstName}),
+&apos;{Name}&apos;,{!Lead.FirstName}),
+&apos;{id}&apos;,{!Lead.Id})</expression>
+    </formulas>
+    <formulas>
+        <name>measureEmail</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Measure.Account__c}),{!Get_Measure.Lead__r.Email},{!Get_Measure.Account__r.Email__c})</expression>
     </formulas>
     <formulas>
         <name>Payment_HTMLBody</name>
@@ -389,6 +936,17 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     </formulas>
     <interviewLabel>SFSCH - Send Email Notification {!$Flow.CurrentDateTime}</interviewLabel>
     <label>SFSCH - Send Email Notification</label>
+    <loops>
+        <name>Loop_Attendees</name>
+        <label>Loop Attendees</label>
+        <locationX>1458</locationX>
+        <locationY>1646</locationY>
+        <collectionReference>Get_Attendees</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Emails_to_list</targetReference>
+        </nextValueConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -411,8 +969,8 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_Admin_Email_Template</name>
         <label>Get Admin Email Template</label>
-        <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationX>1018</locationX>
+        <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Related_SObject</targetReference>
@@ -430,13 +988,34 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_All_SA_Fields</name>
-        <label>Get Relevant SA Fields</label>
-        <locationX>578</locationX>
-        <locationY>674</locationY>
+        <name>Get_AI_Summary</name>
+        <label>Get AI Summary</label>
+        <locationX>1722</locationX>
+        <locationY>890</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_SA_Account</targetReference>
+            <targetReference>Copy_1_of_Copy_2_of_Send_Email_Standard</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Accuniq_AI_Summary__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_All_SA_Fields</name>
+        <label>Get Relevant SA Fields</label>
+        <locationX>1084</locationX>
+        <locationY>1106</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Formatted_Date_and_Time</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -458,12 +1037,55 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
         <queriedFields>SchedStartTime</queriedFields>
         <queriedFields>AccountId</queriedFields>
         <queriedFields>Spent_Credit__c</queriedFields>
+        <queriedFields>Additional_Participant_Email__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Appointment</name>
+        <label>Get Appointment</label>
+        <locationX>710</locationX>
+        <locationY>1430</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Set_Appointment_Related_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ServiceAppointment.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ServiceAppointment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Attendees</name>
+        <label>Get Attendees</label>
+        <locationX>1458</locationX>
+        <locationY>1538</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Attendees</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Appointment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ServiceAppointment.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Service_Appointment_Attendee__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Get_Email_Template</name>
         <label>Get Email Template</label>
-        <locationX>314</locationX>
-        <locationY>350</locationY>
+        <locationX>1018</locationX>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Admin_Email_Template</targetReference>
@@ -483,8 +1105,8 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_Email_Template_DeveloperName</name>
         <label>Get Email Template DeveloperName</label>
-        <locationX>314</locationX>
-        <locationY>242</locationY>
+        <locationX>1018</locationX>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Email_Template</targetReference>
@@ -509,10 +1131,44 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Measure</name>
+        <label>Get Measure</label>
+        <locationX>1986</locationX>
+        <locationY>890</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_Email_Accuniq_Measure</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Accuniq_Measures__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Org</name>
+        <label>Get Org</label>
+        <locationX>1766</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>isSandbox</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Organization</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Org_Wide_Address</name>
         <label>Get Org Wide Address</label>
-        <locationX>314</locationX>
-        <locationY>134</locationY>
+        <locationX>1018</locationX>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Email_Template_DeveloperName</targetReference>
@@ -525,7 +1181,7 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
         <name>Get_Payment_Item</name>
         <label>Get Payment Item</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>890</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Payment_Related_Values</targetReference>
@@ -545,11 +1201,11 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
     <recordLookups>
         <name>Get_SA_Account</name>
         <label>Get SA Account</label>
-        <locationX>578</locationX>
-        <locationY>782</locationY>
+        <locationX>1458</locationX>
+        <locationY>1430</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Formatted_Date_and_Time</targetReference>
+            <targetReference>Get_Attendees</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -563,16 +1219,105 @@ SUBSTITUTE({!Get_Email_Template.HtmlValue},&apos;{Payment.Gift_Code__c}&apos;,{!
         <object>Account</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Service_Resource</name>
+        <label>Get Service Resource</label>
+        <locationX>1084</locationX>
+        <locationY>998</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_All_SA_Fields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Service_Resource_Trainer.ServiceResourceId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ServiceResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Service_Resource_Trainer</name>
+        <label>Get Service Resource Trainer</label>
+        <locationX>1084</locationX>
+        <locationY>890</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Service_Resource</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsPrimaryResource</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ServiceAppointmentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ServiceAppointment.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AssignedResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
-        <locationX>188</locationX>
+        <locationX>1640</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Org_Wide_Address</targetReference>
+            <targetReference>Get_Org</targetReference>
         </connector>
     </start>
     <status>Active</status>
     <variables>
         <name>Action</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>addPartEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>bccList</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>bccString</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>count</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Id</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>

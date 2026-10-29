@@ -5,7 +5,7 @@
     <name>Created Appointment</name>
     <relatedEntityType>ServiceAppointment</relatedEntityType>
     <style>none</style>
-    <subject>Tvoja rezervácia bola úspešne vytvorená</subject>
+    <subject>Rezervácia potvrdená</subject>
     <type>custom</type>
     <uiType>SFX</uiType>
 </EmailTemplate>

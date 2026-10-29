@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+        name="serviceResourceId"
+        type="String"
+        label="Service Resource Id"
+        description="ServiceResource.Id — drives Apex dashboard query"
+      />
+            <property
+        name="trainerName"
+        type="String"
+        label="Trainer Name"
+        description="ServiceResource.Name — shown in welcome bar"
+      />
+            <property
+        name="isAdmin"
+        type="Boolean"
+        label="Je administrátor"
+        description="true when $Profile.Name = 'System Administrator' — unlocks the slot board card"
+        default="false"
+      />
+            <property
+        name="selectedAction"
+        type="String"
+        label="Selected Action"
+        role="outputOnly"
+      />
+            <property
+        name="selectedRecordId"
+        type="String"
+        label="Selected Record Id"
+        role="outputOnly"
+      />
+            <property
+        name="selectedPayerId"
+        type="String"
+        label="Selected Payer Account Id"
+        role="outputOnly"
+      />
+            <property
+        name="selectedSubProductsJson"
+        type="String"
+        label="Selected Sub Products (JSON)"
+        role="outputOnly"
+        description="JSON: [{junctionId, productId, quantity, unitPrice, creditCost}]"
+      />
+            <property
+        name="buyProductsJson"
+        type="String"
+        label="Buy Products JSON"
+        role="outputOnly"
+        description="JSON for BuyProductsAction: [{id, qty, unitPrice}]"
+      />
+            <property
+        name="blackHole"
+        type="Boolean"
+        label="Black Hole (hotovosť)"
+        role="outputOnly"
+        description="true when cash payment chosen — Payment__c.Black_Hole__c"
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

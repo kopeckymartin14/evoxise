@@ -21,8 +21,8 @@
     <assignments>
         <name>hideSuccessBox</name>
         <label>hideSuccessBoxes</label>
-        <locationX>2085</locationX>
-        <locationY>350</locationY>
+        <locationX>2074</locationX>
+        <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>showSuccessBox</assignToReference>
             <operator>Assign</operator>
@@ -42,7 +42,7 @@
         <name>Reset_Token</name>
         <label>Reset Token</label>
         <locationX>710</locationX>
-        <locationY>998</locationY>
+        <locationY>1106</locationY>
         <assignmentItems>
             <assignToReference>token</assignToReference>
             <operator>Assign</operator>
@@ -54,8 +54,8 @@
     <assignments>
         <name>Set_Gift_Message</name>
         <label>Set Gift Message</label>
-        <locationX>1810</locationX>
-        <locationY>674</locationY>
+        <locationX>1282</locationX>
+        <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>giftSuccessMessage</assignToReference>
             <operator>Assign</operator>
@@ -71,7 +71,7 @@
         <name>Set_Redirect_False</name>
         <label>Set Redirect False</label>
         <locationX>864</locationX>
-        <locationY>782</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>redir</assignToReference>
             <operator>Assign</operator>
@@ -84,7 +84,7 @@
         <name>setSuccessBoxTrue</name>
         <label>setSuccessBoxTrue</label>
         <locationX>578</locationX>
-        <locationY>1322</locationY>
+        <locationY>1430</locationY>
         <assignmentItems>
             <assignToReference>showSuccessBox</assignToReference>
             <operator>Assign</operator>
@@ -99,10 +99,10 @@
     <decisions>
         <name>External_Redirect</name>
         <label>External Redirect?</label>
-        <locationX>1133</locationX>
+        <locationX>1128</locationX>
         <locationY>134</locationY>
         <defaultConnector>
-            <targetReference>MenuScreen</targetReference>
+            <targetReference>Get_Waiting_Payment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -131,8 +131,8 @@
     <decisions>
         <name>Follow_Action</name>
         <label>Follow Action</label>
-        <locationX>2085</locationX>
-        <locationY>458</locationY>
+        <locationX>2074</locationX>
+        <locationY>566</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Not_Identified</name>
@@ -150,40 +150,10 @@
             <label>Not Identified</label>
         </rules>
         <rules>
-            <name>Buy_Credit</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>MenuButtons.value</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>creditBuy</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Buy_Credit_Online</targetReference>
-            </connector>
-            <label>Buy Credit</label>
-        </rules>
-        <rules>
-            <name>Buy_Gift</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>MenuButtons3.value</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>giftBuy</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Buy_Credit_Online_Gift</targetReference>
-            </connector>
-            <label>Buy Gift</label>
-        </rules>
-        <rules>
             <name>Claim_Gift</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>MenuButtons3.value</leftValueReference>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>claimGift</stringValue>
@@ -198,7 +168,7 @@
             <name>Create_Reservation</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>MenuButtons.value</leftValueReference>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>createReservation</stringValue>
@@ -213,7 +183,7 @@
             <name>My_Payments</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>MenuButtons2.value</leftValueReference>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>myPayments</stringValue>
@@ -228,7 +198,7 @@
             <name>My_Reservations</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>MenuButtons2.value</leftValueReference>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>myReservations</stringValue>
@@ -243,7 +213,7 @@
             <name>Referral</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>MenuButtons.value</leftValueReference>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Referral</stringValue>
@@ -258,7 +228,7 @@
             <name>Refresh</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>MenuButtons3.value</leftValueReference>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Refresh</stringValue>
@@ -269,12 +239,42 @@
             </connector>
             <label>Refresh</label>
         </rules>
+        <rules>
+            <name>Buy_Missing_Credit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>buyCredit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SFSCH_Buy_Missing_Credits_Flow_1</targetReference>
+            </connector>
+            <label>Buy Missing Credit</label>
+        </rules>
+        <rules>
+            <name>XToken_Admin</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>landingMenu.selectedAction</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>xTokenAdmin</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SFSCH_View_Token_Summary_Subflow</targetReference>
+            </connector>
+            <label>XToken Admin</label>
+        </rules>
     </decisions>
     <decisions>
         <name>From_Redirect</name>
         <label>From Redirect?</label>
         <locationX>864</locationX>
-        <locationY>890</locationY>
+        <locationY>998</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Follow_Action</targetReference>
@@ -315,6 +315,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>paymentToken</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Assign</targetReference>
             </connector>
@@ -325,7 +332,7 @@
         <name>PaymentParamPresent</name>
         <label>PaymentParamPresent?</label>
         <locationX>710</locationX>
-        <locationY>1106</locationY>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>Get_Account_Refresh</targetReference>
         </defaultConnector>
@@ -373,7 +380,7 @@
         <name>Get_Account</name>
         <label>Get Account</label>
         <locationX>864</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Redirect_False</targetReference>
@@ -393,12 +400,12 @@
     <recordLookups>
         <name>Get_Account_Refresh</name>
         <label>Get Account (Refresh)</label>
-        <locationX>2085</locationX>
-        <locationY>1682</locationY>
+        <locationX>2074</locationX>
+        <locationY>1790</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <isGoTo>true</isGoTo>
-            <targetReference>MenuScreen</targetReference>
+            <targetReference>Get_Waiting_Payment</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -429,6 +436,13 @@
                 <elementReference>token</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Login_Token_Validity__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Account</object>
         <queriedFields>Id</queriedFields>
@@ -438,7 +452,7 @@
         <name>Get_Payment_Record_From_Param</name>
         <label>Get Payment Record From Param</label>
         <locationX>578</locationX>
-        <locationY>1214</locationY>
+        <locationY>1322</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>setSuccessBoxTrue</targetReference>
@@ -455,12 +469,47 @@
         <object>Payment__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Waiting_Payment</name>
+        <label>Get Waiting Payment</label>
+        <locationX>2074</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>MenuScreen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Started</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Payment_Method__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Subscription</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Payment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>MenuScreen</name>
         <label>MenuScreen</label>
-        <locationX>2085</locationX>
-        <locationY>242</locationY>
+        <locationX>2074</locationX>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -468,372 +517,34 @@
             <targetReference>hideSuccessBox</targetReference>
         </connector>
         <fields>
-            <name>logo</name>
-            <extensionName>flowruntime:image</extensionName>
+            <name>landingMenu</name>
+            <extensionName>c:landingMenu</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>imageName</name>
+                <name>accountId</name>
                 <value>
-                    <stringValue>logoblack</stringValue>
+                    <elementReference>AccountId</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>horizontalAlignment</name>
+                <name>accountName</name>
                 <value>
-                    <stringValue>center</stringValue>
+                    <elementReference>Get_Account_Refresh.Name</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>imageWidth</name>
+                <name>availableCredit</name>
                 <value>
-                    <stringValue>30%</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>menuScreenHeader</name>
-            <fieldText>&lt;p&gt;{!successBox}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;{!Get_Payment_Record_From_Param.Success_Text__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>showSuccessBox</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>giftSuccessBox</name>
-            <fieldText>&lt;p&gt;{!successBox}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;{!giftSuccessMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>giftSuccessMessage</leftValueReference>
-                    <operator>IsNull</operator>
-                    <rightValue>
-                        <booleanValue>false</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>tokenStatusText</name>
-            <fieldText>&lt;p&gt;{!sectionBox}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;Stav X-Tokenov pre {!Get_Account.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>AccountId</leftValueReference>
-                    <operator>IsNull</operator>
-                    <rightValue>
-                        <booleanValue>false</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>MenuScreen_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>MenuScreen_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>MenuScreen_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>helpToggle</name>
-                    <extensionName>flowruntime:toggle</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Nápoveda</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>messageToggleActive</name>
-                        <value>
-                            <stringValue> </stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>messageToggleInactive</name>
-                        <value>
-                            <stringValue> </stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <fields>
-                    <name>helpText</name>
-                    <fieldText>&lt;p&gt;{!mainHelp}&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>helpToggle.value</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>MenuScreen_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>MenuScreen_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>MenuScreen_Section2_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>MenuScreen_Section2_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>X_Token</name>
-                    <dataType>Number</dataType>
-                    <defaultValue>
-                        <elementReference>Get_Account_Refresh.Availaible_Credit__c</elementReference>
-                    </defaultValue>
-                    <fieldText>X-Tokeny k dispozícii</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
-                    <isDisabled>
-                        <booleanValue>true</booleanValue>
-                    </isDisabled>
-                    <isRequired>false</isRequired>
-                    <scale>0</scale>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>MenuScreen_Section2_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Nak_pen_X_Tokeny_spolu</name>
-                    <dataType>Number</dataType>
-                    <defaultValue>
-                        <elementReference>Get_Account_Refresh.Purchased_Credit__c</elementReference>
-                    </defaultValue>
-                    <fieldText>Nakúpené X-Tokeny spolu</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
-                    <isDisabled>
-                        <booleanValue>true</booleanValue>
-                    </isDisabled>
-                    <isRequired>false</isRequired>
-                    <scale>0</scale>
-                </fields>
-                <fields>
-                    <name>Minut_X_Tokeny</name>
-                    <dataType>Number</dataType>
-                    <defaultValue>
-                        <elementReference>Get_Account_Refresh.Consumed_Credit__c</elementReference>
-                    </defaultValue>
-                    <fieldText>Minuté X-Tokeny</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
-                    <isDisabled>
-                        <booleanValue>true</booleanValue>
-                    </isDisabled>
-                    <isRequired>false</isRequired>
-                    <scale>0</scale>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>MenuScreen_Section2_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>AccountId</leftValueReference>
-                    <operator>IsNull</operator>
-                    <rightValue>
-                        <booleanValue>false</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>MenuButtons</name>
-            <extensionName>c:fsc_flowButtonBar</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>alignment</name>
-                <value>
-                    <stringValue>center</stringValue>
+                    <elementReference>Get_Account_Refresh.Availaible_Credit__c</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>orientation</name>
+                <name>giftSuccessMessage</name>
                 <value>
-                    <stringValue>horizontal</stringValue>
+                    <elementReference>giftSuccessMessage</elementReference>
                 </value>
             </inputParameters>
-            <inputParameters>
-                <name>showLines</name>
-                <value>
-                    <stringValue>neither</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>actionMode</name>
-                <value>
-                    <stringValue>navigation</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>buttons</name>
-                <value>
-                    <stringValue>[{&quot;label&quot;:&quot;Kúpiť X-Tokeny&quot;,&quot;value&quot;:&quot;creditBuy&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand-outline&quot;,&quot;iconName&quot;:&quot;utility:cart&quot;,&quot;index&quot;:0},{&quot;label&quot;:&quot;Rezervácia Termínu&quot;,&quot;value&quot;:&quot;createReservation&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand-outline&quot;,&quot;iconName&quot;:&quot;utility:notebook&quot;,&quot;index&quot;:1},{&quot;label&quot;:&quot;Odporúčanie&quot;,&quot;value&quot;:&quot;Referral&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand-outline&quot;,&quot;iconName&quot;:&quot;utility:engage&quot;,&quot;index&quot;:2}]</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>MenuButtons2</name>
-            <extensionName>c:fsc_flowButtonBar</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>alignment</name>
-                <value>
-                    <stringValue>center</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>orientation</name>
-                <value>
-                    <stringValue>horizontal</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>showLines</name>
-                <value>
-                    <stringValue>neither</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>actionMode</name>
-                <value>
-                    <stringValue>navigation</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>buttons</name>
-                <value>
-                    <stringValue>[{&quot;label&quot;:&quot;Moje Platby&quot;,&quot;value&quot;:&quot;myPayments&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand-outline&quot;,&quot;iconName&quot;:&quot;utility:money&quot;,&quot;index&quot;:0},{&quot;label&quot;:&quot;Moje Rezervácie&quot;,&quot;value&quot;:&quot;myReservations&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand-outline&quot;,&quot;iconName&quot;:&quot;utility:notebook&quot;,&quot;index&quot;:1}]</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>MenuButtons3</name>
-            <extensionName>c:fsc_flowButtonBar</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>alignment</name>
-                <value>
-                    <stringValue>center</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>orientation</name>
-                <value>
-                    <stringValue>horizontal</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>showLines</name>
-                <value>
-                    <stringValue>neither</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>actionMode</name>
-                <value>
-                    <stringValue>navigation</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>buttons</name>
-                <value>
-                    <stringValue>[{&quot;label&quot;:&quot;Kúpiť darček&quot;,&quot;value&quot;:&quot;giftBuy&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand-outline&quot;,&quot;index&quot;:0,&quot;iconName&quot;:&quot;utility:groups&quot;},{&quot;label&quot;:&quot;Mám darčekový kupón&quot;,&quot;value&quot;:&quot;claimGift&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand-outline&quot;,&quot;iconName&quot;:&quot;utility:price_book_entries&quot;,&quot;index&quot;:1},{&quot;label&quot;:&quot;Refresh&quot;,&quot;value&quot;:&quot;Refresh&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;neutral&quot;,&quot;iconName&quot;:&quot;utility:refresh&quot;,&quot;index&quot;:2}]</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -890,7 +601,7 @@
             <inputParameters>
                 <name>maxTime</name>
                 <value>
-                    <stringValue>0:0:4:0</stringValue>
+                    <stringValue>0:0:6:0</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -907,7 +618,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>1007</locationX>
+        <locationX>1002</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>External_Redirect</targetReference>
@@ -915,54 +626,10 @@
     </start>
     <status>Active</status>
     <subflows>
-        <name>Buy_Credit_Online</name>
-        <label>Buy Credit Online</label>
-        <locationX>1282</locationX>
-        <locationY>566</locationY>
-        <connector>
-            <targetReference>Get_Account_Refresh</targetReference>
-        </connector>
-        <flowName>SFSCH_Buy_Credit_Online</flowName>
-        <inputAssignments>
-            <name>Account</name>
-            <value>
-                <elementReference>Get_Account</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>isGift</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </inputAssignments>
-    </subflows>
-    <subflows>
-        <name>Buy_Credit_Online_Gift</name>
-        <label>Buy Credit Online - Gift</label>
-        <locationX>1546</locationX>
-        <locationY>566</locationY>
-        <connector>
-            <targetReference>Get_Account_Refresh</targetReference>
-        </connector>
-        <flowName>SFSCH_Buy_Credit_Online</flowName>
-        <inputAssignments>
-            <name>Account</name>
-            <value>
-                <elementReference>Get_Account</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>isGift</name>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-    </subflows>
-    <subflows>
         <name>Create_Identify_Customer</name>
         <label>Create/Identify Customer</label>
         <locationX>864</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Get_Account</targetReference>
         </connector>
@@ -987,8 +654,8 @@
     <subflows>
         <name>My_Payments_subflow</name>
         <label>My Payments</label>
-        <locationX>2338</locationX>
-        <locationY>566</locationY>
+        <locationX>1810</locationX>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Get_Account_Refresh</targetReference>
         </connector>
@@ -1003,8 +670,8 @@
     <subflows>
         <name>My_Reservations_sub</name>
         <label>My Reservations</label>
-        <locationX>2602</locationX>
-        <locationY>566</locationY>
+        <locationX>2074</locationX>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Get_Account_Refresh</targetReference>
         </connector>
@@ -1019,8 +686,8 @@
     <subflows>
         <name>Referral_Subflow</name>
         <label>Referral Subflow</label>
-        <locationX>2866</locationX>
-        <locationY>566</locationY>
+        <locationX>2338</locationX>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Get_Account_Refresh</targetReference>
         </connector>
@@ -1034,10 +701,33 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
     <subflows>
+        <name>SFSCH_Buy_Missing_Credits_Flow_1</name>
+        <label>SFSCH - Buy Missing Credits Flow 1</label>
+        <locationX>2778</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Get_Account_Refresh</targetReference>
+        </connector>
+        <flowName>SFSCH_Buy_Missing_Credits</flowName>
+        <inputAssignments>
+            <name>Account</name>
+            <value>
+                <elementReference>Get_Account_Refresh</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>isGift</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
         <name>SFSCH_Claim_Gift_Card</name>
         <label>SFSCH - Claim Gift Card</label>
-        <locationX>1810</locationX>
-        <locationY>566</locationY>
+        <locationX>1282</locationX>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Set_Gift_Message</targetReference>
         </connector>
@@ -1053,8 +743,8 @@
     <subflows>
         <name>SFSCH_Create_Reservation_Flow_1</name>
         <label>SFSCH - Create Reservation Flow 1</label>
-        <locationX>2074</locationX>
-        <locationY>566</locationY>
+        <locationX>1546</locationX>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Get_Account_Refresh</targetReference>
         </connector>
@@ -1066,10 +756,26 @@
             </value>
         </inputAssignments>
     </subflows>
+    <subflows>
+        <name>SFSCH_View_Token_Summary_Subflow</name>
+        <label>SFSCH - View Token Summary</label>
+        <locationX>3042</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Get_Account_Refresh</targetReference>
+        </connector>
+        <flowName>SFSCH_View_Token_Summary</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>Get_Account_Refresh.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
     <textTemplates>
         <name>mainHelp</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Vitajte na hlavnej stránke našej klienstkej zóny. Tu nájdeš všetko, čo potrebuješ vedieť a vidieť&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Stav tvojich X-Tokenov&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Kúpiť X-Tokeny&quot;&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; =&amp;gt; Možnosť kúpiť X-token balíčky, s ktorými potom budeš platiť za tréningy. Čím väčší balík kúpiš, tým výhodnejšie&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Rezervácia termínu&quot; &lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;=&amp;gt; jednoduchým spôsobom si rezervuješ termín tréningu&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Odporúčanie&quot;&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-size: 14px;&quot;&gt;Získaj X-Tokeny zadarmo. Tvoje odporúčanie odmeníme. &lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Správa tvojich odporúčaní  a možnosť poslať odporúčanie známemu.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Moje Platby&quot; =&amp;gt; &lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Zoznam tvojich platieb s detailom&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Moje Rezervácie&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&quot; =&amp;gt; správa tvojich existujúcich rezervácii. Potrebuješ zmeniť rezerváciu alebo si byť len istý, kedy máš tréning&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Kúpiť Darček&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&quot; =&amp;gt; Obdaruj svojho blízkeho balíčkom X-Tokenov. Zmeň nielen svoj život&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Mám darčekový kupón&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&quot; =&amp;gt; Dostal si darčekový kupón a chceš si uplatniť X-Tokeny&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Vitajte na hlavnej stránke našej klienstkej zóny. Tu nájdeš všetko, čo potrebuješ vedieť a vidieť&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Stav tvojich X-Tokenov&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;X-Token Administrácia&quot;&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; =&amp;gt; Možnosť kúpiť X-token balíčky, členstvo alebo mesačnú permanentku&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Rezervácia termínu&quot; &lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;=&amp;gt; jednoduchým spôsobom si rezervuješ termín tréningu&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Odporúčanie&quot;&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Získaj X-Tokeny zadarmo. Tvoje odporúčanie odmeníme. &lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Správa tvojich odporúčaní  a možnosť poslať odporúčanie známemu.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Moje Platby&quot; =&amp;gt; &lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Zoznam tvojich platieb s detailom&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Moje Rezervácie&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&quot; =&amp;gt; správa tvojich existujúcich rezervácii. Potrebuješ zmeniť rezerváciu alebo si byť len istý, kedy máš tréning&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Tlačítko &quot;&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Mám darčekový kupón&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&quot; =&amp;gt; Dostal si darčekový kupón a chceš si uplatniť X-Tokeny&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>sectionBox</name>
@@ -1079,7 +785,7 @@
     <textTemplates>
         <name>successBox</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>&lt;div class=&quot;slds-box slds-theme_shade&quot; style=&quot;background-color: green; color: white&quot;&gt;</text>
+        <text>&lt;div class=&quot;slds-box slds-theme_shade&quot; style=&quot;background-color: red; color: white&quot;&gt;</text>
     </textTemplates>
     <variables>
         <name>AccountId</name>

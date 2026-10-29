@@ -1,25 +1,52 @@
 <html>
-<head>
-	<title></title>
-</head>
-<body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto; font-family: Arial, sans-serif;">
-<table border="0" cellpadding="0" cellspacing="0" style="max-width: 800px; margin: 0 auto; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%;">
-	
-		<tr>
-			<td style="text-align: center;"><img alt="final_evoxise white gradient X logo" src="https://x-finityconsultingsro--devsch.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=0159V000004n96K&amp;oid=00D9V000007OkP3&amp;lastMod=1730728843000" style="width: 60%;" title="final_evoxise white gradient X logo" /></td>
-		</tr>
-		<tr>
-			<td style="padding: 20px; font-size: 16px; color: #333; text-align: center;"><span style="font-size:16px;">Ďakujeme, rezervoval si si tréning <strong>{ServiceAppointment.Subject}</strong>&nbsp;dňa&nbsp;<strong>{ServiceAppointment.Start_Date__c}</strong> o <strong>{ServiceAppointment.Start_Time__c}</strong> v trvaní<strong>&nbsp;{ServiceAppointment.DurationInMinutes}</strong> minút<br />
-			<br />
-			Ak budeš mať ďalšie otázky alebo potrebuješ čokoľvek upraviť v rámci tvojej rezervácie, platieb, iného,&nbsp;všetko potrebné nájdeš v&nbsp;klientskej&nbsp;zóne.<br />
-			<br />
-			Tešíme sa na tvoju návštevu.<br />
-			<br />
-			S priateľským pozdravom,<br />
-			<br />
-			Team Evoxise</span></td>
-		</tr>
-	
-</table>
-</body>
+ <head>
+  <title>Potvrdenie rezervácie</title>
+ </head>
+ <body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+  <table border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); width: 100%;">
+   <tbody>
+    <tr>
+     <td style="text-align: center; padding: 30px 20px 20px 20px; border-bottom: 1px solid #f0f0f0;"><img alt="EVOXISE Logo" src="{[devName:final_evoxise_white_gradient_X_logo]}" style="width: 180px; max-width: 50%; height: auto;" /></td>
+    </tr>
+    <tr>
+     <td style="padding: 30px 40px; color: #333333; font-size: 16px; line-height: 1.6; text-align: center;">
+      <h2 style="margin: 0 0 20px 0; font-size: 22px; color: #000000;">Rezervácia potvrdená ✅</h2>
+      <p style="margin: 0 0 25px 0;">Super správa, <strong>{Name}</strong>! Tvoj tréning je úspešne zarezervovaný. Už sa na teba tešíme.</p>
+      <table border="0" cellpadding="0" cellspacing="0" style="background-color: #f8f9fa; border-radius: 6px; margin-bottom: 25px;" width="100%">
+       <tbody>
+        <tr>
+         <td style="padding: 20px; text-align: center;">
+          <div style="font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Kedy</div>
+          <div style="font-size: 20px; font-weight: bold; color: #000; margin-bottom: 5px;">{ServiceAppointment.Start_Date__c}</div>
+          <div style="font-size: 24px; font-weight: bold; color: #000;">{ServiceAppointment.Start_Time__c}</div>
+          <div style="border-top: 1px solid #e0e0e0; margin: 15px 40px;">&#xa0;</div>
+          <div style="font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Tréning</div>
+          <div style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 5px;">{ServiceAppointment.Subject}</div>
+          <div style="font-size: 14px; color: #555;">(Trvanie: {ServiceAppointment.DurationInMinutes} minút)</div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <!--CalendarLinks-->
+      <p style="margin: 0 0 15px 0; font-size: 15px; color: #555;">Všetko potrebné k svojim rezerváciám a platbám nájdeš v klientskej zóne:</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tbody>
+        <tr>
+         <td align="center" style="padding-bottom: 10px;"><a href="https://www.evoxise.sk" style="background-color: #000000; color: #ffffff; display: inline-block; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 15px;">Vstúpiť do Klientskej zóny</a></td>
+        </tr>
+       </tbody>
+      </table>
+      <div style="margin-top: 25px; border-top: 1px dashed #ddd; padding-top: 20px;">
+       <p style="margin: 0 0 5px 0; font-size: 14px; color: #666;">Zmenili sa ti plány?</p>
+       <a href="{cancel}" style="color: #d32f2f; text-decoration: underline; font-size: 14px; font-weight: bold;">Zrušiť túto rezerváciu</a>
+       <p style="margin: 5px 0 0 0; font-size: 12px; color: #999;">(Bezplatné zrušenie je možné najneskôr deň vopred)</p>
+      </div>
+      <p style="margin: 30px 0 0 0; font-weight: bold;">Vidíme sa vo fitku!
+       <br />
+       Team Evoxise</p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
 </html>

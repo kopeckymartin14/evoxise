@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
         <name>Generate_Access_Token</name>
         <label>Generate Access Token</label>
@@ -11,10 +11,15 @@
             <targetReference>Update_Resource</targetReference>
         </connector>
         <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>characterLength</name>
+            <value>
+                <numberValue>32.0</numberValue>
+            </value>
+        </inputParameters>
         <nameSegment>INV_GenerateRegistrationCode</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>navigateEverywhereLFA_Action_1</name>
@@ -42,9 +47,25 @@
         <nameSegment>c:navigateEverywhereLFA</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Set_Code_Invalid</name>
+        <label>Set Code Invalid</label>
+        <locationX>490</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>IsCodeInvalid</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Copy_2_of_Login_Register_Form</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Set_Redirect_back</name>
         <label>Set Redirect back</label>
@@ -82,8 +103,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <isGoTo>true</isGoTo>
-                <targetReference>Copy_2_of_Login_Register_Form</targetReference>
+                <targetReference>Set_Code_Invalid</targetReference>
             </connector>
             <label>Code Valid</label>
         </rules>
@@ -138,25 +158,7 @@
             <label>Found</label>
         </rules>
     </decisions>
-    <dynamicChoiceSets>
-        <name>sourcePicklist</name>
-        <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
-        <picklistField>Source__c</picklistField>
-        <picklistObject>Account</picklistObject>
-    </dynamicChoiceSets>
     <environments>Default</environments>
-    <formulas>
-        <name>greenBox</name>
-        <dataType>String</dataType>
-        <expression>&apos;&lt;div class=&quot;slds-scoped-notification slds-theme_success&quot; role=&quot;status&quot;&gt;&apos;</expression>
-    </formulas>
-    <formulas>
-        <name>redBox</name>
-        <dataType>String</dataType>
-        <expression>&apos;&lt;div class=&quot;slds-scoped-notification slds-theme_error&quot; role=&quot;status&quot;&gt;&apos;</expression>
-    </formulas>
     <formulas>
         <name>redirectURL</name>
         <dataType>String</dataType>
@@ -261,114 +263,35 @@
             <targetReference>Check_Code</targetReference>
         </connector>
         <fields>
-            <name>Copy_2_of_logo</name>
-            <extensionName>flowruntime:image</extensionName>
+            <name>trainerLoginForm_passcode</name>
+            <extensionName>c:trainerLoginForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>imageName</name>
+                <name>mode</name>
                 <value>
-                    <stringValue>logoblack</stringValue>
+                    <stringValue>passcode</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>horizontalAlignment</name>
+                <name>codeInvalid</name>
                 <value>
-                    <stringValue>center</stringValue>
+                    <elementReference>IsCodeInvalid</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>imageWidth</name>
+                <name>lockedMessage</name>
                 <value>
-                    <stringValue>30%</stringValue>
+                    <stringValue>Registrácia je momentálne zamknutá, prebieha finálny testing.</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <outputParameters>
+                <assignToReference>PassCode</assignToReference>
+                <name>value</name>
+            </outputParameters>
         </fields>
-        <fields>
-            <name>Copy_2_of_css1</name>
-            <extensionName>SF_JY:styleOverwrite</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>cssString</name>
-                <value>
-                    <elementReference>css</elementReference>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>dasds</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;Registrácia je momentalne zamknuta, prebieha finalny testing&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Copy_2_of_error</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(255, 0, 0); font-size: 18px;&quot;&gt;Kod nie je spravny&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Code_Valid</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Copy_2_of_Login_Register_Form_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Copy_2_of_Login_Register_Form_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Copy_2_of_Login_Register_Form_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>PassCode</name>
-                    <dataType>String</dataType>
-                    <fieldText>PassCode</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Copy_2_of_Login_Register_Form_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <nextOrFinishButtonLabel>Pokračovať</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
+        <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
@@ -383,113 +306,29 @@
             <targetReference>Get_Service_Resource</targetReference>
         </connector>
         <fields>
-            <name>logo</name>
-            <extensionName>flowruntime:image</extensionName>
+            <name>trainerLoginForm_identifier</name>
+            <extensionName>c:trainerLoginForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>imageName</name>
+                <name>mode</name>
                 <value>
-                    <stringValue>logoblack</stringValue>
+                    <stringValue>identifier</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>horizontalAlignment</name>
+                <name>incorrectIdentifier</name>
                 <value>
-                    <stringValue>center</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>imageWidth</name>
-                <value>
-                    <stringValue>30%</stringValue>
+                    <elementReference>incorrectIdentifier</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <outputParameters>
+                <assignToReference>password</assignToReference>
+                <name>value</name>
+            </outputParameters>
         </fields>
-        <fields>
-            <name>css1</name>
-            <extensionName>SF_JY:styleOverwrite</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>cssString</name>
-                <value>
-                    <elementReference>css</elementReference>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>error</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 18px; color: rgb(255, 0, 0);&quot;&gt;Tvoj Identifikátor nie je správny. Pokiaľ nevieš svoj kód, kontaktuj Juraja alebo Martina&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>incorrectIdentifier</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>sss</name>
-            <fieldText>&lt;p&gt;{!sectionBox}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Zadaj prosím tvoj Identifikátor&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Login_Register_Form_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Login_Register_Form_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>password</name>
-                    <fieldText>Identifikátor</fieldText>
-                    <fieldType>PasswordField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <nextOrFinishButtonLabel>Pokračovať</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
+        <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
@@ -501,35 +340,36 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>Copy_1_of_Copy_2_of_logo</name>
-            <extensionName>flowruntime:image</extensionName>
+            <name>successMessage</name>
+            <extensionName>c:flowMessage</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>imageName</name>
+                <name>variant</name>
                 <value>
-                    <stringValue>logoblack</stringValue>
+                    <stringValue>success</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>horizontalAlignment</name>
+                <name>title</name>
                 <value>
-                    <stringValue>center</stringValue>
+                    <stringValue>Hotovo</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>imageWidth</name>
+                <name>message</name>
                 <value>
-                    <stringValue>50%</stringValue>
+                    <stringValue>Presmerujeme ťa…</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showClose</name>
+                <value>
+                    <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>Copy_1_of_Copy_2_of_error</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 24px; color: rgb(0, 0, 0);&quot;&gt;Toto okno môžeš zavrieť&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>autoTurn</name>
@@ -545,7 +385,6 @@
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
-        <nextOrFinishButtonLabel>Pokračovať</nextOrFinishButtonLabel>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -557,16 +396,6 @@
         </connector>
     </start>
     <status>Active</status>
-    <textTemplates>
-        <name>css</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&amp;lt;link href=&apos;https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&apos; rel=&apos;stylesheet&apos;&amp;gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;.body {&lt;/p&gt;&lt;p&gt;font-family: &apos;Josefin Sans&apos;, arial, sans-serif;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; font-family: monospace; color: var(--webkit-css-property-color,var(--sys-color-token-property-special));&quot;&gt;--lwc-fontFamily&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; font-family: monospace; color: rgb(31, 31, 31);&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;&apos;Josefin Sans&apos;, arial, sans-serif;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;}&lt;/p&gt;</text>
-    </textTemplates>
-    <textTemplates>
-        <name>sectionBox</name>
-        <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>&lt;div class=&quot;slds-box slds-theme_shade slds-theme_alert-texture&quot;&gt;</text>
-    </textTemplates>
     <variables>
         <name>Email_res</name>
         <dataType>String</dataType>
@@ -597,6 +426,30 @@
         <value>
             <booleanValue>false</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>IsCodeInvalid</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>PassCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>password</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>recordId</name>

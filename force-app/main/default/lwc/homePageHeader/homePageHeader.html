@@ -1,0 +1,367 @@
+﻿<template>
+  <div class="scrollContainer" onscroll={handleScroll}>
+    <div class={headerClass}>
+      <header class="scrolled-to-top">
+        <a href="javascript:void(0);" onclick={goToPage}>
+          <img src={logoHeader2} alt="" data-section="Home" />
+        </a>
+        <template if:true={isMobile}>
+          <!-- <a href="javascript:void(0);"  class="trainingFree" data-section="prvytreningzdarma__c" onclick={goToPage}>Prvý tréning zdarma</a> -->
+          <a
+            href="javascript:void(0);"
+            class="trainingFree"
+            data-section="prvytreningzdarma__c"
+            onclick={openFirstTrainingPage}
+            >Rezervácia</a
+          >
+          <!-- <a href="javascript:void(0);"  class="trainingFree" onclick={openGift}>Vianočný Voucher</a> -->
+
+          <!-- <a href="javascript:void(0);" class="button-mobile" data-section="prvytreningzdarma__c" onclick={goToPage}>Prvý tréning zdarma</a> -->
+        </template>
+        <button
+          class="menu-toggle"
+          aria-controls="primary-navigation"
+          aria-expanded={isMenuOpen}
+        >
+          <div class="hamburger"></div>
+        </button>
+        <nav>
+          <ul class="primary" id="primary-navigation">
+            <!-- <li><a href="javascript:void(0);" data-section="home-page" onclick={navigateToSection}> Čoskoro otvárame </a></li> -->
+            <!-- <li><a href="javascript:void(0);" data-section="Home" onclick={goToPage}> Domov </a></li> -->
+            <template if:false={isMobile}>
+              <!-- <li><a href="javascript:void(0);" class="trainingFree" data-section="prvytreningzdarma__c" onclick={goToPage}>Prvý tréning zdarma</a></li> -->
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  class="trainingFree"
+                  data-section="prvytreningzdarma__c"
+                  onclick={openFirstTrainingPage}
+                  >Rezervácia</a
+                >
+              </li>
+              <!-- <li>
+                <a
+                  href="javascript:void(0);"
+                  class="trainingFree"
+                  onclick={openGift}
+                  >Voucher</a
+                >
+              </li> -->
+            </template>
+            <template if:true={isMobile}>
+              <!-- <li><a href="javascript:void(0);" data-section="prvytreningzdarma__c" onclick={openFirstTrainingPage}>Chcem vyskúšať ARX</a></li> -->
+            </template>
+            <!-- <li><a href="javascript:void(0);" data-section="home-page" onclick={navigateToSection}> Čoskoro otvárame </a></li> -->
+            <!-- <template if:true={showModalOption}> -->
+            <!-- <li><a href="javascript:void(0);" onclick={handleButtonClick}>Voucher</a></li> -->
+            <template if:false={hasAnySession}>
+              <li class="has-submenu" data-id="submenu" onclick={toggleSubmenu}>
+                <a href="javascript:void(0);" data-section="zone__c"
+                  >Prihlásenie</a
+                >
+                <ul class="submenu secondary">
+                  <li>
+                    <a
+                      href="javascript:void(0);"
+                      data-section="client-zone"
+                      onclick={openClientZone}
+                      >Klientská Zóna</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0);"
+                      data-section="trainer-zone"
+                      onclick={openTrainerZone}
+                      >Trénerská Zóna</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </template>
+            <template if:true={hasClientSession}>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  data-section="clientzone__c"
+                  data-zone-link="client"
+                  onclick={goToPage}
+                  >Klientská Zóna</a
+                >
+              </li>
+            </template>
+            <template if:true={hasTrainerSession}>
+              <li>
+                <a
+                  href="/s/trainer-zone"
+                  data-zone-link="trainer"
+                  onclick={goToTrainerZone}
+                  >Trénerská Zóna</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  data-zone-link="switch-trainer"
+                  onclick={handleSwitchTrainer}
+                  >Zmeniť trénera</a
+                >
+              </li>
+            </template>
+            <!-- </template> -->
+            <!-- <li><a onclick={handleButtonClick}> Mám predbežný záujem </a></li> -->
+            <!-- <li><a href="javascript:void(0);" data-section="arx-page" onclick={navigateToSection}>Čo je ARX</a></li>
+                        <li><a href="javascript:void(0);" data-section="results-page" onclick={navigateToSection}>Výsledky s ARX</a></li>
+                        <li><a href="javascript:void(0);" data-section="benefits-page" onclick={navigateToSection}>Ciele a ARX</a></li>
+                        <li><a href="javascript:void(0);" data-section="comparisson-page" onclick={navigateToSection}>ARX vs Konkurencia</a></li> -->
+            <!-- <li><a href="javascript:void(0);" data-section="kariera_evoxise__c" onclick={goToPage}>Kariéra</a></li> -->
+            <li>
+              <a
+                href="javascript:void(0);"
+                data-section="accuniq__c"
+                onclick={goToPage}
+                >Accuniq</a
+              >
+            </li>
+            <template for:each={studioMenus} for:item="menu">
+              <li key={menu.key} class="has-submenu" onclick={toggleSubmenu}>
+                <a
+                  href="javascript:void(0);"
+                  data-submenu-toggle={menu.key}
+                  aria-haspopup="true"
+                  >{menu.label}</a
+                >
+                <ul class="submenu secondary">
+                  <template for:each={menu.items} for:item="item">
+                    <li key={item.id}>
+                      <a href={item.href} onclick={goToSection}>{item.label}</a>
+                    </li>
+                  </template>
+                </ul>
+              </li>
+            </template>
+            <!-- <template if:true={isMobile}>
+              <li>
+                <a href="javascript:void(0);" onclick={openGift}>Voucher</a>
+              </li>
+            </template> -->
+            <li>
+              <a
+                href="javascript:void(0);"
+                data-section="Blog__c"
+                onclick={goToPage}
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a href="javascript:void(0);" onclick={openContactUs}
+                >Kontaktuj nás</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                href="javascript:void(0);"
+                data-section="cennik__c"
+                onclick={goToPage}
+                >Cenník</a
+              >
+            </li> -->
+            <!-- <li>
+              <a
+                href="javascript:void(0);"
+                data-section="faq__c"
+                onclick={goToPage}
+                >FAQ</a
+              >
+            </li> -->
+            <!-- <li><a href="javascript:void(0);" data-section="contact-page" onclick={navigateToSection}>Kontakt</a></li> -->
+            <!-- <li>
+              <a
+                href="javascript:void(0);"
+                data-section="contact-page"
+                onclick={openContactPage}
+                >Kontakt</a
+              >
+            </li> -->
+
+            <template if:true={hasAnySession}>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  data-zone-link="logout"
+                  onclick={handleLogout}
+                  >Odhlásiť sa</a
+                >
+              </li> </template
+            ><!-- <li><a href="#contact"> Kontakt </a></li>  -->
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <template if:true={isModalOpen}>
+    <div class="hdr-modal-overlay" role="dialog" aria-modal="true">
+      <div class="hdr-modal-box">
+        <div class="hdr-modal-head">
+          <h2>Voucher</h2>
+          <button class="hdr-modal-close" title="Zavrieť" onclick={closeModal}>
+            ✕
+          </button>
+        </div>
+        <div class="hdr-modal-body">
+          <lightning-flow
+            flow-api-name="SFSCH_Buy_Gift_Anonymous"
+            onstatuschange={handleStatusChange}
+          >
+          </lightning-flow>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-modal-backdrop" onclick={closeModal}></div>
+  </template>
+
+  <template if:true={isClientZoneOpen}>
+    <div class="hdr-modal-overlay" role="dialog" aria-modal="true">
+      <div class="hdr-modal-box">
+        <div class="hdr-modal-head">
+          <h2>Klientská Zóna</h2>
+          <button
+            class="hdr-modal-close"
+            title="Zavrieť"
+            onclick={closeClientZone}
+          >
+            ✕
+          </button>
+        </div>
+        <div class="hdr-modal-body">
+          <lightning-flow
+            flow-api-name="Create_Identify_Customer"
+            onstatuschange={handleStatusChange}
+          >
+          </lightning-flow>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-modal-backdrop" onclick={closeClientZone}></div>
+  </template>
+
+  <template if:true={isTrainerZoneOpen}>
+    <div class="hdr-modal-overlay" role="dialog" aria-modal="true">
+      <div class="hdr-modal-box">
+        <div class="hdr-modal-head">
+          <h2>Trénerská Zóna</h2>
+          <button
+            class="hdr-modal-close"
+            title="Zavrieť"
+            onclick={closeTrainerZone}
+          >
+            ✕
+          </button>
+        </div>
+        <div class="hdr-modal-body">
+          <lightning-flow
+            flow-api-name="SFSCH_Create_Identify_Trainer"
+            onstatuschange={handleStatusChange}
+          >
+          </lightning-flow>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-modal-backdrop" onclick={closeTrainerZone}></div>
+  </template>
+
+  <template if:true={isContactPageOpen}>
+    <div class="hdr-modal-overlay" role="dialog" aria-modal="true">
+      <div class="hdr-modal-box">
+        <div class="hdr-modal-head">
+          <h2>Kontakt</h2>
+          <button
+            class="hdr-modal-close"
+            title="Zavrieť"
+            onclick={closeContactPage}
+          >
+            ✕
+          </button>
+        </div>
+        <div class="hdr-modal-body">
+          <lightning-flow
+            flow-api-name="SFSCH_Contact_Screen"
+            onstatuschange={handleStatusChange}
+          >
+          </lightning-flow>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-modal-backdrop" onclick={closeContactPage}></div>
+  </template>
+
+  <template if:true={isFirstTrainingOpen}>
+    <div class="hdr-modal-overlay" role="dialog" aria-modal="true">
+      <div class="hdr-modal-box">
+        <div class="hdr-modal-head">
+          <h2>Rezervácia — Prvý krok k výsledkom</h2>
+          <button
+            class="hdr-modal-close"
+            title="Zavrieť"
+            onclick={closeFirstTrainingPage}
+          >
+            ✕
+          </button>
+        </div>
+        <div class="hdr-modal-body">
+          <lightning-flow
+            flow-api-name="SFSCH_EVOXISE_Booking_Selector"
+            flow-input-variables={firstTrainingInputVars}
+            onstatuschange={handleStatusChange}
+          >
+          </lightning-flow>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-modal-backdrop" onclick={closeFirstTrainingPage}></div>
+  </template>
+
+  <template if:true={isGiftOpen}>
+    <div class="hdr-modal-overlay" role="dialog" aria-modal="true">
+      <div class="hdr-modal-box">
+        <div class="hdr-modal-head">
+          <h2>Voucher</h2>
+          <button class="hdr-modal-close" title="Zavrieť" onclick={closeGift}>
+            ✕
+          </button>
+        </div>
+        <div class="hdr-modal-body lwc-modal-content">
+          <c-voucher-selection onclose={closeGift}></c-voucher-selection>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-modal-backdrop" onclick={closeGift}></div>
+  </template>
+
+  <template if:true={isContactUsOpen}>
+    <div class="hdr-modal-overlay" role="dialog" aria-modal="true">
+      <div class="hdr-modal-box">
+        <div class="hdr-modal-head">
+          <h2>Kontaktuj nás</h2>
+          <button
+            class="hdr-modal-close"
+            title="Zavrieť"
+            onclick={closeContactUs}
+          >
+            ✕
+          </button>
+        </div>
+        <div class="hdr-modal-body">
+          <lightning-flow
+            flow-api-name="SFSCH_Contact_Us"
+            onstatuschange={handleStatusChange}
+          >
+          </lightning-flow>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-modal-backdrop" onclick={closeContactUs}></div>
+  </template>
+</template>

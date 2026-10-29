@@ -1,0 +1,1142 @@
+<template>
+  <div class="wrap">
+    <!-- Live region: toasts are announced, not just painted -->
+    <div class="assistive-text" role="status" aria-live="polite">
+      {liveMessage}
+    </div>
+
+    <!-- Welcome bar -->
+    <div class="welcome-bar">
+      <div class="welcome-left">
+        <span class="eyebrow">
+          <span class="eyebrow-pip"></span>Trénerská zóna
+        </span>
+        <h2 class="welcome-name">
+          Vitaj,&nbsp;<span class="lime">{trainerName}</span>
+        </h2>
+        <span class="welcome-date">{todayLabel}</span>
+      </div>
+
+      <div
+        class="territory-tabs"
+        role="group"
+        aria-label="Filter podľa pobočky"
+      >
+        <template for:each={territoryTabs} for:item="tt">
+          <button
+            key={tt.name}
+            type="button"
+            class={tt.cssClass}
+            data-territory={tt.name}
+            aria-pressed={tt.isActive}
+            onclick={handleTerritorySelect}
+          >
+            {tt.name}
+          </button>
+        </template>
+      </div>
+    </div>
+
+    <!-- Today's Brief -->
+    <div class="bezel bezel--navy brief-card">
+      <div class="brief-core">
+        <div class="stat-block">
+          <lightning-icon
+            icon-name="utility:date_time"
+            size="x-small"
+            class="stat-icon"
+          ></lightning-icon>
+          <div class="stat-value">
+            <template lwc:if={isLoading}>
+              <span class="sk"></span>
+            </template>
+            <template lwc:else>{_todayCount}</template>
+          </div>
+          <div class="stat-label">Dnešné tréningy</div>
+        </div>
+        <div class="stat-block">
+          <lightning-icon
+            icon-name="utility:tablet_landscape"
+            size="x-small"
+            class="stat-icon"
+          ></lightning-icon>
+          <div class="stat-value">
+            <template lwc:if={isLoading}>
+              <span class="sk"></span>
+            </template>
+            <template lwc:else>{measuresCount}</template>
+          </div>
+          <div class="stat-label">Accuniq merania</div>
+        </div>
+        <div class="stat-block warn">
+          <lightning-icon
+            icon-name="utility:warning"
+            size="x-small"
+            class="stat-icon"
+          ></lightning-icon>
+          <div class="stat-value">
+            <template lwc:if={isLoading}>
+              <span class="sk"></span>
+            </template>
+            <template lwc:else>{attendeesCount}</template>
+          </div>
+          <div class="stat-label">Záporné X-Tokeny</div>
+        </div>
+        <div class="stat-block info">
+          <lightning-icon
+            icon-name="utility:people"
+            size="x-small"
+            class="stat-icon"
+          ></lightning-icon>
+          <div class="stat-value">
+            <template lwc:if={isLoading}>
+              <span class="sk"></span>
+            </template>
+            <template lwc:else>{requestsStatCount}</template>
+          </div>
+          <div class="stat-label">Žiadosti</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load error — previously swallowed by an empty catch -->
+    <template lwc:if={loadError}>
+      <div class="err" role="alert">
+        <lightning-icon
+          icon-name="utility:error"
+          size="small"
+          class="err-icon"
+          alternative-text="Chyba"
+        ></lightning-icon>
+        <div>
+          <div class="err-title">Dáta sa nepodarilo načítať</div>
+          <div class="err-desc">
+            Skús to znova. Ak problém pretrváva, kontaktuj podporu.
+          </div>
+          <div class="err-action">
+            <button type="button" class="tbl-btn" onclick={handleRetryLoad}>
+              <lightning-icon
+                icon-name="utility:refresh"
+                size="xx-small"
+              ></lightning-icon>
+              Skúsiť znova
+            </button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Main layout -->
+    <div class={mainGridClass}>
+      <!-- LEFT: Action cards -->
+      <div class="action-grid">
+        <button
+          type="button"
+          class="action-card ai-card"
+          data-action="app"
+          onclick={handleCardAction}
+        >
+          <span class="card-icon-bg">
+            <lightning-icon
+              icon-name="utility:price_book_entries"
+              size="small"
+            ></lightning-icon>
+          </span>
+          <span class="card-body">
+            <span class="card-title">Správa rezervácií</span>
+            <span class="card-desc">Termíny, presuny a zrušenia</span>
+          </span>
+          <span class="card-arrow">
+            <lightning-icon
+              icon-name="utility:chevronright"
+              size="xx-small"
+            ></lightning-icon>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-card ai-card mobile-only"
+          data-action="newClient"
+          onclick={handleCardAction}
+        >
+          <span class="card-icon-bg">
+            <lightning-icon
+              icon-name="utility:adduser"
+              size="small"
+            ></lightning-icon>
+          </span>
+          <span class="card-body">
+            <span class="card-title">Nový klient / Nájsť klienta</span>
+            <span class="card-desc">Registrácia a vyhľadávanie</span>
+          </span>
+          <span class="card-arrow">
+            <lightning-icon
+              icon-name="utility:chevronright"
+              size="xx-small"
+            ></lightning-icon>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-card"
+          data-action="convertLead"
+          onclick={handleCardAction}
+        >
+          <span class="card-icon-bg">
+            <lightning-icon
+              icon-name="utility:lead"
+              size="small"
+            ></lightning-icon>
+          </span>
+          <span class="card-body">
+            <span class="card-title">Konvertovať na zákazníka</span>
+            <span class="card-desc">Administrácia leadov</span>
+          </span>
+          <span class="card-arrow">
+            <lightning-icon
+              icon-name="utility:chevronright"
+              size="xx-small"
+            ></lightning-icon>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-card"
+          data-action="multi"
+          onclick={handleCardAction}
+        >
+          <span class="card-icon-bg">
+            <lightning-icon
+              icon-name="utility:activity"
+              size="small"
+            ></lightning-icon>
+          </span>
+          <span class="card-body">
+            <span class="card-title">Skupinové tréningy</span>
+            <span class="card-desc">Rozvrh a účastníci</span>
+          </span>
+          <span class="card-arrow">
+            <lightning-icon
+              icon-name="utility:chevronright"
+              size="xx-small"
+            ></lightning-icon>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-card"
+          data-action="myZone"
+          onclick={handleCardAction}
+        >
+          <span class="card-icon-bg">
+            <lightning-icon
+              icon-name="utility:money"
+              size="small"
+            ></lightning-icon>
+          </span>
+          <span class="card-body">
+            <span class="card-title">Moje tréningy a odmena</span>
+            <span class="card-desc">Prehľad odmien a histórie</span>
+          </span>
+          <span class="card-arrow">
+            <lightning-icon
+              icon-name="utility:chevronright"
+              size="xx-small"
+            ></lightning-icon>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-card"
+          data-action="shift"
+          onclick={handleCardAction}
+        >
+          <span class="card-icon-bg">
+            <lightning-icon
+              icon-name="utility:shift_pattern_entry"
+              size="small"
+            ></lightning-icon>
+          </span>
+          <span class="card-body">
+            <span class="card-title">Naplánovať smeny</span>
+            <span class="card-desc">Plánovanie pracovných smien</span>
+          </span>
+          <span class="card-arrow">
+            <lightning-icon
+              icon-name="utility:chevronright"
+              size="xx-small"
+            ></lightning-icon>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-card"
+          data-action="clientAttendance"
+          onclick={handleCardAction}
+        >
+          <span class="card-icon-bg">
+            <lightning-icon
+              icon-name="utility:groups"
+              size="small"
+            ></lightning-icon>
+          </span>
+          <span class="card-body">
+            <span class="card-title">Dochádzka klientov</span>
+            <span class="card-desc">Klienti bez budúceho tréningu</span>
+          </span>
+          <span class="card-arrow">
+            <lightning-icon
+              icon-name="utility:chevronright"
+              size="xx-small"
+            ></lightning-icon>
+          </span>
+        </button>
+
+        <template lwc:if={showSlotBoard}>
+          <button
+            type="button"
+            class="action-card ai-card"
+            data-action="slotBoard"
+            onclick={handleCardAction}
+          >
+            <span class="card-icon-bg">
+              <lightning-icon
+                icon-name="utility:event"
+                size="small"
+              ></lightning-icon>
+            </span>
+            <span class="card-body">
+              <span class="card-title">Rozvrh a rezervácia</span>
+              <span class="card-desc"
+                >Obsadenosť strojov a rýchla rezervácia</span
+              >
+            </span>
+            <span class="card-arrow">
+              <lightning-icon
+                icon-name="utility:chevronright"
+                size="xx-small"
+              ></lightning-icon>
+            </span>
+          </button>
+        </template>
+
+        <template lwc:if={isSuperUser}>
+          <button
+            type="button"
+            class="action-card"
+            data-action="shiftBoard"
+            onclick={handleCardAction}
+          >
+            <span class="card-icon-bg">
+              <lightning-icon
+                icon-name="utility:date_time"
+                size="small"
+              ></lightning-icon>
+            </span>
+            <span class="card-body">
+              <span class="card-title">Plánovač smien</span>
+              <span class="card-desc">Smeny trénerov a strojov</span>
+            </span>
+            <span class="card-arrow">
+              <lightning-icon
+                icon-name="utility:chevronright"
+                size="xx-small"
+              ></lightning-icon>
+            </span>
+          </button>
+        </template>
+      </div>
+
+      <!-- RIGHT: Sidebar -->
+      <template lwc:if={showSidebar}>
+        <div class="sidebar">
+          <!-- Sub-products -->
+          <template lwc:if={hasSubProducts}>
+            <div class="sidebar-section">
+              <div class="sidebar-inner">
+                <div class="sidebar-head warn">
+                  <div class="sidebar-dot warn"></div>
+                  <span class="sidebar-title">Doplnkové produkty</span>
+                  <span class="sidebar-badge warn">{subProductsBadge}</span>
+                </div>
+                <template
+                  for:each={visibleSubProductAppointments}
+                  for:item="sp"
+                >
+                  <div key={sp.saId} class="subproduct-item">
+                    <button
+                      type="button"
+                      class={sp.rowClass}
+                      data-said={sp.saId}
+                      aria-expanded={sp.isOpen}
+                      onclick={handleSubProductRowClick}
+                    >
+                      <span class="subproduct-row-main">
+                        <span class="subproduct-row-name">{sp.clientName}</span>
+                        <span class="subproduct-row-sub"
+                          >{sp.timeFormatted} · {sp.productsLabel}</span
+                        >
+                      </span>
+                      <span class="subproduct-row-total"
+                        >{sp.totalFormatted}</span
+                      >
+                    </button>
+
+                    <template lwc:if={sp.isOpen}>
+                      <div class="subproduct-detail">
+                        <template for:each={sp.products} for:item="p">
+                          <label key={p.junctionId} class="subproduct-line">
+                            <input
+                              type="checkbox"
+                              class="subproduct-check"
+                              data-junctionid={p.junctionId}
+                              checked={p.checked}
+                              onchange={handleSubProductCheck}
+                            />
+                            <span class="subproduct-line-name"
+                              >{p.lineLabel}</span
+                            >
+                            <span class="subproduct-line-price"
+                              >{p.priceFormatted}</span
+                            >
+                          </label>
+                        </template>
+
+                        <div class="payer-label">Platí:</div>
+                        <div class="payer-chips">
+                          <template for:each={sp.payers} for:item="py">
+                            <button
+                              key={py.accountId}
+                              type="button"
+                              class={py.chipClass}
+                              data-accountid={py.accountId}
+                              disabled={py.locked}
+                              aria-pressed={py.isSelected}
+                              onclick={handleSubPayerSelect}
+                            >
+                              {py.accountName}
+                            </button>
+                          </template>
+                          <template lwc:if={sp.noPayers}>
+                            <span class="payer-none"
+                              >Žiadny platca — priraď účastníka</span
+                            >
+                          </template>
+                        </div>
+
+                        <label class="blackhole-toggle">
+                          <input
+                            type="checkbox"
+                            class="blackhole-check"
+                            checked={sp.blackHole}
+                            onchange={handleBlackHoleToggle}
+                          />
+                          <span class="blackhole-slider"></span>
+                          <span class="blackhole-label"
+                            >Hotovosť (Black Hole)</span
+                          >
+                        </label>
+
+                        <div class="subproduct-actions">
+                          <button
+                            type="button"
+                            class="tbl-btn accent"
+                            disabled={sp.payDisabled}
+                            onclick={handleSubProductsPay}
+                          >
+                            Zaplatiť
+                          </button>
+                          <button
+                            type="button"
+                            class="tbl-btn"
+                            disabled={sp.payDisabled}
+                            onclick={handleSubProductsCredits}
+                          >
+                            Kreditmi
+                          </button>
+                        </div>
+                      </div>
+                    </template>
+                  </div>
+                </template>
+                <template lwc:if={showSubProductsToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleSubProducts}
+                    >
+                      {subProductsToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Lead appointments -->
+          <template lwc:if={hasLeadAppointments}>
+            <div class="sidebar-section">
+              <div class="sidebar-inner">
+                <div class="sidebar-head info">
+                  <div class="sidebar-dot info"></div>
+                  <span class="sidebar-title">Dnešné úvodné tréningy</span>
+                  <span class="sidebar-badge info"
+                    >{leadAppointmentsBadge}</span
+                  >
+                </div>
+                <template lwc:if={leadStatusMessage}>
+                  <div class="cancel-toast info">{leadStatusMessage}</div>
+                </template>
+
+                <template for:each={visibleLeadAppointments} for:item="la">
+                  <div key={la.id}>
+                    <div class="row row--static">
+                      <span>
+                        <span class="row-who">{la.leadName}</span>
+                        <span class="row-meta"
+                          >{la.timeFormatted} · {la.emailLabel}</span
+                        >
+                      </span>
+                    </div>
+                    <div class="row-actions">
+                      <template lwc:if={la.email}>
+                        <button
+                          type="button"
+                          class="tbl-btn tbl-btn--icon"
+                          data-email={la.email}
+                          title="Kopírovať email"
+                          aria-label={la.copyLabel}
+                          onclick={handleCopyLeadEmail}
+                        >
+                          <lightning-icon
+                            icon-name="utility:copy"
+                            size="xx-small"
+                          ></lightning-icon>
+                        </button>
+                      </template>
+                      <button
+                        type="button"
+                        class="tbl-btn accent"
+                        data-id={la.id}
+                        disabled={la.isBusy}
+                        onclick={handleLeadCompleted}
+                      >
+                        <lightning-icon
+                          icon-name="utility:check"
+                          size="xx-small"
+                        ></lightning-icon>
+                        Absolvoval
+                      </button>
+                      <button
+                        type="button"
+                        class="tbl-btn danger"
+                        data-id={la.id}
+                        data-name={la.leadName}
+                        disabled={la.isBusy}
+                        onclick={handleLeadNoShowRequest}
+                      >
+                        <lightning-icon
+                          icon-name="utility:close"
+                          size="xx-small"
+                        ></lightning-icon>
+                        Neprišiel
+                      </button>
+                    </div>
+                  </div>
+                </template>
+
+                <template lwc:if={showLeadAppointmentsToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleLeadAppointments}
+                    >
+                      {leadAppointmentsToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Accuniq measures -->
+          <template lwc:if={hasMeasures}>
+            <div class="sidebar-section">
+              <div class="sidebar-inner">
+                <div class="sidebar-head warn">
+                  <div class="sidebar-dot warn"></div>
+                  <span class="sidebar-title">Accuniq merania</span>
+                  <span class="sidebar-badge warn">{measuresBadge}</span>
+                </div>
+                <template lwc:if={cancelMessage}>
+                  <div class="cancel-toast">{cancelMessage}</div>
+                </template>
+
+                <template for:each={visibleMeasures} for:item="m">
+                  <div key={m.id}>
+                    <div class="row row--static">
+                      <span>
+                        <span class="row-who">{m.clientName}</span>
+                        <span class="row-meta"
+                          >{m.status} · {m.priceFormatted}</span
+                        >
+                      </span>
+                    </div>
+                    <template lwc:if={m.isNotProcessed}>
+                      <div class="row-actions">
+                        <button
+                          type="button"
+                          class="tbl-btn accent"
+                          data-id={m.id}
+                          onclick={handlePayAccuniq}
+                        >
+                          Zaplatiť
+                        </button>
+                        <button
+                          type="button"
+                          class="tbl-btn danger"
+                          data-id={m.id}
+                          data-name={m.clientName}
+                          disabled={m.isBusy}
+                          onclick={handleCancelAccuniqRequest}
+                        >
+                          Zrušiť
+                        </button>
+                      </div>
+                    </template>
+                  </div>
+                </template>
+
+                <template lwc:if={showMeasuresToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleMeasures}
+                    >
+                      {measuresToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Negative tokens -->
+          <template lwc:if={hasAttendees}>
+            <div class="sidebar-section">
+              <div class="sidebar-inner">
+                <div class="sidebar-head danger">
+                  <div class="sidebar-dot danger"></div>
+                  <span class="sidebar-title">Záporné X-Tokeny</span>
+                  <span class="sidebar-badge danger">{attendeesBadge}</span>
+                </div>
+                <template for:each={visibleAttendees} for:item="a">
+                  <div key={a.id} class="row row--static">
+                    <span>
+                      <span class="row-who">{a.accountName}</span>
+                      <span class="row-meta neg"
+                        >{a.availableCredit} X-Tokenov</span
+                      >
+                    </span>
+                    <button
+                      type="button"
+                      class="tbl-btn danger"
+                      data-accountid={a.accountId}
+                      onclick={handleBuyTokens}
+                    >
+                      Kúpiť X-T
+                    </button>
+                  </div>
+                </template>
+                <template lwc:if={showAttendeesToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleAttendees}
+                    >
+                      {attendeesToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Change requests -->
+          <template lwc:if={hasChangeRequests}>
+            <div class="sidebar-section change-requests">
+              <div class="sidebar-inner">
+                <div class="sidebar-head warn">
+                  <div class="sidebar-dot warn"></div>
+                  <span class="sidebar-title">Žiadosti o zmenu tréningu</span>
+                  <span class="sidebar-badge warn">{changeRequestsBadge}</span>
+                </div>
+                <template lwc:if={changeHandledMessage}>
+                  <div class="cancel-toast warn">{changeHandledMessage}</div>
+                </template>
+
+                <template for:each={visibleChangeRequests} for:item="c">
+                  <div key={c.id}>
+                    <button
+                      type="button"
+                      class={c.rowClass}
+                      data-id={c.id}
+                      aria-expanded={c.isExpanded}
+                      onclick={handleChangeRequestRowClick}
+                    >
+                      <span>
+                        <span class="row-who">{c.name}</span>
+                        <span class="row-meta">{c.phone}</span>
+                        <span class="row-meta"
+                          >{c.whenFormatted} · {c.resourceName}</span
+                        >
+                        <span class="row-meta">
+                          <span class={c.reasonClass}>{c.reasonLabel}</span>
+                        </span>
+                        <template lwc:if={c.showTrainer}>
+                          <span class="row-meta trainer-sub"
+                            >Tréner: {c.trainerName}</span
+                          >
+                        </template>
+                      </span>
+                      <lightning-icon
+                        icon-name="utility:chevrondown"
+                        size="xx-small"
+                        class="row-caret"
+                      ></lightning-icon>
+                    </button>
+
+                    <div class="row-actions">
+                      <button
+                        type="button"
+                        class="tbl-btn accent mark-handled"
+                        data-id={c.id}
+                        data-name={c.name}
+                        disabled={c.isBusy}
+                        onclick={handleMarkChangeHandledRequest}
+                      >
+                        <lightning-icon
+                          icon-name="utility:check"
+                          size="xx-small"
+                        ></lightning-icon>
+                        Vybavené
+                      </button>
+                    </div>
+
+                    <template lwc:if={c.isExpanded}>
+                      <div class="detail-row change-detail">
+                        <div class="detail-label">Náhradné termíny</div>
+                        <div class="detail-value">{c.preferredDates}</div>
+                        <div class="detail-label">Správa</div>
+                        <div class="detail-value detail-question">
+                          {c.message}
+                        </div>
+                        <div class="detail-label">Odoslané</div>
+                        <div class="detail-value">{c.sentFormatted}</div>
+                      </div>
+                    </template>
+                  </div>
+                </template>
+
+                <template lwc:if={showChangeRequestsToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleChangeRequests}
+                    >
+                      {changeRequestsToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Booking requests -->
+          <template lwc:if={hasRequests}>
+            <div class="sidebar-section booking-requests">
+              <div class="sidebar-inner">
+                <div class="sidebar-head info">
+                  <div class="sidebar-dot info"></div>
+                  <span class="sidebar-title">Žiadosti o tréning</span>
+                  <span class="sidebar-badge info">{requestsBadge}</span>
+                </div>
+                <template lwc:if={contactedMessage}>
+                  <div class="cancel-toast info">{contactedMessage}</div>
+                </template>
+
+                <template for:each={visibleRequests} for:item="r">
+                  <div key={r.id}>
+                    <div class="row row--static">
+                      <span>
+                        <span class="row-who">{r.name}</span>
+                        <span class="row-meta">{r.preferredDates}</span>
+                        <template lwc:if={r.showTrainer}>
+                          <span class="row-meta trainer-sub"
+                            >Tréner: {r.trainerName}</span
+                          >
+                        </template>
+                      </span>
+                    </div>
+                    <div class="row-actions">
+                      <button
+                        type="button"
+                        class="tbl-btn send-email"
+                        data-id={r.id}
+                        title="Poslať email"
+                        aria-label={r.emailLabel}
+                        onclick={handleSendBookingEmail}
+                      >
+                        <lightning-icon
+                          icon-name="utility:email"
+                          size="xx-small"
+                        ></lightning-icon>
+                        Email
+                      </button>
+                      <button
+                        type="button"
+                        class="tbl-btn accent"
+                        data-id={r.id}
+                        data-name={r.name}
+                        disabled={r.isBusy}
+                        onclick={handleMarkContactedRequest}
+                      >
+                        <lightning-icon
+                          icon-name="utility:check"
+                          size="xx-small"
+                        ></lightning-icon>
+                        Kontaktovaný
+                      </button>
+                    </div>
+                  </div>
+                </template>
+
+                <template lwc:if={showRequestsToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleRequests}
+                    >
+                      {requestsToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Portal support -->
+          <template lwc:if={hasSupport}>
+            <div class="sidebar-section">
+              <div class="sidebar-inner">
+                <div class="sidebar-head info">
+                  <div class="sidebar-dot info"></div>
+                  <span class="sidebar-title">Podpora</span>
+                  <span class="sidebar-badge info">{supportBadge}</span>
+                </div>
+                <template lwc:if={supportMessage}>
+                  <div class="cancel-toast info">{supportMessage}</div>
+                </template>
+
+                <template for:each={visibleSupport} for:item="s">
+                  <div key={s.id}>
+                    <button
+                      type="button"
+                      class={s.rowClass}
+                      data-id={s.id}
+                      aria-expanded={s.isExpanded}
+                      onclick={handleSupportRowClick}
+                    >
+                      <span>
+                        <span class="row-who">{s.name}</span>
+                        <span class="row-meta">{s.category} · {s.phone}</span>
+                      </span>
+                      <lightning-icon
+                        icon-name="utility:chevrondown"
+                        size="xx-small"
+                        class="row-caret"
+                      ></lightning-icon>
+                    </button>
+
+                    <template lwc:if={s.isExpanded}>
+                      <div class="detail-row">
+                        <div class="detail-label">Predmet</div>
+                        <div class="detail-value">{s.subject}</div>
+                        <div class="detail-label">Otázka</div>
+                        <div class="detail-value detail-question">
+                          {s.question}
+                        </div>
+                      </div>
+                      <div class="row-actions">
+                        <button
+                          type="button"
+                          class="tbl-btn"
+                          data-id={s.id}
+                          title="Poslať email"
+                          aria-label={s.emailLabel}
+                          onclick={handleSendSupportEmail}
+                        >
+                          <lightning-icon
+                            icon-name="utility:email"
+                            size="xx-small"
+                          ></lightning-icon>
+                          Email
+                        </button>
+                        <button
+                          type="button"
+                          class="tbl-btn accent"
+                          data-id={s.id}
+                          data-name={s.name}
+                          disabled={s.isBusy}
+                          onclick={handleSupportCalledRequest}
+                        >
+                          <lightning-icon
+                            icon-name="utility:check"
+                            size="xx-small"
+                          ></lightning-icon>
+                          Vybavené
+                        </button>
+                      </div>
+                    </template>
+                  </div>
+                </template>
+
+                <template lwc:if={showSupportToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleSupport}
+                    >
+                      {supportToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- Eight Challenge participant messages -->
+          <template lwc:if={hasHyroxNotes}>
+            <div class="sidebar-section hyrox-notes">
+              <div class="sidebar-inner">
+                <div class="sidebar-head info">
+                  <div class="sidebar-dot info"></div>
+                  <span class="sidebar-title"
+                    >Eight Challenge — správy od účastníkov</span
+                  >
+                  <span class="sidebar-badge info">{hyroxNotesBadge}</span>
+                </div>
+                <template lwc:if={hyroxNoteMessage}>
+                  <div class="cancel-toast info">{hyroxNoteMessage}</div>
+                </template>
+
+                <template for:each={visibleHyroxNotes} for:item="n">
+                  <div key={n.id}>
+                    <button
+                      type="button"
+                      class={n.rowClass}
+                      data-id={n.id}
+                      aria-expanded={n.isExpanded}
+                      onclick={handleHyroxNoteRowClick}
+                    >
+                      <span>
+                        <span class="row-who">{n.nameLabel}</span>
+                        <span class="row-meta"
+                          >{n.raceLabel} · {n.createdLabel}</span
+                        >
+                      </span>
+                      <lightning-icon
+                        icon-name="utility:chevrondown"
+                        size="xx-small"
+                        class="row-caret"
+                      ></lightning-icon>
+                    </button>
+
+                    <template lwc:if={n.isExpanded}>
+                      <div class="detail-row">
+                        <div class="detail-label">Email</div>
+                        <div class="detail-value">{n.email}</div>
+                        <div class="detail-label">Správa</div>
+                        <div class="detail-value detail-question">
+                          {n.message}
+                        </div>
+                      </div>
+                      <div class="row-actions">
+                        <button
+                          type="button"
+                          class="tbl-btn"
+                          data-id={n.id}
+                          title="Poslať email"
+                          aria-label={n.emailLabel}
+                          onclick={handleSendHyroxNoteEmail}
+                        >
+                          <lightning-icon
+                            icon-name="utility:email"
+                            size="xx-small"
+                          ></lightning-icon>
+                          Email
+                        </button>
+                        <button
+                          type="button"
+                          class="tbl-btn accent"
+                          data-id={n.id}
+                          disabled={n.isBusy}
+                          onclick={handleHyroxNoteDone}
+                        >
+                          <lightning-icon
+                            icon-name="utility:check"
+                            size="xx-small"
+                          ></lightning-icon>
+                          Vybavené
+                        </button>
+                      </div>
+                    </template>
+                  </div>
+                </template>
+
+                <template lwc:if={showHyroxNotesToggle}>
+                  <div class="show-more-wrap">
+                    <button
+                      type="button"
+                      class="show-more-btn"
+                      onclick={toggleHyroxNotes}
+                    >
+                      {hyroxNotesToggleLabel}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+    </div>
+
+    <!-- Secondary strip -->
+    <div class="secondary-strip">
+      <button
+        type="button"
+        class="strip-btn"
+        data-action="referral"
+        onclick={handleCardAction}
+      >
+        <lightning-icon
+          icon-name="utility:engage"
+          size="xx-small"
+          class="strip-icon"
+        ></lightning-icon>
+        <span>Odporúčanie</span>
+      </button>
+      <button
+        type="button"
+        class="strip-btn"
+        data-action="gift"
+        onclick={handleCardAction}
+      >
+        <lightning-icon
+          icon-name="utility:moneybag"
+          size="xx-small"
+          class="strip-icon"
+        ></lightning-icon>
+        <span>Kúpiť darček</span>
+      </button>
+      <button
+        type="button"
+        class="strip-btn"
+        data-action="aiSummary"
+        onclick={handleCardAction}
+      >
+        <lightning-icon
+          icon-name="utility:einstein"
+          size="xx-small"
+          class="strip-icon"
+        ></lightning-icon>
+        <span>AI Summary</span>
+      </button>
+      <button
+        type="button"
+        class="strip-btn"
+        data-action="returnTokens"
+        onclick={handleCardAction}
+      >
+        <lightning-icon
+          icon-name="utility:undo"
+          size="xx-small"
+          class="strip-icon"
+        ></lightning-icon>
+        <span>Vrátiť X-Tokeny</span>
+      </button>
+      <button
+        type="button"
+        class="strip-btn"
+        data-action="buyProducts"
+        onclick={handleCardAction}
+      >
+        <lightning-icon
+          icon-name="utility:shopping_bag"
+          size="xx-small"
+          class="strip-icon"
+        ></lightning-icon>
+        <span>Kúpiť produkty</span>
+      </button>
+      <button
+        type="button"
+        class="strip-btn"
+        data-action="eightChallenge"
+        onclick={handleCardAction}
+      >
+        <lightning-icon
+          icon-name="utility:trending"
+          size="xx-small"
+          class="strip-icon"
+        ></lightning-icon>
+        <span>Eight Challenge</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Confirm sheet — destructive actions are no longer one-click -->
+  <template lwc:if={confirmOpen}>
+    <div
+      class="scrim"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="confirmTitle"
+      onclick={handleScrimClick}
+      onkeydown={handleConfirmKeydown}
+    >
+      <div class="sheet">
+        <div class="sheet-in">
+          <h3 id="confirmTitle" class="sheet-title">Potvrdiť akciu</h3>
+          <p class="sheet-body">{confirmMessage}</p>
+          <div class="sheet-actions">
+            <button type="button" class="tbl-btn" onclick={handleConfirmCancel}>
+              Späť
+            </button>
+            <button
+              type="button"
+              class="tbl-btn accent"
+              data-confirm="yes"
+              onclick={handleConfirmAccept}
+            >
+              Potvrdiť
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</template>

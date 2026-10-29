@@ -1,12 +1,12 @@
 {
-  "activeViewId": "330efb6b-e66e-5faf-83ed-6d6d1ecf5c22",
-  "appPageId": "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
-  "configurationTags": [],
-  "devName": "cookies__c",
-  "id": "d085284b-45db-5d0a-994a-fbdc526b166f",
-  "label": "Cookies",
-  "pageAccess": "UseParent",
-  "routeType": "custom-cookies",
-  "type": "route",
-  "urlPrefix": "cookies"
+  "activeViewId" : "330efb6b-e66e-5faf-83ed-6d6d1ecf5c22",
+  "appPageId" : "3e74b110-87c9-45d6-bfd1-99aec00ec43f",
+  "configurationTags" : [ ],
+  "devName" : "cookies__c",
+  "id" : "d085284b-45db-5d0a-994a-fbdc526b166f",
+  "label" : "Cookies",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-cookies",
+  "type" : "route",
+  "urlPrefix" : "cookies"
 }

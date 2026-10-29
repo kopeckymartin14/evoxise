@@ -69,6 +69,167 @@
                 <default>false</default>
                 <label>Token Return</label>
             </value>
+            <value>
+                <fullName>New Payment Subscription</fullName>
+                <default>false</default>
+                <label>New Payment Subscription</label>
+            </value>
+            <value>
+                <fullName>Waiting List</fullName>
+                <default>false</default>
+                <label>Waiting List</label>
+            </value>
+            <value>
+                <fullName>Waiting List Cancel</fullName>
+                <default>false</default>
+                <label>Waiting List Cancel</label>
+            </value>
+            <value>
+                <fullName>Confirmed Appointment</fullName>
+                <default>false</default>
+                <label>Confirmed Appointment</label>
+            </value>
+            <value>
+                <fullName>Cancelled Appointment Automated</fullName>
+                <default>false</default>
+                <label>Cancelled Appointment Automated</label>
+            </value>
+            <value>
+                <fullName>New Seats Available</fullName>
+                <default>false</default>
+                <label>New Seats Available</label>
+            </value>
+            <value>
+                <fullName>Create Appointment Multi</fullName>
+                <default>false</default>
+                <label>Create Appointment Multi</label>
+            </value>
+            <value>
+                <fullName>Training Confirmation</fullName>
+                <default>false</default>
+                <label>Training Confirmation</label>
+            </value>
+            <value>
+                <fullName>Training Cancelation</fullName>
+                <default>false</default>
+                <label>Training Cancelation</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Recovery Resume</fullName>
+                <default>false</default>
+                <label>Recovery Resume</label>
+            </value>
+            <value>
+                <fullName>Recovery Education</fullName>
+                <default>false</default>
+                <label>Recovery Education</label>
+            </value>
+            <value>
+                <fullName>Recovery Social Proof</fullName>
+                <default>false</default>
+                <label>Recovery Social Proof</label>
+            </value>
+            <value>
+                <fullName>Nurture Welcome</fullName>
+                <default>false</default>
+                <label>Nurture Welcome</label>
+            </value>
+            <value>
+                <fullName>Booking Welcome</fullName>
+                <default>false</default>
+                <label>Booking Welcome</label>
+            </value>
+            <value>
+                <fullName>PostTraining Result</fullName>
+                <default>false</default>
+                <label>PostTraining Result</label>
+            </value>
+            <value>
+                <fullName>NoShow Rebook</fullName>
+                <default>false</default>
+                <label>NoShow Rebook</label>
+            </value>
+            <value>
+                <fullName>BA Waitlist W1</fullName>
+                <default>false</default>
+                <label>BA Waitlist W1</label>
+            </value>
+            <value>
+                <fullName>BA Waitlist W2</fullName>
+                <default>false</default>
+                <label>BA Waitlist W2</label>
+            </value>
+            <value>
+                <fullName>BA Waitlist W3</fullName>
+                <default>false</default>
+                <label>BA Waitlist W3</label>
+            </value>
+            <value>
+                <fullName>BA Waitlist W4</fullName>
+                <default>false</default>
+                <label>BA Waitlist W4</label>
+            </value>
+            <value>
+                <fullName>Spartan Confirmation</fullName>
+                <default>false</default>
+                <label>Spartan Confirmation</label>
+            </value>
+            <value>
+                <fullName>Spartan Cancellation</fullName>
+                <default>false</default>
+                <label>Spartan Cancellation</label>
+            </value>
+            <value>
+                <fullName>Hyrox Confirmation</fullName>
+                <default>false</default>
+                <label>Hyrox Confirmation</label>
+            </value>
+            <value>
+                <fullName>Hyrox Cancellation</fullName>
+                <default>false</default>
+                <label>Hyrox Cancellation</label>
+            </value>
+            <value>
+                <fullName>Accuniq AI Summary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accuniq AI Summary</label>
+            </value>
+            <value>
+                <fullName>Accuniq Instructions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accuniq Instructions</label>
+            </value>
+            <value>
+                <fullName>Cancel Appointment Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cancel Appointment Lead</label>
+            </value>
+            <value>
+                <fullName>Create Appointment Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Create Appointment Lead</label>
+            </value>
+            <value>
+                <fullName>Evoxise Core</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Evoxise Core</label>
+            </value>
+            <value>
+                <fullName>Modify Appointment Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Modify Appointment Lead</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

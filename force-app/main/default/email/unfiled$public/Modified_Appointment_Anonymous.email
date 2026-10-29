@@ -1,0 +1,48 @@
+<html>
+ <head>
+  <title>Zmena termínu potvrdená</title>
+ </head>
+ <body style="margin: 0px; padding: 20px; background-color: rgb(244, 244, 244); height: auto; min-height: auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+  <table border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); width: 100%;">
+   <tbody>
+    <tr>
+     <td style="text-align: center; padding: 30px 20px 20px 20px; border-bottom: 1px solid #f0f0f0;"><img alt="EVOXISE Logo" src="{[devName:final_evoxise_white_gradient_X_logo]}" style="width: 180px; max-width: 50%; height: auto;" /></td>
+    </tr>
+    <tr>
+     <td style="padding: 30px 40px; color: #333333; font-size: 16px; line-height: 1.6; text-align: center;">
+      <h2 style="margin: 0 0 20px 0; font-size: 22px; color: #000000;">Termín úspešne zmenený 🔄</h2>
+      <p style="margin: 0 0 25px 0;">Ahoj <strong>{LeadName}</strong>, tvoja rezervácia bola preplánovaná. Tu sú detaily nového termínu:</p>
+      <table border="0" cellpadding="0" cellspacing="0" style="background-color: #f8f9fa; border-radius: 6px; margin-bottom: 25px;" width="100%">
+       <tbody>
+        <tr>
+         <td style="padding: 20px; text-align: center;">
+          <div style="font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Nový Dátum</div>
+          <div style="font-size: 20px; font-weight: bold; color: #000; margin-bottom: 5px;">{ServiceAppointment.Start_Date__c}</div>
+          <div style="font-size: 24px; font-weight: bold; color: #000;">{ServiceAppointment.Start_Time__c}</div>
+          <div style="border-top: 1px solid #e0e0e0; margin: 15px 40px;">&#xa0;</div>
+          <div style="font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Tréning</div>
+          <div style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 5px;">{ServiceAppointment.Subject}</div>
+          <div style="font-size: 14px; color: #555;">(Trvanie: {ServiceAppointment.DurationInMinutes} minút)</div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <!--CalendarLinks-->
+      <p style="margin: 0 0 15px 0; font-size: 15px; color: #555;">Ak ti nový termín nevyhovuje, môžeš ho jednoducho upraviť:</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tbody>
+        <tr>
+         <td align="center" style="padding-bottom: 15px;"><a href="{modify}" style="background-color: #000000; color: #ffffff; display: inline-block; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 15px; margin: 5px;">🔄 Zmeniť termín</a> <a href="{cancel}" style="background-color: #ffffff; color: #d32f2f; border: 1px solid #d32f2f; display: inline-block; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 15px; margin: 5px;">❌ Zrušiť</a></td>
+        </tr>
+       </tbody>
+      </table>
+      <p style="margin: 0; font-size: 13px; color: #999; font-style: italic;">⚠️ Dôležité: Bezplatná zmena alebo zrušenie sú možné len <strong>do 20:00 predchádzajúceho dňa</strong>.</p>
+      <p style="margin: 30px 0 0 0; font-weight: bold;">Tešíme sa na tvoju návštevu!
+       <br />
+       Team Evoxise</p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

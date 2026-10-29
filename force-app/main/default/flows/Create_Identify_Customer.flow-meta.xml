@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
         <name>Generate_Account_Login_Token</name>
         <label>Generate Account Login Token</label>
-        <locationX>726</locationX>
-        <locationY>2474</locationY>
+        <locationX>743</locationX>
+        <locationY>2774</locationY>
         <actionName>INV_GenerateRegistrationCode</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>Update_Account</targetReference>
         </connector>
         <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>characterLength</name>
+            <value>
+                <numberValue>32.0</numberValue>
+            </value>
+        </inputParameters>
         <nameSegment>INV_GenerateRegistrationCode</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Navigate_To_Landing</name>
         <label>Navigate To Landing</label>
-        <locationX>726</locationX>
-        <locationY>2690</locationY>
+        <locationX>743</locationX>
+        <locationY>2990</locationY>
         <actionName>c:navigateEverywhereLFA</actionName>
         <actionType>component</actionType>
         <connector>
@@ -42,13 +47,12 @@
         <nameSegment>c:navigateEverywhereLFA</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
     <assignments>
         <name>Assign_Email_to_Screen</name>
         <label>Assign Email to Screen</label>
-        <locationX>941</locationX>
+        <locationX>809</locationX>
         <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>Email_res</assignToReference>
@@ -57,6 +61,29 @@
                 <elementReference>referralRecord.Email__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>referralFromPerson</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>referralRecord.From_Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>referralFromTrainer</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>referralRecord.From_Resource__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Login_Register_Form</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Email_to_Screen_and_other</name>
+        <label>Assign Email to Screen and other</label>
+        <locationX>1073</locationX>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>referralFromPerson</assignToReference>
             <operator>Assign</operator>
@@ -92,22 +119,39 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Redirect_To_Login</name>
-        <label>Redirect To Login</label>
+        <name>Assign_Show_Message</name>
+        <label>Assign Show Message</label>
         <locationX>666</locationX>
-        <locationY>1382</locationY>
+        <locationY>1574</locationY>
         <assignmentItems>
-            <assignToReference>Buttons.value</assignToReference>
+            <assignToReference>ForgotIdentificatorBoolean</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Existing Customer</stringValue>
+                <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>Email_res</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Email_Registration.value</elementReference>
+                <elementReference>identifyCustomerForm.loginEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Login_Register_Form</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Redirect_To_Login</name>
+        <label>Redirect To Login</label>
+        <locationX>930</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>Email_res</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>identifyCustomerForm.registrationEmail</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -118,20 +162,13 @@
     <assignments>
         <name>Set_Redirect_back</name>
         <label>Set Redirect back</label>
-        <locationX>1590</locationX>
-        <locationY>1640</locationY>
+        <locationX>1854</locationX>
+        <locationY>1940</locationY>
         <assignmentItems>
             <assignToReference>incorrectIdentifier</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Buttons.value</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Existing Customer</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -142,8 +179,8 @@
     <assignments>
         <name>SetOutput</name>
         <label>SetOutput1</label>
-        <locationX>1062</locationX>
-        <locationY>2006</locationY>
+        <locationX>1326</locationX>
+        <locationY>2306</locationY>
         <assignmentItems>
             <assignToReference>recordId</assignToReference>
             <operator>Assign</operator>
@@ -158,8 +195,8 @@
     <assignments>
         <name>SetOutput2</name>
         <label>SetOutput2</label>
-        <locationX>1370</locationX>
-        <locationY>1382</locationY>
+        <locationX>1634</locationX>
+        <locationY>1682</locationY>
         <assignmentItems>
             <assignToReference>recordId</assignToReference>
             <operator>Assign</operator>
@@ -189,7 +226,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Clear_Token_Data</targetReference>
+                <targetReference>Account_Login_Token</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -198,7 +235,7 @@
         <name>Account_Login_Token</name>
         <label>Account Login Token?</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>566</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -219,8 +256,8 @@
     <decisions>
         <name>Already_Exists_Login</name>
         <label>Already Exists?</label>
-        <locationX>1590</locationX>
-        <locationY>1274</locationY>
+        <locationX>1854</locationX>
+        <locationY>1574</locationY>
         <defaultConnector>
             <targetReference>Set_Redirect_back</targetReference>
         </defaultConnector>
@@ -236,7 +273,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>password</leftValueReference>
+                <leftValueReference>identifyCustomerForm.loginPassword</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Handle_Existing_Customer_Login.contactDetails.Unique_Code__c</elementReference>
@@ -266,8 +303,8 @@
     <decisions>
         <name>Already_Exists_Registration</name>
         <label>Already Exists?</label>
-        <locationX>864</locationX>
-        <locationY>1274</locationY>
+        <locationX>1128</locationX>
+        <locationY>1574</locationY>
         <defaultConnector>
             <targetReference>Register_New_Customer</targetReference>
         </defaultConnector>
@@ -289,12 +326,37 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Exist_Referral_Record</name>
-        <label>Exist Referral Record?</label>
-        <locationX>1073</locationX>
-        <locationY>566</locationY>
+        <name>Exist_Generic_Referral_Record</name>
+        <label>Exist Generic Referral Record?</label>
+        <locationX>1205</locationX>
+        <locationY>782</locationY>
         <defaultConnector>
             <targetReference>Login_Register_Form</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>referralRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Email_to_Screen_and_other</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Exist_Referral_Record</name>
+        <label>Exist Referral Record?</label>
+        <locationX>1007</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Get_Generic_Referral</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -316,7 +378,7 @@
     <decisions>
         <name>From_Redirect</name>
         <label>From Redirect?</label>
-        <locationX>726</locationX>
+        <locationX>743</locationX>
         <locationY>134</locationY>
         <defaultConnector>
             <targetReference>Live_Mode_Check</targetReference>
@@ -348,7 +410,7 @@
     <decisions>
         <name>Referral_Code_Exists</name>
         <label>Referral Code Exists</label>
-        <locationX>1227</locationX>
+        <locationX>1260</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Login_Register_Form</targetReference>
@@ -373,8 +435,8 @@
     <decisions>
         <name>Referral_Exist</name>
         <label>Referral Exist?</label>
-        <locationX>1062</locationX>
-        <locationY>1490</locationY>
+        <locationX>1326</locationX>
+        <locationY>1790</locationY>
         <defaultConnector>
             <targetReference>Send_Welcome_Email</targetReference>
         </defaultConnector>
@@ -398,17 +460,32 @@
     <decisions>
         <name>Selection_New_Existing</name>
         <label>Selection New/Existing</label>
-        <locationX>1227</locationX>
-        <locationY>1058</locationY>
+        <locationX>1260</locationX>
+        <locationY>1358</locationY>
         <defaultConnector>
             <targetReference>Handle_Existing_Customer_Login</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Selected Existing (Login)</defaultConnectorLabel>
         <rules>
+            <name>Forgot_Identificator</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>identifyCustomerForm.forgotIdentificatorAction</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact_Details_Flow</targetReference>
+            </connector>
+            <label>Forgot Identificator</label>
+        </rules>
+        <rules>
             <name>Selected_New</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Buttons.value</leftValueReference>
+                <leftValueReference>identifyCustomerForm.selectedMode</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>New Customer</stringValue>
@@ -420,19 +497,16 @@
             <label>Selected New (Registration)</label>
         </rules>
     </decisions>
-    <dynamicChoiceSets>
-        <name>sourcePicklist</name>
-        <dataType>Picklist</dataType>
-        <displayField xsi:nil="true"/>
-        <object xsi:nil="true"/>
-        <picklistField>Source__c</picklistField>
-        <picklistObject>Account</picklistObject>
-    </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
         <name>greenBox</name>
         <dataType>String</dataType>
         <expression>&apos;&lt;div class=&quot;slds-scoped-notification slds-theme_success&quot; role=&quot;status&quot;&gt;&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>LoginTokenValidity</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() + (1/24)</expression>
     </formulas>
     <formulas>
         <name>redBox</name>
@@ -475,21 +549,7 @@
         <connector>
             <targetReference>Assign_RecordId</targetReference>
         </connector>
-        <filterLogic>(1 AND 2) OR (3 AND 4)</filterLogic>
-        <filters>
-            <field>One_Time_Token__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>token</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>One_Time_Token_Validity__c</field>
-            <operator>GreaterThanOrEqualTo</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </filters>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Login_Token__c</field>
             <operator>EqualTo</operator>
@@ -499,9 +559,9 @@
         </filters>
         <filters>
             <field>Login_Token_Validity__c</field>
-            <operator>GreaterThanOrEqualTo</operator>
+            <operator>GreaterThan</operator>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -511,9 +571,44 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Generic_Referral</name>
+        <label>Get Generic Referral</label>
+        <locationX>1205</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Exist_Generic_Referral_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Referral_Code__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>refferalCode</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Generic_Referral__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Referral__c</object>
+        <outputReference>referralRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>From_Account__c</queriedFields>
+        <queriedFields>From_Resource__c</queriedFields>
+        <queriedFields>Referral_Code__c</queriedFields>
+        <queriedFields>Date__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>Generic_Referral__c</queriedFields>
+        <queriedFields>Parent_Referral__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Referral</name>
         <label>Get Referral</label>
-        <locationX>1073</locationX>
+        <locationX>1007</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -527,6 +622,13 @@
                 <elementReference>refferalCode</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Generic_Referral__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <object>Referral__c</object>
         <outputReference>referralRecord</outputReference>
         <queriedFields>Id</queriedFields>
@@ -536,12 +638,14 @@
         <queriedFields>AccountId__c</queriedFields>
         <queriedFields>Date__c</queriedFields>
         <queriedFields>Email__c</queriedFields>
+        <queriedFields>Generic_Referral__c</queriedFields>
+        <queriedFields>Parent_Referral__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Website_Settings</name>
         <label>Get Website Settings</label>
-        <locationX>726</locationX>
-        <locationY>2366</locationY>
+        <locationX>743</locationX>
+        <locationY>2666</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Generate_Account_Login_Token</targetReference>
@@ -551,34 +655,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Clear_Token_Data</name>
-        <label>Clear Token Data</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
-        <connector>
-            <targetReference>Account_Login_Token</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>One_Time_Token_Validity__c</field>
-        </inputAssignments>
-        <inputAssignments>
-            <field>One_Time_Token__c</field>
-        </inputAssignments>
-        <object>Account</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>726</locationX>
-        <locationY>2582</locationY>
+        <locationX>743</locationX>
+        <locationY>2882</locationY>
         <connector>
             <targetReference>Navigate_To_Landing</targetReference>
         </connector>
@@ -593,7 +673,7 @@
         <inputAssignments>
             <field>Login_Token_Validity__c</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <elementReference>LoginTokenValidity</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -608,126 +688,36 @@
     <screens>
         <name>Code_Confirmation_Screen</name>
         <label>Code Confirmation</label>
-        <locationX>1062</locationX>
-        <locationY>1898</locationY>
+        <locationX>1326</locationX>
+        <locationY>2198</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <backButtonLabel>Späť</backButtonLabel>
         <connector>
             <targetReference>SetOutput</targetReference>
         </connector>
         <fields>
-            <name>logo2</name>
-            <extensionName>flowruntime:image</extensionName>
+            <name>codeConfirmationForm</name>
+            <extensionName>c:codeConfirmationForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>imageName</name>
+                <name>expectedCode</name>
                 <value>
-                    <stringValue>logoblack</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>horizontalAlignment</name>
-                <value>
-                    <stringValue>center</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>imageWidth</name>
-                <value>
-                    <stringValue>50%</stringValue>
+                    <elementReference>Register_New_Customer.createdAccount.Unique_Code__c</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
-        <fields>
-            <name>CodeConfirmationText</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;Prosím zadajte kód, ktorý prišiel na Vašu emailovú adresu&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Code_Confirmation_Screen_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Code_Confirmation_Screen_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>5</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Code_Confirmation_Screen_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>codeConfirmationInput</name>
-                    <dataType>String</dataType>
-                    <fieldText>Identifikátor</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <validationRule>
-                        <errorMessage>&lt;p&gt;Invalid code&lt;/p&gt;</errorMessage>
-                        <formulaExpression>{!codeConfirmationInput} == {!Register_New_Customer.createdAccount.Unique_Code__c}</formulaExpression>
-                    </validationRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Code_Confirmation_Screen_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>5</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <nextOrFinishButtonLabel>Pokračovať</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
+        <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Login_Register_Form</name>
         <label>Login/Register Form</label>
-        <locationX>1227</locationX>
-        <locationY>950</locationY>
-        <actions>
-            <name>getDetails</name>
-            <actionName>Get_Contact_Details_Subflow</actionName>
-            <actionType>flow</actionType>
-            <inputParameters>
-                <name>Action</name>
-                <value>
-                    <stringValue>Send Email</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>email</name>
-                <value>
-                    <elementReference>Email_Login.value</elementReference>
-                </value>
-            </inputParameters>
-            <label>Get Contact Details Subflow</label>
-            <nameSegment>Get_Contact_Details_Subflow</nameSegment>
-            <versionSegment>1</versionSegment>
-        </actions>
+        <locationX>1260</locationX>
+        <locationY>1250</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -735,597 +725,45 @@
             <targetReference>Selection_New_Existing</targetReference>
         </connector>
         <fields>
-            <name>logo</name>
-            <extensionName>flowruntime:image</extensionName>
+            <name>identifyCustomerForm</name>
+            <extensionName>c:identifyCustomerForm</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>imageName</name>
+                <name>preFilledEmail</name>
                 <value>
-                    <stringValue>logoblack</stringValue>
+                    <elementReference>Email_res</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>horizontalAlignment</name>
+                <name>showCustomerExistsError</name>
                 <value>
-                    <stringValue>center</stringValue>
+                    <elementReference>Handle_New_Registration.foundBoolean</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>imageWidth</name>
+                <name>showNotFoundError</name>
                 <value>
-                    <stringValue>30%</stringValue>
+                    <elementReference>incorrectIdentifier</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>forgotIdentificatorSent</name>
+                <value>
+                    <elementReference>ForgotIdentificatorBoolean</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
-        <fields>
-            <name>css1</name>
-            <extensionName>SF_JY:styleOverwrite</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>cssString</name>
-                <value>
-                    <elementReference>css</elementReference>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>Notif_Customer_Exists</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;{!redBox}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;Užívateľ s týmto emailom existuje, prosím prihláste sa&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Handle_New_Registration.foundBoolean</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Notif_Customer_notFound</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;{!redBox}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 20px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Užívateľ neexistuje, alebo nesprávny identifikátor&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <visibilityRule>
-                <conditionLogic>or</conditionLogic>
-                <conditions>
-                    <leftValueReference>Handle_Existing_Customer_Login.foundBoolean</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>false</booleanValue>
-                    </rightValue>
-                </conditions>
-                <conditions>
-                    <leftValueReference>incorrectIdentifier</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Login_Register_Form_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Login_Register_Form_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>isCompany</name>
-                    <dataType>Boolean</dataType>
-                    <defaultValue>
-                        <booleanValue>false</booleanValue>
-                    </defaultValue>
-                    <fieldText>Firma?</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>Buttons.value</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <stringValue>New Customer</stringValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Buttons</name>
-                    <extensionName>c:fsc_flowButtonBar</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>alignment</name>
-                        <value>
-                            <stringValue>left</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>orientation</name>
-                        <value>
-                            <stringValue>horizontal</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>showLines</name>
-                        <value>
-                            <stringValue>neither</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>actionMode</name>
-                        <value>
-                            <stringValue>selection</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>buttons</name>
-                        <value>
-                            <stringValue>[{&quot;label&quot;:&quot;Nový Zákazník&quot;,&quot;value&quot;:&quot;New Customer&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;neutral&quot;,&quot;index&quot;:0},{&quot;label&quot;:&quot;Existujúci Zákazník&quot;,&quot;value&quot;:&quot;Existing Customer&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;neutral&quot;,&quot;index&quot;:1}]</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>defaultValue</name>
-                        <value>
-                            <stringValue>Existing Customer</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Login_Register_Form_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Login_Register_Form_Section2_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section2_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>First_Name</name>
-                    <dataType>String</dataType>
-                    <fieldText>Meno</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>Last_Name</name>
-                    <dataType>String</dataType>
-                    <fieldText>Priezvisko</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>false</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>Billing_Street</name>
-                    <dataType>String</dataType>
-                    <fieldText>Ulica</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>Billing_City</name>
-                    <dataType>String</dataType>
-                    <fieldText>Mesto</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>Billing_Postal_Code</name>
-                    <dataType>String</dataType>
-                    <fieldText>PSČ</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>Billing_Country</name>
-                    <dataType>String</dataType>
-                    <fieldText>Štát</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section2_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>ico</name>
-                    <dataType>String</dataType>
-                    <fieldText>IČO</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>icdph</name>
-                    <dataType>String</dataType>
-                    <fieldText>IČ DPH</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>dic</name>
-                    <dataType>String</dataType>
-                    <fieldText>DIČ</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>isCompany</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <fields>
-                    <name>Email_Registration</name>
-                    <extensionName>flowruntime:email</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>required</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>value</name>
-                        <value>
-                            <elementReference>Email_res</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <fields>
-                    <name>Phone</name>
-                    <extensionName>flowruntime:phone</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>required</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Telefón</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <fields>
-                    <name>Source</name>
-                    <choiceReferences>sourcePicklist</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>Odkiaľ ste sa o nás dozvedeli?</fieldText>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                </fields>
-                <fields>
-                    <name>regText</name>
-                    <fieldText>&lt;p style=&quot;text-align: right;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Registráciou súhlasíte s &lt;/span&gt;&lt;a href=&quot;https://www.evoxise.sk/s/ochrana-osobnych-udajov&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;obchodnými podmienkami&lt;/a&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section2_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Buttons.value</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <stringValue>New Customer</stringValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Login_Register_Form_Section3</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Login_Register_Form_Section3_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Email_Login</name>
-                    <extensionName>flowruntime:email</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>required</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>value</name>
-                        <value>
-                            <elementReference>Email_res</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section3_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>password</name>
-                    <fieldText>Identifikátor</fieldText>
-                    <fieldType>PasswordField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Login_Register_Form_Section3_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>ActionForgotPassword</name>
-                    <extensionName>flowruntime:actionButtonField</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Zabudnutý Identifikátor</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>isSuccess</name>
-                        <value>
-                            <elementReference>getDetails.IsSuccess</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>inProgress</name>
-                        <value>
-                            <elementReference>getDetails.InProgress</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>errorMessage</name>
-                        <value>
-                            <elementReference>getDetails.ErrorMessage</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>disabled</name>
-                        <value>
-                            <elementReference>getDetails.InProgress</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <fields>
-                    <name>forgotIdentificatorText</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Na email sme ti poslali tvoj Identifikátor&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>getDetails.IsSuccess</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Buttons.value</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <stringValue>Existing Customer</stringValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <nextOrFinishButtonLabel>Pokračovať</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
+        <showFooter>false</showFooter>
         <showHeader>false</showHeader>
-        <triggers>
-            <eventName>flow__screenfieldclick</eventName>
-            <eventSource>ActionForgotPassword</eventSource>
-            <handlers>
-                <screenActionName>getDetails</screenActionName>
-            </handlers>
-        </triggers>
     </screens>
     <screens>
         <name>Success</name>
         <label>Success</label>
-        <locationX>726</locationX>
-        <locationY>2798</locationY>
+        <locationX>743</locationX>
+        <locationY>3098</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1347,7 +785,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>600</locationX>
+        <locationX>617</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>From_Redirect</targetReference>
@@ -1355,10 +793,33 @@
     </start>
     <status>Active</status>
     <subflows>
+        <name>Get_Contact_Details_Flow</name>
+        <label>Get Contact Details Flow</label>
+        <locationX>666</locationX>
+        <locationY>1466</locationY>
+        <connector>
+            <targetReference>Assign_Show_Message</targetReference>
+        </connector>
+        <flowName>Get_Contact_Details_Subflow</flowName>
+        <inputAssignments>
+            <name>Action</name>
+            <value>
+                <stringValue>Send Email</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>email</name>
+            <value>
+                <elementReference>identifyCustomerForm.loginEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
         <name>Handle_Existing_Customer_Login</name>
         <label>Handle Existing Customer Login</label>
-        <locationX>1590</locationX>
-        <locationY>1166</locationY>
+        <locationX>1854</locationX>
+        <locationY>1466</locationY>
         <connector>
             <targetReference>Already_Exists_Login</targetReference>
         </connector>
@@ -1372,13 +833,13 @@
         <inputAssignments>
             <name>email</name>
             <value>
-                <elementReference>Email_Login.value</elementReference>
+                <elementReference>identifyCustomerForm.loginEmail</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <name>uniqueCode</name>
             <value>
-                <elementReference>password</elementReference>
+                <elementReference>identifyCustomerForm.loginPassword</elementReference>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1386,8 +847,8 @@
     <subflows>
         <name>Handle_New_Registration</name>
         <label>Handle New Registration</label>
-        <locationX>864</locationX>
-        <locationY>1166</locationY>
+        <locationX>1128</locationX>
+        <locationY>1466</locationY>
         <connector>
             <targetReference>Already_Exists_Registration</targetReference>
         </connector>
@@ -1401,7 +862,7 @@
         <inputAssignments>
             <name>email</name>
             <value>
-                <elementReference>Email_Registration.value</elementReference>
+                <elementReference>identifyCustomerForm.registrationEmail</elementReference>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1409,7 +870,7 @@
     <subflows>
         <name>Live_Mode_Check</name>
         <label>Live Mode Check</label>
-        <locationX>1227</locationX>
+        <locationX>1260</locationX>
         <locationY>242</locationY>
         <connector>
             <targetReference>Referral_Code_Exists</targetReference>
@@ -1420,82 +881,46 @@
     <subflows>
         <name>Register_New_Customer</name>
         <label>Register New Customer</label>
-        <locationX>1062</locationX>
-        <locationY>1382</locationY>
+        <locationX>1326</locationX>
+        <locationY>1682</locationY>
         <connector>
             <targetReference>Referral_Exist</targetReference>
         </connector>
         <flowName>Register_new_Customer</flowName>
         <inputAssignments>
-            <name>billingCity</name>
+            <name>branch</name>
             <value>
-                <elementReference>Billing_City</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>billingCountry</name>
-            <value>
-                <elementReference>Billing_Country</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>billingPostal</name>
-            <value>
-                <elementReference>Billing_Postal_Code</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>billingStreet</name>
-            <value>
-                <elementReference>Billing_Street</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>dic</name>
-            <value>
-                <elementReference>dic</elementReference>
+                <elementReference>identifyCustomerForm.branch</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <name>email</name>
             <value>
-                <elementReference>Email_Registration.value</elementReference>
+                <elementReference>identifyCustomerForm.registrationEmail</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <name>firstName</name>
             <value>
-                <elementReference>First_Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>icDph</name>
-            <value>
-                <elementReference>icdph</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <name>ico</name>
-            <value>
-                <elementReference>ico</elementReference>
+                <elementReference>identifyCustomerForm.firstName</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <name>isBusinessAccount</name>
             <value>
-                <elementReference>isCompany</elementReference>
+                <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <name>lastName</name>
             <value>
-                <elementReference>Last_Name</elementReference>
+                <elementReference>identifyCustomerForm.lastName</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <name>phone</name>
             <value>
-                <elementReference>Phone.value</elementReference>
+                <elementReference>identifyCustomerForm.phone</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1513,7 +938,7 @@
         <inputAssignments>
             <name>source</name>
             <value>
-                <elementReference>Source</elementReference>
+                <elementReference>identifyCustomerForm.source</elementReference>
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1521,8 +946,8 @@
     <subflows>
         <name>Send_Welcome_Email</name>
         <label>Send Welcome Email</label>
-        <locationX>1062</locationX>
-        <locationY>1790</locationY>
+        <locationX>1326</locationX>
+        <locationY>2090</locationY>
         <connector>
             <targetReference>Code_Confirmation_Screen</targetReference>
         </connector>
@@ -1543,12 +968,18 @@
     <subflows>
         <name>SFSCH_Referral_Flow</name>
         <label>SFSCH - Referral Flow</label>
-        <locationX>930</locationX>
-        <locationY>1598</locationY>
+        <locationX>1194</locationX>
+        <locationY>1898</locationY>
         <connector>
             <targetReference>Send_Welcome_Email</targetReference>
         </connector>
         <flowName>SFSCH_Referral</flowName>
+        <inputAssignments>
+            <name>account</name>
+            <value>
+                <elementReference>Register_New_Customer.createdAccount</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <name>actionType</name>
             <value>
@@ -1596,7 +1027,27 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>ForgotIdentificatorBoolean</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
         <name>incorrectIdentifier</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>MissingIdentificator</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
